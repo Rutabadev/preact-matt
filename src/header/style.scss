@@ -6,6 +6,15 @@
   justify-content: space-between;
   align-items: center;
 
+  button {
+    font-weight: 600;
+    font-size: 1em;
+
+    &.main {
+      font-size: 1.2em;
+    }
+  }
+
   .menu-links,
   .authentification {
     padding: 0 20px;

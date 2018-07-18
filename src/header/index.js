@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <div class="header">
       <div class="menu-links">
-        <button class="primary">Matthieu</button>
+        <button class="primary main">Matthieu</button>
         <button class="primary">CSS Showcase</button>
         <button class="primary">Fotos</button>
       </div>
