@@ -1,0 +1,78 @@
+@import url("//fonts.googleapis.com/css?family=Roboto+Mono");
+
+:root {
+  --primary: #ffdc06;
+  --primary-dimmed: #b29d16;
+  --secondary: #cc1989;
+  --secondary-dimmed: #b20d75;
+  --tertiary: #1ff3ff;
+  --warning: #eb1212;
+  --text-color: #2c3e50;
+  --white: white;
+  --bg: #f8f8f8;
+  --elevation-high: 0 0 24px grey;
+  --elevation-mid: 0 1px 7px grey;
+  --elevation-low: 0 1px 2px grey;
+  --rounded: 25px;
+  --hover: brightness(0.8);
+  --disabled: opacity(0.5);
+}
+
+html,
+body {
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  align-items: stretch;
+
+  .content {
+    flex-grow: 1;
+  }
+
+  button {
+    border-radius: var(--rounded);
+    padding: 0.5em 1em;
+    border: none;
+    background-color: var(--white);
+    color: var(--text-color);
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 600;
+    position: relative;
+
+    &:hover {
+      box-shadow: var(--elevation-low);
+      z-index: 1;
+    }
+
+    &:active {
+      box-shadow: var(--elevation-mid);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.primary {
+      background-color: var(--primary);
+    }
+    &.secondary {
+      background-color: var(--secondary);
+      color: var(--white);
+    }
+  }
+}
