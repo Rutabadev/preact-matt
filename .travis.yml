@@ -7,4 +7,5 @@ script:
 install:
   npm install -g firebase-tools
 after_success:
-  firebase deploy  - project matthieu-f1348 - token $FIREBASE_TOKEN
+  firebase use --token $FIREBASE_TOKEN matthieu-f1348
+  firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY
