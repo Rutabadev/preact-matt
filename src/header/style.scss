@@ -13,6 +13,10 @@
     &.main {
       font-size: 1.2em;
     }
+
+    &.active {
+      box-shadow: var(--elevation-low);
+    }
   }
 
   .menu-links,

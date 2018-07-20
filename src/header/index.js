@@ -1,16 +1,24 @@
 import "./style.scss";
+import { Component } from "preact";
 
-export const Header = () => {
-  return (
-    <div class="header">
-      <div class="menu-links">
-        <button class="primary main">Matthieu</button>
-        <button class="primary">CSS Showcase</button>
-        <button class="primary">Fotos</button>
+export class Header extends Component {
+  render(props, state) {
+    const features = props.features;
+    const links = [];
+    features.forEach(feature => {
+      let dynamicClass = feature.active ? "secondary active" : "primary";
+      if (feature.main) {
+        dynamicClass += " main";
+      }
+      links.push(<button class={dynamicClass}>{feature.name}</button>);
+    });
+    return (
+      <div class="header">
+        <div class="menu-links">{links}</div>
+        <div class="authentification">
+          <button class="primary">Login</button>
+        </div>
       </div>
-      <div class="authentification">
-        <button class="primary">Login</button>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}

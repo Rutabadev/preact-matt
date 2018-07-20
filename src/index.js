@@ -7,11 +7,30 @@ import { Fotos } from "./fotos";
 import { NotFound } from "./not-found";
 import Router from "preact-router";
 
+const features = [
+  {
+    name: "Matthieu",
+    path: "/",
+    main: true,
+    active: true
+  },
+  {
+    name: "CSS Showcase",
+    path: "/",
+    active: false
+  },
+  {
+    name: "Fotos",
+    path: "/fotos",
+    active: false
+  }
+];
+
 export default class App extends Component {
   render() {
     return (
       <div class="app">
-        <Header />
+        <Header features={features} />
         <div class="content">
           <Router>
             <CssShowcase path="/" />

@@ -55,12 +55,12 @@ body {
     position: relative;
 
     &:hover {
-      box-shadow: var(--elevation-low);
+      box-shadow: var(--elevation-mid);
       z-index: 1;
     }
 
     &:active {
-      box-shadow: var(--elevation-mid);
+      box-shadow: var(--elevation-low);
     }
 
     &:focus {
