@@ -6,7 +6,6 @@ install:
   - npm install
 script:
   npm run build --prod
-before_deploy:
-  firebase use--token $FIREBASE_TOKEN matthieu - f1348
-deploy:
-  firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY
+after_success:
+  - firebase use--token $FIREBASE_TOKEN matthieu - f1348
+  - firebase deploy --non-interactive --token $FIREBASE_DEPLOY_KEY
