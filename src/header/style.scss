@@ -9,6 +9,7 @@
   button {
     font-weight: 600;
     font-size: 1em;
+    box-shadow: none;
 
     &.main {
       font-size: 1.2em;
@@ -17,6 +18,11 @@
     &.active {
       box-shadow: var(--elevation-low);
     }
+  }
+
+  a.active button {
+    background-color: var(--secondary);
+    color: var(--white);
   }
 
   .menu-links,

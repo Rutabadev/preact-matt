@@ -1,9 +1,10 @@
 import "./style";
 import { Component, render } from "preact";
-import { Header } from "./header";
-import { Footer } from "./footer";
 import { CssShowcase } from "./css-showcase";
+import { Footer } from "./footer";
 import { Fotos } from "./fotos";
+import { Header } from "./header";
+import { Home } from "./home";
 import { NotFound } from "./not-found";
 import Router from "preact-router";
 
@@ -16,7 +17,7 @@ const features = [
   },
   {
     name: "CSS Showcase",
-    path: "/",
+    path: "/css",
     active: false
   },
   {
@@ -33,9 +34,10 @@ export default class App extends Component {
         <Header features={features} />
         <div class="content">
           <Router>
-            <CssShowcase path="/" />
+            <CssShowcase path="/css" />
             <Fotos path="/fotos" />
-            <NotFound default />
+            <Home path="/" />
+            <NotFound type="404" default />
           </Router>
         </div>
         <Footer />
