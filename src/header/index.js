@@ -7,14 +7,9 @@ export class Header extends Component {
     const features = props.features;
     const links = [];
     features.forEach(feature => {
-      // let dynamicClass = feature.active ? "secondary active" : "primary";
-      let dynamicClass = "primary";
-      if (feature.main) {
-        dynamicClass += " main";
-      }
       links.push(
         <Link activeClassName="active" href={feature.path}>
-          <button class={dynamicClass}>{feature.name}</button>
+          <button class={feature.main ? "main" : ""}>{feature.name}</button>
         </Link>
       );
     });
@@ -22,7 +17,7 @@ export class Header extends Component {
       <div class="header">
         <nav class="menu-links">{links}</nav>
         <div class="authentification">
-          <button class="primary">Login</button>
+          <button onClick={e => alert("Pas encore fait.")}>Login</button>
         </div>
       </div>
     );

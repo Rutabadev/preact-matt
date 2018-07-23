@@ -12,18 +12,15 @@ const features = [
   {
     name: "Matthieu",
     path: "/",
-    main: true,
-    active: true
+    main: true
   },
   {
     name: "CSS Showcase",
-    path: "/css",
-    active: false
+    path: "/css"
   },
   {
     name: "Fotos",
-    path: "/fotos",
-    active: false
+    path: "/fotos"
   }
 ];
 
