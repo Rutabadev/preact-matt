@@ -1,7 +1,7 @@
 {
-  "name": "Matthieu Montaille",
+  "name": "preact-matt",
   "version": "0.0.251",
-  "description": "Le site de Matthieu Montaillé",
+  "description": "",
   "keywords": [],
   "main": "index.js",
   "dependencies": {
