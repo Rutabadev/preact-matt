@@ -1,4 +1,4 @@
-import "./style";
+import "./style.scss";
 import { Component, render } from "preact";
 import { CssShowcase } from "./css-showcase";
 import { Footer } from "./footer";
