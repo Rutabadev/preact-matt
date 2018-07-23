@@ -1,5 +1,5 @@
 .footer {
-  height: 40px;
+  min-height: 40px;
   background-color: var(--secondary);
   display: flex;
   align-items: center;
@@ -9,5 +9,13 @@
     cursor: pointer;
     color: var(--white);
     margin: 0 10px;
+  }
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+
+    & a {
+      margin: 10px 0;
+    }
   }
 }

@@ -27,7 +27,22 @@
   }
 
   .menu-links,
+  .sidenav-switcher,
   .authentification {
     padding: 0 20px;
+  }
+
+  .sidenav-switcher {
+    display: none;
+  }
+
+  @media (max-width: 520px) {
+    .menu-links {
+      display: none;
+    }
+
+    .sidenav-switcher {
+      display: inherit;
+    }
   }
 }

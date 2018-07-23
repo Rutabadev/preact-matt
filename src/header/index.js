@@ -15,6 +15,7 @@ export class Header extends Component {
     });
     return (
       <div class="header">
+        <nav class="sidenav-switcher" />
         <nav class="menu-links">{links}</nav>
         <div class="authentification">
           <button onClick={e => alert("Pas encore fait.")}>Login</button>
