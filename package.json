@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "index.js",
   "dependencies": {
+    "firebase": "5.3.0",
     "preact": "8.2.5",
     "preact-compat": "3.17.0",
     "preact-router": "2.6.1"
