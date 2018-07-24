@@ -1,6 +1,6 @@
 import { Component } from "preact";
-import { auth, provider } from "../firebase";
 import "./style.scss";
+import firebase from "../firebase";
 
 export class Login extends Component {
   constructor() {
@@ -14,20 +14,26 @@ export class Login extends Component {
   }
 
   login() {
-    auth.signInWithPopup(provider).then(result => {
-      const user = result.user;
-      this.setState({
-        user
+    firebase
+      .auth()
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(result => {
+        const user = result.user;
+        this.setState({
+          user
+        });
       });
-    });
   }
 
   logout() {
-    auth.signOut().then(() => {
-      this.setState({
-        user: null
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
       });
-    });
   }
 
   user() {
