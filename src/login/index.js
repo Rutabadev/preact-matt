@@ -8,6 +8,9 @@ export class Login extends Component {
     this.state = {
       user: null
     };
+
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   login() {
