@@ -1,6 +1,7 @@
 import "./style.scss";
 import { Component } from "preact";
 import { Link } from "preact-router/match";
+import { Login } from "../login";
 
 export class Header extends Component {
   render(props, state) {
@@ -18,7 +19,7 @@ export class Header extends Component {
         <nav class="sidenav-switcher" />
         <nav class="menu-links">{links}</nav>
         <div class="authentification">
-          <button onClick={e => alert("Pas encore fait.")}>Login</button>
+          <Login />
         </div>
       </div>
     );
