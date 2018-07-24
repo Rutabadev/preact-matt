@@ -2,8 +2,27 @@ import "./style.scss";
 import { Component } from "preact";
 import { Link } from "preact-router/match";
 import { Login } from "../login";
+import { SideNav } from "../sidenav";
 
 export class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sideNavDisplay: "closed"
+    };
+
+    this.closeSideNav = this.closeSideNav.bind(this);
+  }
+
+  openSideNav() {
+    this.setState({ sideNavDisplay: "open" });
+  }
+
+  closeSideNav() {
+    console.log("je devrai la fermer");
+    this.setState({ sideNavDisplay: "closed" });
+  }
+
   render(props, state) {
     const features = props.features;
     const links = [];
@@ -14,9 +33,17 @@ export class Header extends Component {
         </Link>
       );
     });
+
     return (
       <div class="header">
-        <nav class="sidenav-switcher" />
+        <div class="sidenav-switcher">
+          <button onClick={() => this.openSideNav()}>#</button>
+          <SideNav
+            features={features}
+            sideNavDisplay={this.state.sideNavDisplay}
+            closeHandler={this.closeSideNav}
+          />
+        </div>
         <nav class="menu-links">{links}</nav>
         <div class="authentification">
           <Login />
