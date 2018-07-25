@@ -36,7 +36,9 @@ export class Header extends Component {
     return (
       <div class="header">
         <div class="sidenav-switcher">
-          <button onClick={() => this.openSideNav()}>#</button>
+          <button class="sidenav-button" onClick={() => this.openSideNav()}>
+            #
+          </button>
           <SideNav
             features={features}
             sideNavDisplay={this.state.sideNavDisplay}

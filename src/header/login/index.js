@@ -39,7 +39,7 @@ export class Login extends Component {
   user() {
     if (this.state.user) {
       return (
-        <button onClick={this.logout}>
+        <button class="image-button" onClick={this.logout}>
           <img src={this.state.user.photoURL} alt="User profile" />
         </button>
       );

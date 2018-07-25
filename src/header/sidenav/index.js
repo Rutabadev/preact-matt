@@ -18,7 +18,7 @@ export const SideNav = ({ features, sideNavDisplay, closeHandler }) => {
     <div class={"sidenav " + sideNavDisplay}>
       <div class="table-wrapper">
         <div class="close-button-wrapper">
-          <button class="close-button" onClick={closeHandler}>
+          <button class="sidenav-button" onClick={closeHandler}>
             X
           </button>
         </div>
