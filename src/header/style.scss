@@ -43,6 +43,10 @@
 
     .sidenav-switcher {
       display: inherit;
+
+      & button {
+        z-index: 0;
+      }
     }
   }
 }

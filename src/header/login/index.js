@@ -1,6 +1,6 @@
 import { Component } from "preact";
 import "./style.scss";
-import firebase from "../firebase";
+import firebase from "../../firebase";
 
 export class Login extends Component {
   constructor() {

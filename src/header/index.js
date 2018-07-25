@@ -1,8 +1,8 @@
 import "./style.scss";
 import { Component } from "preact";
 import { Link } from "preact-router/match";
-import { Login } from "../login";
-import { SideNav } from "../sidenav";
+import { Login } from "./login";
+import { SideNav } from "./sidenav";
 
 export class Header extends Component {
   constructor() {
@@ -19,7 +19,6 @@ export class Header extends Component {
   }
 
   closeSideNav() {
-    console.log("je devrai la fermer");
     this.setState({ sideNavDisplay: "closed" });
   }
 
