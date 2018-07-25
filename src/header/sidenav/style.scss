@@ -12,8 +12,17 @@
     background-color: transparent;
   }
 
+  .mega-wrapper {
+    display: table;
+  }
+
+  .close-button-wrapper {
+    height: var(--navbar-height);
+    display: table-cell;
+    vertical-align: middle;
+  }
   .close-button {
-    align-self: flex-start;
+    font-size: 1.4em;
   }
 
   a button {

@@ -1,5 +1,5 @@
 .header {
-  height: 65px;
+  height: var(--navbar-height);
   background-color: var(--primary);
   box-shadow: var(--elevation-high);
   display: flex;
