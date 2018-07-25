@@ -1,18 +1,20 @@
 .sidenav {
   position: absolute;
+  left: 0;
+  top: 0;
   height: 100vh;
   width: 300px;
   background-color: var(--bg);
   display: flex;
   flex-direction: column;
   z-index: 1;
-  transition: left 0.2s ease;
+  transition: transform 300ms ease;
 
   button {
     background-color: transparent;
   }
 
-  .mega-wrapper {
+  .table-wrapper {
     display: table;
   }
 
@@ -31,11 +33,11 @@
 }
 
 .open {
-  left: 0;
-  top: 0;
+  -webkit-transform: none;
+  transform: none;
 }
 
 .closed {
-  left: -300px;
-  top: 0;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
 }
