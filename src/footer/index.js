@@ -12,7 +12,13 @@ export const Footer = () => {
       <a href="https://twitter.com/MZPuex" native>
         Touitteur
       </a>
-      <a href="https://matthieumontaille.fr" native>
+      <a
+        onClick={() =>
+          alert(
+            "Alors vous allez rire mais en fait vous êtes actuellement sur le site."
+          )
+        }
+      >
         {/* Add popup "T'es déjà dessus patate" */}
         Sith
       </a>
