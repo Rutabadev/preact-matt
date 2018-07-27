@@ -24,6 +24,7 @@ export const SideNav = ({ features, sideNavDisplay, closeHandler }) => {
         </div>
       </div>
       {links}
+      <button class="theme-switcher">Switch theme</button>
     </div>
   );
 };
