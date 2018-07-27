@@ -27,7 +27,7 @@ const features = [
 export default class App extends Component {
   render() {
     return (
-      <div class="app">
+      <div class="app light-theme">
         <Header features={features} />
         <div class="content">
           <Router>
@@ -43,6 +43,18 @@ export default class App extends Component {
   }
 }
 
+// Store reference of topmost parent component
+let AppComponent = {};
 if (typeof window !== "undefined") {
-  render(<App />, document.getElementById("root"));
+  AppComponent = render(<App />, document.getElementById("root"));
 }
+
+window.updateApp = someValue => {
+  console.log(AppComponent.classList.contains("light-theme"));
+  // Update state of topmost parent when this method is called
+  if (AppComponent.classList.contains("light-theme")) {
+    AppComponent.classList.replace("light-theme", "dark-theme");
+  } else {
+    AppComponent.classList.replace("dark-theme", "light-theme");
+  }
+};

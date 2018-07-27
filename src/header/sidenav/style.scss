@@ -30,14 +30,18 @@
   a button {
     width: 100%;
   }
-}
 
-.open {
-  -webkit-transform: none;
-  transform: none;
-}
+  &.open {
+    -webkit-transform: none;
+    transform: none;
+  }
 
-.closed {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+  &.closed {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  .theme-switcher {
+    margin-top: auto;
+  }
 }
