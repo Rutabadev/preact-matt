@@ -28,16 +28,24 @@ export default class App extends Component {
 
   constructor() {
     super();
-    this.state = {
-      theme: 'light'
+    if (localStorage.getItem('theme') === null) {
+      this.state = {
+        theme: 'light'
+      }      
+    } else {
+      this.state = {
+        theme: localStorage.getItem('theme')
+      }
     }
   }
 
   changeTheme() {
     if (this.state.theme === 'light') {
       this.setState({theme: 'dark'})
+      localStorage.setItem('theme', 'dark')
     } else {
       this.setState({theme: 'light'})
+      localStorage.setItem('theme', 'light')
     }
   }
 
@@ -62,19 +70,3 @@ export default class App extends Component {
 if (typeof window !== "undefined") {
   render(<App />, document.getElementById("root"));
 }
-
-// Store reference of topmost parent component
-// if (typeof window !== "undefined") {
-//   const AppComponent = render(<App />, document.getElementById("root"));
-//   window.updateApp = () => {
-//     console.log(AppComponent.classList.contains("light-theme"));
-//     // Update state of topmost parent when this method is called
-//     if (AppComponent.classList.contains("light-theme")) {
-//       AppComponent.classList.replace("light-theme", "dark-theme");
-//       console.log(AppComponent.classList);
-//     } else {
-//       AppComponent.classList.replace("dark-theme", "light-theme");
-//       console.log(AppComponent.classList);
-//     }
-//   };
-// }
