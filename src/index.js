@@ -34,11 +34,11 @@ export default class App extends Component {
   }
 
   changeTheme() {
-    if (localStorage.getItem('theme') === 'light') {
-      localStorage.setItem('theme', 'dark')
+    if (localStorage.getItem('theme') === 'dark') {
+      localStorage.setItem('theme', 'light')
       this.updateStateTheme();
     } else {
-      localStorage.setItem('theme', 'light')
+      localStorage.setItem('theme', 'dark')
       this.updateStateTheme();
     }
   }
