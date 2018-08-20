@@ -27,26 +27,32 @@ const features = [
 export default class App extends Component {
 
   constructor() {
-    super();
-    if (localStorage.getItem('theme') === null) {
-      this.state = {
-        theme: 'light'
-      }      
-    } else {
-      this.state = {
-        theme: localStorage.getItem('theme')
-      }
+    super()
+    this.state = {
+      theme: ''
     }
   }
 
   changeTheme() {
-    if (this.state.theme === 'light') {
-      this.setState({theme: 'dark'})
+    if (localStorage.getItem('theme') === 'light') {
       localStorage.setItem('theme', 'dark')
+      this.updateStateTheme();
     } else {
-      this.setState({theme: 'light'})
       localStorage.setItem('theme', 'light')
+      this.updateStateTheme();
     }
+  }
+
+  updateStateTheme() {
+    if (localStorage.getItem('theme') !== null) {
+      this.setState({theme: localStorage.getItem('theme')})
+    } else {
+      this.setState({theme: light})
+    }
+  }
+
+  componentDidMount() {
+    this.updateStateTheme();
   }
 
   render() {
