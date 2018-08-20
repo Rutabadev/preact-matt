@@ -33,7 +33,7 @@ export class SideNav extends Component {
           </div>
         </div>
         {links}
-        <button class="theme-switcher" onClick={this.updateApp.bind(this)}>
+        <button class="theme-switcher" onClick={this.props.changeTheme}>
           Switch theme
         </button>
       </div>

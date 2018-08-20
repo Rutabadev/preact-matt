@@ -43,6 +43,7 @@ export class Header extends Component {
             features={features}
             sideNavDisplay={this.state.sideNavDisplay}
             closeHandler={this.closeSideNav}
+            changeTheme={props.changeTheme}
           />
         </div>
         <nav class="menu-links">{links}</nav>
