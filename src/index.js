@@ -47,7 +47,7 @@ export default class App extends Component {
     if (localStorage.getItem('theme') !== null) {
       this.setState({theme: localStorage.getItem('theme')})
     } else {
-      this.setState({theme: light})
+      this.setState({theme: 'light'})
     }
   }
 
