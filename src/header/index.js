@@ -3,6 +3,7 @@ import { Component } from "preact";
 import { Link } from "preact-router/match";
 import { Login } from "./login";
 import { SideNav } from "./sidenav";
+import { MdMenu } from "preact-icons/md"
 
 export class Header extends Component {
   constructor() {
@@ -39,7 +40,7 @@ export class Header extends Component {
       <div class="header">
         <div class="sidenav-switcher">
           <button class="sidenav-button" onClick={() => this.openSideNav()}>
-            #
+            <MdMenu />
           </button>
           <SideNav
             features={features}

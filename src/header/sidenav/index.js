@@ -1,6 +1,7 @@
 import "./style.scss";
 import { Component } from "preact";
 import { Link } from "preact-router/match";
+import { MdClose } from "preact-icons/md"
 
 export class SideNav extends Component {
 
@@ -24,7 +25,7 @@ export class SideNav extends Component {
         <div class="table-wrapper">
           <div class="close-button-wrapper">
             <button class="sidenav-button" onClick={this.props.closeHandler}>
-              X
+              <MdClose />
             </button>
           </div>
         </div>
