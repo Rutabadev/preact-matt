@@ -29,6 +29,10 @@ body {
   padding: 0;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 #root {
   height: 100%;
 }

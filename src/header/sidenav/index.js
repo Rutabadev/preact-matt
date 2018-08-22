@@ -3,10 +3,6 @@ import { Component } from "preact";
 import { Link } from "preact-router/match";
 
 export class SideNav extends Component {
-  updateApp() {
-    // Call this method with the state value to update
-    window.updateApp();
-  }
 
   render() {
     const links = [];

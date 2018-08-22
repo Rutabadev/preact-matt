@@ -16,10 +16,12 @@ export class Header extends Component {
 
   openSideNav() {
     this.setState({ sideNavDisplay: "open" });
+    document.body.classList.add("scroll-lock");
   }
 
   closeSideNav() {
     this.setState({ sideNavDisplay: "closed" });
+    document.body.classList.remove("scroll-lock");
   }
 
   render(props, state) {
