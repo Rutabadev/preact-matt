@@ -1,3 +1,5 @@
+@import "../variables";
+
 .header {
   height: var(--navbar-height);
   background-color: var(--primary);
@@ -34,7 +36,7 @@
 
   .menu-links,
   .sidenav-switcher,
-  .authentification {
+  .end-bar {
     padding: 0 20px;
   }
 
@@ -48,17 +50,15 @@
     display: none;
   }
 
-  @media (max-width: 545px) {
-    .menu-links {
+  .end-bar {
+    display: flex;
+  }
+
+
+  @media (max-width: $breakpoint-mobile) {
+    .menu-links,
+    .theme-switch {
       display: none;
-    }
-
-    .sidenav-switcher {
-      display: inherit;
-
-      & button {
-        z-index: 0;
-      }
     }
 
     .sidenav-button {
@@ -68,5 +68,13 @@
       font-size: 1.4em;
       border-radius: 50%;
     }
+
+    .sidenav-switcher {
+      display: inherit;
+
+      & button {
+        z-index: 0;
+      }
+    }    
   }
 }

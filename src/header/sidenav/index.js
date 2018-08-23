@@ -1,7 +1,8 @@
 import "./style.scss";
 import { Component } from "preact";
 import { Link } from "preact-router/match";
-import { MdClose } from "preact-icons/md"
+import CloseIcon from "preact-icons/md/close"
+import ColorIcon from 'preact-icons/go/color-mode';
 
 export class SideNav extends Component {
 
@@ -25,13 +26,13 @@ export class SideNav extends Component {
         <div class="table-wrapper">
           <div class="close-button-wrapper">
             <button class="sidenav-button" onClick={this.props.closeHandler}>
-              <MdClose />
+              <CloseIcon />
             </button>
           </div>
         </div>
         {links}
         <button class="theme-switcher" onClick={this.props.changeTheme}>
-          Switch theme
+          <ColorIcon/>
         </button>
       </div>
     );
