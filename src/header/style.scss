@@ -38,11 +38,17 @@
     padding: 0 20px;
   }
 
+  .menu-links {
+    button {
+      margin: 0 .2em;
+    }
+  }
+
   .sidenav-switcher {
     display: none;
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 545px) {
     .menu-links {
       display: none;
     }
