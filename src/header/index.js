@@ -50,6 +50,7 @@ export class Header extends Component {
             closeHandler={this.closeSideNav}
             changeTheme={props.changeTheme}
           />
+          <div className={"behind-sidenav " + this.state.sideNavDisplay}></div>
         </div>
         <nav class="menu-links">{links}</nav>
         <div class="end-bar">
