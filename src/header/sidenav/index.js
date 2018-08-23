@@ -3,6 +3,8 @@ import { Component } from "preact";
 import { Link } from "preact-router/match";
 import CloseIcon from "preact-icons/md/close"
 import ColorIcon from 'preact-icons/go/color-mode';
+import OutsideAlerter from "./outside-alerter";
+
 
 export class SideNav extends Component {
 
@@ -22,19 +24,21 @@ export class SideNav extends Component {
     });
 
     return (
-      <div class={"sidenav " + this.props.sideNavDisplay}>
-        <div class="table-wrapper">
-          <div class="close-button-wrapper">
-            <button class="sidenav-button" onClick={this.props.closeHandler}>
-              <CloseIcon />
-            </button>
+      <OutsideAlerter sideNavDisplay={this.props.sideNavDisplay} closeHandler={this.props.closeHandler}>
+        <div class={"sidenav " + this.props.sideNavDisplay}>
+          <div class="table-wrapper">
+            <div class="close-button-wrapper">
+              <button class="sidenav-button" onClick={this.props.closeHandler}>
+                <CloseIcon />
+              </button>
+            </div>
           </div>
+          {links}
+          <button class="theme-switcher" onClick={this.props.changeTheme}>
+            <ColorIcon />
+          </button>
         </div>
-        {links}
-        <button class="theme-switcher" onClick={this.props.changeTheme}>
-          <ColorIcon/>
-        </button>
-      </div>
+      </OutsideAlerter>
     );
   }
 }
