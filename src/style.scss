@@ -8,7 +8,8 @@
   --secondary-dimmed: #b20d75;
   --tertiary: #1ff3ff;
   --warning: #eb1212;
-  --white: white;
+  --black: #333;
+  --white: #eee;
   --elevation-high: 0 0 24px grey;
   --elevation-mid: 0 1px 7px grey;
   --elevation-low: 0 1px 2px grey;
@@ -39,21 +40,21 @@ body {
 }
 
 .app {
-  &.light-theme {
-    --text-color: #333;
-    --bg: #eee;
-  }
-
-  &.dark-theme {
-    --text-color: #eee;
-    --bg: #333;
-  }
-
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100%;
   align-items: stretch;
+
+  &.light-theme {
+    --text-color: var(--black);
+    --bg: var(--white);
+  }
+
+  &.dark-theme {
+    --text-color: var(--white);
+    --bg: var(--black);
+  }
 
   .content {
     background-color: var(--bg);
@@ -74,7 +75,7 @@ body {
     font-weight: 600;
     position: relative;
     box-shadow: var(--elevation-low);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.1s;
 
     &:hover {
       box-shadow: var(--elevation-mid);
@@ -92,6 +93,7 @@ body {
 
     &.primary {
       background-color: var(--primary);
+      color: var(--black);
     }
     &.secondary {
       background-color: var(--secondary);

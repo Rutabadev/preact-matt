@@ -52,6 +52,10 @@
 
   .end-bar {
     display: flex;
+
+    & * {
+      margin: 0 1px;
+    }
   }
 
 

@@ -6,7 +6,6 @@ export const Home = () => {
       <h1 align="center">Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé</h1>
       <div class="main">
         <br/>
-        <br/>
         <h2>Biographie</h2>
         <p>De son vrai prénom Kim Jun Ho, Matthieu Montaillé est un jeune <strike>
           immigré

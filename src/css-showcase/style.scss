@@ -1,0 +1,10 @@
+.css-showcase {
+    .elements-box {
+        display: flex;
+        justify-content: space-around;
+        margin: 2em;
+    }
+    .elements-box:nth-child(2) {
+        font-size: 3em;
+    }
+}
