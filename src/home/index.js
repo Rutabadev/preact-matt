@@ -14,7 +14,7 @@ export const Home = () => {
         <br/>
         <p>Après une enfance difficile mais somme toute aisée, il devient adulte.</p>
         <br/>
-        <p>S'en suit alors une suite de péripéties tumulteuses sans intérêt ni saveur. Par exemple une fois il s'est cogné l'orteil contre le coin de son lit. C'est douleureux.</p>
+        <p>S'en suit alors une suite de péripéties tumulteuses sans intérêt ni saveur. Par exemple une fois il s'est cogné l'orteil contre le coin de son lit. C'est douloureux.</p>
         <br/>
         <p>C'est sur les coups de l'année 1789 que Matthieu fit une découverte sans prédédent : il n'était pas encore né. Ça fait un choc sur le moment mais c'est pas déconnant quand on y réfléchit bien.</p>
         <br/>
