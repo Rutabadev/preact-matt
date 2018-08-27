@@ -21,7 +21,7 @@ export const Home = () => {
         <p>On ne va pas se mentir, il a pas fait grand chose. On retiendra principalement ses classements au badmington. Une fois il a fait 16ème je crois, c'est pas dégueu.</p>
         <br/>
         <h2>Conclusion</h2>
-        <p>--. En fait c'est un smiley qui le représente bien parcequ'il vient du 66 et qu'il fait appuyer deux fois sur le 6 du clavier pour faire ça. Aussi ça lui ressemble parcequ'il est bridé.</p>
+        <p>--. En fait c'est un smiley qui le représente bien parcequ'il vient du 66 et qu'il faut appuyer deux fois sur le 6 du clavier pour faire ça. Aussi ça lui ressemble parcequ'il est bridé.</p>
       </div>
     </div>
   );

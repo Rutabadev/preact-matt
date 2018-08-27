@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 0;
+  z-index: 1;
 
   button {
     font-weight: 600;
@@ -75,10 +75,6 @@
 
     .sidenav-switcher {
       display: inherit;
-
-      & button {
-        z-index: 0;
-      }
     }
 
     .behind-sidenav {
