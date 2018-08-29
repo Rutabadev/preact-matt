@@ -15,7 +15,9 @@ const fotos = [
   { src: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/37646162_2280680261947351_1336390812296019968_n.jpg?_nc_cat=0&oh=f707a65159e50b5862106a12081c0a8c&oe=5BFA9D45', width: 4, height: 7 },
   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
   { src: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/21150324_1891212590894122_3485048031183971892_n.jpg?_nc_cat=0&oh=8da5edbc5306eb69059865537c78f71d&oe=5BF8BEF6', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
+  { src: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t34.18173-12/22386205_1931983456817035_2000213937_n.png?_nc_cat=0&oh=70ed056bfd8303fba33b2aa93cc9483a&oe=5B8872EA', width: 4, height: 5 },
+  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 },
+  { src: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/32562820_2180351731980205_9097307234819375104_n.jpg?_nc_cat=0&oh=fdeaf96bf834e00dc724274604ad4337&oe=5C31D46C', width: 1, height: 1 }
 ];
 
 export class Fotos extends Component {
