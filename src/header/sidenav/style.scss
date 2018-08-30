@@ -10,6 +10,7 @@
   z-index: 2;
   transition: transform 300ms ease;
   will-change: transform;
+  box-shadow: var(--elevation-high);
 
   button {
     background-color: transparent;
@@ -38,8 +39,8 @@
   }
 
   &.closed {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-110%);
+    transform: translateX(-110%);
   }
 
   .theme-switcher {
