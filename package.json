@@ -30,7 +30,8 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
-    "dev": "preact watch"
+    "dev": "preact watch",
+    "fix": "eslint --fix ."
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
