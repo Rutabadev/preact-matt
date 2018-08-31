@@ -1,5 +1,5 @@
 import "./style.scss";
-import CreaditCardIcon from "preact-icons/md/credit-card"
+import CreditCardIcon from "preact-icons/md/credit-card"
 import DeliciousIcon from "preact-icons/fa/delicious"
 import LinkIcon from "preact-icons/ti/link"
 import MortarBoardIcon from "preact-icons/go/mortar-board"
@@ -14,7 +14,7 @@ export const CssShowcase = () => {
         <button disabled class="primary">disabled</button>
       </div>
       <div class="elements-box">
-        <CreaditCardIcon />
+        <CreditCardIcon />
         <DeliciousIcon />
         <LinkIcon />
         <MortarBoardIcon />
