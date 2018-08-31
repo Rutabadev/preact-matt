@@ -3,7 +3,7 @@ import "./style.scss"
 export const Home = () => {
   return (
     <div class="home">
-      <h1 align="center">Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé</h1>
+      <h1 class="main-title">Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé</h1>
       <div class="main">
         <br/>
         <h2>Biographie</h2>
