@@ -11,6 +11,7 @@ export const CssShowcase = () => {
       <div class="elements-box">
         <button class="primary">primary</button>
         <button class="secondary">secondary</button>
+        <button disabled class="primary">disabled</button>
       </div>
       <div class="elements-box">
         <CreaditCardIcon />

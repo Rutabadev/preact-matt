@@ -9,12 +9,14 @@
   --tertiary: #1ff3ff;
   --warning: #eb1212;
   --black: #333;
+  --blackRGB: 58, 58, 58;
   --white: #eee;
-  --elevation-high: 0 0 24px grey;
-  --elevation-mid: 0 1px 7px grey;
-  --elevation-low: 0 1px 2px grey;
+  --whiteRGB: 238, 238, 238;
+  --elevation-high-values: 0 0 24px;
+  --elevation-mid-values: 0 1px 7px;
+  --elevation-low-values: 0 1px 2px;
   --rounded: 25px;
-  --hover: brightness(0.8);
+  --hover: brightness(0.92);
   --disabled: opacity(0.5);
   --navbar-height: 65px;
 }
@@ -49,11 +51,19 @@ body {
   &.light-theme {
     --text-color: var(--black);
     --bg: var(--white);
+    --behind-sidenav-color: var(--whiteRGB);
+    --elevation-high: var(--elevation-high-values) grey;
+    --elevation-mid: var(--elevation-mid-values) grey;
+    --elevation-low: var(--elevation-low-values) grey;
   }
 
   &.dark-theme {
     --text-color: var(--white);
     --bg: var(--black);
+    --behind-sidenav-color: var(--blackRGB);
+    --elevation-high: var(--elevation-high-values) black;
+    --elevation-mid: var(--elevation-mid-values) black;
+    --elevation-low: var(--elevation-low-values) black;
   }
 
   .content {
@@ -79,6 +89,7 @@ body {
 
     &:hover {
       box-shadow: var(--elevation-mid);
+      filter: var(--hover);
     }
 
     &:active {
@@ -88,6 +99,10 @@ body {
 
     &:focus {
       outline: 0;
+    }
+
+    &:disabled {
+      filter: var(--disabled);
     }
 
     &.primary {
