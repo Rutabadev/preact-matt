@@ -28,13 +28,13 @@ export class SideNav extends Component {
 				<div class={'sidenav ' + this.props.sideNavDisplay}>
 					<div class="table-wrapper">
 						<div class="close-button-wrapper">
-							<button class="sidenav-button" onClick={this.props.closeHandler} aria-label="sidenav">
+							<button class="sidenav-button" onClick={this.props.closeHandler} aria-label="sidenav switcher">
 								<CloseIcon />
 							</button>
 						</div>
 					</div>
 					{links}
-					<button class="sidenav-theme-switch" onClick={this.props.changeTheme} aria-label="theme-switch">
+					<button class="sidenav-theme-switch" onClick={this.props.changeTheme} aria-label="theme switch">
 						<ColorIcon />
 					</button>
 				</div>

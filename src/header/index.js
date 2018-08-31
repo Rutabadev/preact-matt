@@ -42,7 +42,7 @@ export class Header extends Component {
 		return (
 			<div class="header">
 				<div class="sidenav-switcher">
-					<button class="sidenav-button" onClick={() => this.openSideNav()}>
+					<button class="sidenav-button" onClick={() => this.openSideNav()} aria-label="sidenav switcher">
 						<MenuIcon />
 					</button>
 					<SideNav
