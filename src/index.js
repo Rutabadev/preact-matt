@@ -1,4 +1,5 @@
 import './style.scss';
+import Helmet from "preact-helmet";
 import { Component, render } from 'preact';
 import { CssShowcase } from './css-showcase';
 import { Footer } from './footer';
@@ -61,6 +62,11 @@ export default class App extends Component {
 	render() {
 		return (
 			<div class={'app ' + this.state.theme + '-theme'}>
+				<Helmet
+					meta={[
+						{ name: "description", content: "The Matthieu Montaillé showcase website" }
+					]}
+				/>
 				<Header features={features} changeTheme={this.changeTheme} />
 				<div class="content">
 					<Router>
