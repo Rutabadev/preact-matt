@@ -53,7 +53,7 @@ export class Header extends Component {
         </div>
         <nav class='menu-links'>{links}</nav>
         <div class='end-bar'>
-          <button class='theme-switch' onClick={this.props.changeTheme}>
+          <button class='theme-switch' onClick={this.props.changeTheme} aria-label='theme-switch'>
             <ColorIcon />
           </button>
           <Login />
