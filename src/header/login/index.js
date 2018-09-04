@@ -5,21 +5,12 @@ import firebase from '../../firebase'
 export class Login extends Component {
   constructor () {
     super()
-
-    // firebase.auth().onAuthStateChanged(function (user) {
-    //   if (user) {
-    //     this.state = {
-    //       user: user
-    //     }
-    //   } else {
-    //     this.state = {
-    //       user: null
-    //     }
-    //   }
-    // })
-
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
+
+    this.state = {
+      user: null
+    }
   }
 
   login () {

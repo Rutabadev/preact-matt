@@ -51,20 +51,6 @@ export class Fotos extends Component {
     this.openLightbox = this.openLightbox.bind(this)
     this.gotoNext = this.gotoNext.bind(this)
     this.gotoPrevious = this.gotoPrevious.bind(this)
-
-  //   firebase.auth().onAuthStateChanged(function (user) {
-  //     if (user) {
-  //       this.state = {
-  //         currentImage: 0,
-  //         allow: true
-  //       }
-  //     } else {
-  //       this.state = {
-  //         currentImage: 0,
-  //         allow: false
-  //       }
-  //     }
-  //   })
   }
 
   render () {
