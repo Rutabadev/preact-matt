@@ -1,6 +1,7 @@
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images'
 import { Component } from 'preact'
+import firebase from '../../firebase'
 
 const fotos = [
   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
@@ -50,6 +51,20 @@ export class Fotos extends Component {
     this.openLightbox = this.openLightbox.bind(this)
     this.gotoNext = this.gotoNext.bind(this)
     this.gotoPrevious = this.gotoPrevious.bind(this)
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        this.state = {
+          currentImage: 0,
+          allow: true
+        }
+      } else {
+        this.state = {
+          currentImage: 0,
+          allow: false
+        }
+      }
+    })
   }
 
   render () {
