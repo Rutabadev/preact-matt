@@ -5,12 +5,13 @@ import firebase from '../../firebase'
 export class Login extends Component {
   constructor () {
     super()
-    this.login = this.login.bind(this)
-    this.logout = this.logout.bind(this)
 
     this.state = {
       user: null
     }
+
+    this.login = this.login.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   login () {
