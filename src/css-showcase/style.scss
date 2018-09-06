@@ -7,4 +7,26 @@
     .elements-box:nth-child(2) {
         font-size: 3em;
     }
+    .icon-row>* {
+        animation: spinout .3s ease;
+        &:hover {
+            animation: spinin .3s ease;
+        }
+    }
+    @keyframes spinin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes spinout {
+        from {
+            transform: rotate(360deg);
+        }
+        to {
+            transform: rotate(0deg);
+        }
+    }
 }

@@ -12,7 +12,7 @@ export const CssShowcase = () => (
       <button class='secondary'>secondary</button>
       <button disabled class='primary'>disabled</button>
     </div>
-    <div class='elements-box'>
+    <div class='elements-box icon-row'>
       <CreditCardIcon />
       <DeliciousIcon />
       <LinkIcon />
