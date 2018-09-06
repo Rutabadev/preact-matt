@@ -1,7 +1,6 @@
 import Gallery from 'react-photo-gallery'
 import Lightbox from 'react-images'
 import { Component } from 'preact'
-import firebase from '../../firebase'
 
 const fotos = [
   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
