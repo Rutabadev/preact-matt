@@ -5,34 +5,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    & a {
+    & .roller {
         position: relative;
-        cursor: pointer;
-        color: var(--white);
         margin: 0 10px;
-        &:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: .1em;
-            bottom: -0.15em;
-            left: 0;
-            background-color: var(--white);
-            visibility: hidden;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transition: all 0.3s ease-in-out 0s;
-            transition: all 0.3s ease-in-out 0s;
-        }
-        &:hover:before {
-            visibility: visible;
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
     }
     @media (max-width: $breakpoint-mobile) {
         flex-direction: column;
-        & a {
+        & .roller {
             margin: 10px 0;
         }
     }

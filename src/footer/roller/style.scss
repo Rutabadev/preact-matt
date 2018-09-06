@@ -1,0 +1,20 @@
+.roller {
+  height: 1.2em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  cursor: pointer;
+  .first {
+    transition: all 0.3s ease;
+  }
+  .second {
+    transition: all 0.3s ease;
+    color: var(--primary);
+  }
+  &:hover {
+    .first, .second {
+      transform: translateY(-100%);
+    }
+  }
+}
