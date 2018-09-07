@@ -12,15 +12,14 @@ export class Modal extends Component {
       hidden: !props.modalOpen
     }
   }
+
   componentWillReceiveProps ({ modalOpen }) {
-    console.log('------')
-    console.log(modalOpen)
-    console.log(this.props.modalOpen)
     if (modalOpen !== this.props.modalOpen) {
       if (!modalOpen && this.props.modalOpen) {
         this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
       } else {
         this.setState({ hidden: false })
+        this.button.focus()
         clearTimeout(this.timeout)
       }
     }
@@ -51,7 +50,7 @@ export class Modal extends Component {
                 Cancel
               </button>
             )}
-            <button class='secondary' onClick={onSuccess}>
+            <button class='secondary' ref={(button) => { this.button = button }} onClick={onSuccess}>
               OK
             </button>
           </div>
