@@ -1,7 +1,5 @@
 .modal-overlay {
     position: fixed;
-    background-color: rgba( var(--behind-sidenav-color), .7);
-    animation: background-opacity .2s linear;
     top: 0;
     left: 0;
     width: 100vw;
@@ -10,36 +8,29 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-
+    background: rgba( var(--behind-sidenav-color), .0);
+    transition: background .2s linear;
     .modal {
         padding: 20px;
         background-color: var(--bg);
         box-shadow: var(--elevation-high);
         border-radius: var(--rounded);
-        width: 420px;
+        width: 60%;
+        max-width: 420px;
         min-height: 100px;
         opacity: 0;
-        animation: ease-top .2s ease .2s forwards;
-
-        @keyframes ease-top {
-            100% {
-                opacity: 1;
-                transform: translateY(-70px);
-            }            
-        }
-
+        transform: translateY(0);
+        transition: all .2s ease;
         svg {
             font-size: 1.4em;
             margin-right: 10px;
         }
-
         h3.modal-title {
             display: flex;
             margin: 0;
             justify-content: flex-start;
-            align-items: center;   
+            align-items: center;
         }
-
         .hr {
             margin: 3px 0;
             width: 100%;
@@ -47,16 +38,19 @@
             background-color: var(--text-color);
         }
     }
-
-    @keyframes background-opacity {
-        0% {background-color: rgba( var(--behind-sidenav-color), .0)}
-        100% {background-color: rgba( var(--behind-sidenav-color), .7)}
+    &.open {
+        background: rgba( var(--behind-sidenav-color), .7);
+        .modal {
+            opacity: 1;
+            transform: translateY(-70px);
+        }
     }
-
+    &.hidden {
+        left: -100vw;
+    }
     .modal-buttons {
         display: flex;
         justify-content: flex-end;
-
         button {
             margin-left: 10px;
         }
