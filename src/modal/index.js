@@ -28,7 +28,6 @@ export class Modal extends Component {
   render ({ title, children, onSuccess, onCancel, type, modalOpen }) {
     return (
       <FocusLock>
-
         <div
           class={
             'modal-overlay' +
