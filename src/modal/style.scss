@@ -37,6 +37,11 @@
             height: 2px;
             background-color: var(--text-color);
         }
+        & button:focus {
+            background: linear-gradient(270deg, var(--primary), var(--secondary));
+            background-size: 200% 200%;
+            animation: gradienting 2s ease infinite;
+        }
     }
     &.open {
         background: rgba( var(--behind-sidenav-color), .7);

@@ -47,11 +47,11 @@ export class Modal extends Component {
           <div class='modal-buttons'>
             {onCancel && (
               <button class='secondary' onClick={onCancel}>
-                Cancel
+                  Cancel
               </button>
             )}
             <button class='secondary' ref={(button) => { this.button = button }} onClick={onSuccess}>
-              OK
+                OK
             </button>
           </div>
         </div>

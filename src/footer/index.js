@@ -22,7 +22,7 @@ export class Footer extends Component {
         } />
         <Roller content='Einstagram' link='https://www.instagram.com/matt_mntl' />
         <Roller content='Blaugue' link='https://cestmoijuliettevoyons6.webnode.fr/' />
-        <Modal title='Sith' onSuccess={() => this.setState({modalOpen: false})} type={MODAL_TYPES.WARNING} modalOpen={this.state.modalOpen}>
+        <Modal title='Sith' onSuccess={() => this.setState({modalOpen: false})} onCancel={() => this.setState({modalOpen: false})} type={MODAL_TYPES.WARNING} modalOpen={this.state.modalOpen}>
           <p>Alors en fait vous allez rire mais vous êtes actuellement sur le site</p>
         </Modal>
       </div>
