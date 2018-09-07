@@ -27,14 +27,15 @@ export class Modal extends Component {
   }
   render ({ title, children, onSuccess, onCancel, type, modalOpen }) {
     return (
-      <div
-        class={
-          'modal-overlay' +
+      <FocusLock>
+
+        <div
+          class={
+            'modal-overlay' +
           (modalOpen ? ' open' : ' close') +
           (this.state.hidden ? ' hidden' : '')
-        }
-      >
-        <FocusLock>
+          }
+        >
           <div class='modal'>
             <h3 class='modal-title'>
               {(type === MODAL_TYPES.WARNING || !type) && (
@@ -57,8 +58,8 @@ export class Modal extends Component {
               </button>
             </div>
           </div>
-        </FocusLock>
-      </div>
+        </div>
+      </FocusLock>
     )
   }
 }
