@@ -40,7 +40,13 @@
         & button:focus {
             background: linear-gradient(270deg, var(--primary), var(--secondary));
             background-size: 200% 200%;
-            animation: gradienting 2s ease infinite;
+            animation: gradienting 2s ease infinite, elevating 2s ease infinite;
+        }
+
+        @keyframes elevating {
+            0% {box-shadow: var(--elevation-low); transform: scale(1)}
+            50% {box-shadow: var(--elevation-mid); transform: scale(1.04)}
+            100% {box-shadow: var(--elevation-low); transform: scale(1)}            
         }
     }
     &.open {

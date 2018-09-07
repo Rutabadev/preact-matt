@@ -1,6 +1,6 @@
 import './style.scss'
 import Helmet from 'preact-helmet'
-import { Component, render } from 'preact'
+import { Component } from 'preact'
 import { CssShowcase } from './css-showcase'
 import { Footer } from './footer'
 import { Fotos } from './fotos'
@@ -58,7 +58,7 @@ export default class App extends Component {
 
   render () {
     return (
-      <div class={'app ' + this.state.theme + '-theme'}>
+      <div tabIndex='-1' class={'app ' + this.state.theme + '-theme'}>
         <Helmet
           meta={[
             { name: 'description', content: 'The Matthieu Montaillé showcase website' }

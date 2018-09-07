@@ -17,6 +17,8 @@
   --hover: brightness(0.92);
   --disabled: opacity(0.5);
   --navbar-height: 65px;
+  --text-color: var(--black);
+  --bg: var(--white);
 }
 
 html,
@@ -38,6 +40,27 @@ body {
 #root {
   height: 100%;
 }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: var(--rounded);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 .app {
   color: var(--text-color);
