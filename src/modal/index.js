@@ -20,7 +20,6 @@ export class Modal extends Component {
         this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
       } else {
         this.setState({ hidden: false })
-        this.button.focus()
         clearTimeout(this.timeout)
       }
     }
