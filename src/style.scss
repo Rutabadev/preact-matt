@@ -121,6 +121,7 @@ body {
 
     &:focus {
       outline: 0;
+      filter: var(--hover);
     }
 
     &:disabled {
