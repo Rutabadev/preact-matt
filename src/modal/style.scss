@@ -38,7 +38,7 @@
             height: 2px;
             background-color: var(--text-color);
         }
-        & button:focus {
+        button:focus {
             background: linear-gradient(270deg, var(--primary), var(--secondary));
             background-size: 250% 150%;
             animation: gradienting 2s ease infinite, elevating 2s ease infinite;

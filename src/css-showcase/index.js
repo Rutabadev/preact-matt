@@ -37,10 +37,11 @@ export class CssShowcase extends Component {
           <h1>Coucou</h1>
           <p>Ici on peut mettre ce que l'on veut</p>
           <button class='primary' onClick={() => this.setState({ modalOpen2: true })}>seconde modale parce qu'on est des oufs</button>
-          <br /><br />
+          <br />
+          <br />
         </Modal>
         <Modal title='Custom modal imbriquée' onSuccess={() => this.setState({ modalOpen2: false })} onCancel={() => this.setState({ modalOpen2: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen2}>
-          <p>Paf la modal imbriquée</p>
+          <p>Paf la modale imbriquée</p>
         </Modal>
       </div>
     )

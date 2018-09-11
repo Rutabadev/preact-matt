@@ -1,4 +1,4 @@
-@import "../variables";
+@import '../variables';
 .footer {
     .links {
         min-height: 40px;
@@ -6,13 +6,13 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        & .roller {
+        .roller {
             position: relative;
             margin: 0 10px;
         }
         @media (max-width: $breakpoint-mobile) {
             flex-direction: column;
-            & .roller {
+            .roller {
                 margin: 10px 0;
             }
         }
