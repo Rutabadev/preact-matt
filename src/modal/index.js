@@ -4,7 +4,7 @@ import { MODAL_TYPES } from './types'
 import Warning from 'preact-icons/md/warning'
 import Error from 'preact-icons/md/error'
 import Success from 'preact-icons/md/check'
-import FocusLock from 'react-focus-lock'
+import FocusTrap from 'focus-trap-react'
 
 export class Modal extends Component {
   constructor (props) {
@@ -14,7 +14,7 @@ export class Modal extends Component {
     }
   }
 
-  componentWillReceiveProps ({ modalOpen }) {
+  componentWillUpdate ({ modalOpen }) {
     if (modalOpen !== this.props.modalOpen) {
       if (!modalOpen && this.props.modalOpen) {
         this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
@@ -25,14 +25,15 @@ export class Modal extends Component {
       }
     }
   }
+
   render ({ title, children, onSuccess, onCancel, type, modalOpen }) {
     return (
-      <FocusLock>
+      <FocusTrap active={modalOpen}>
         <div
           class={
             'modal-overlay' +
-          (modalOpen ? ' open' : ' close') +
-          (this.state.hidden ? ' hidden' : '')
+            (modalOpen ? ' open' : ' close') +
+            (this.state.hidden ? ' hidden' : '')
           }
         >
           <div class='modal'>
@@ -49,16 +50,16 @@ export class Modal extends Component {
             <div class='modal-buttons'>
               {onCancel && (
                 <button class='secondary' onClick={onCancel}>
-                  Cancel
+                    Cancel
                 </button>
               )}
               <button class='secondary' ref={(button) => { this.button = button }} onClick={onSuccess}>
-                OK
+                    OK
               </button>
             </div>
           </div>
         </div>
-      </FocusLock>
+      </FocusTrap>
     )
   }
 }
