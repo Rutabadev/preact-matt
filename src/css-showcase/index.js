@@ -13,6 +13,7 @@ export class CssShowcase extends Component {
     super(props)
     this.state = {
       modalOpen: false,
+      pause: false,
       modalOpen2: false
     }
   }
@@ -33,14 +34,14 @@ export class CssShowcase extends Component {
           <MortarBoardIcon />
           <RestaurantIcon />
         </div>
-        <Modal title='Custom modal' onSuccess={() => this.setState({ modalOpen: false })} onCancel={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.SUCCESS} modalOpen={this.state.modalOpen}>
+        <Modal title='Custom modal' imbriquedModal={this.state.pause} onSuccess={() => this.setState({ modalOpen: false })} onCancel={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.SUCCESS} modalOpen={this.state.modalOpen}>
           <h1>Coucou</h1>
           <p>Ici on peut mettre ce que l'on veut</p>
-          <button class='primary' onClick={() => this.setState({ modalOpen2: true })}>seconde modale parce qu'on est des oufs</button>
+          <button class='primary' ref={(button) => { this.buttonModal = button }} onClick={() => this.setState({ modalOpen2: true, pause: true })}>seconde modale parce qu'on est des oufs</button>
           <br />
           <br />
         </Modal>
-        <Modal title='Custom modal imbriquée' onSuccess={() => this.setState({ modalOpen2: false })} onCancel={() => this.setState({ modalOpen2: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen2}>
+        <Modal title='Custom modal imbriquée' onSuccess={() => this.setState({ modalOpen2: false, pause: false })} onCancel={() => this.setState({ modalOpen2: false, pause: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen2}>
           <p>Paf la modale imbriquée</p>
         </Modal>
       </div>
