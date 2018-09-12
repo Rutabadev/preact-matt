@@ -19,7 +19,7 @@ const fotos = [
   { src: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t1.15752-9/32562820_2180351731980205_9097307234819375104_n.jpg?_nc_cat=0&oh=fdeaf96bf834e00dc724274604ad4337&oe=5C31D46C', width: 1, height: 1 }
 ]
 
-export class Fotos extends Component {
+export default class Fotos extends Component {
   openLightbox (event, obj) {
     this.setState({
       currentImage: obj.index,

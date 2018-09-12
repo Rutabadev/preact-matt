@@ -4,9 +4,8 @@ import { Component } from 'preact'
 import { Footer } from './footer'
 import { Header } from './header'
 import { Home } from './home'
-import { CssShowcase } from './css-showcase'
-import { Fotos } from './fotos'
 import { NotFound } from './not-found'
+import AsyncRoute from 'preact-async-route'
 import Router from 'preact-router'
 
 const features = [
@@ -56,9 +55,17 @@ export default class App extends Component {
     this.updateStateTheme()
   }
 
+  getCssShowcase () {
+    return import('./css-showcase').then(module => module.default)
+  }
+
+  getFotos () {
+    return import('./fotos').then(module => module.default)
+  }
+
   render () {
     return (
-      <div tabIndex='-1' class={'app ' + this.state.theme + '-theme'}>
+      <div class={'app ' + this.state.theme + '-theme'}>
         <Helmet
           meta={[
             { name: 'description', content: 'The Matthieu Montaillé showcase website' }
@@ -68,8 +75,8 @@ export default class App extends Component {
         <div class='content'>
           <Router>
             <Home path='/' />
-            <CssShowcase path='/css' />
-            <Fotos path='/fotos' />
+            <AsyncRoute path='/css' getComponent={this.getCssShowcase} />
+            <AsyncRoute path='/fotos' getComponent={this.getFotos} />
             <NotFound type='404' default />
           </Router>
         </div>
