@@ -1,9 +1,7 @@
 import './style.scss'
 import Helmet from 'preact-helmet'
 import { Component } from 'preact'
-import { CssShowcase } from './css-showcase'
 import { Footer } from './footer'
-import { Fotos } from './fotos'
 import { Header } from './header'
 import { Home } from './home'
 import { NotFound } from './not-found'
@@ -57,6 +55,14 @@ export default class App extends Component {
     this.updateStateTheme()
   }
 
+  getFotos (url, cb, props) {
+    return import('./fotos').then(module => module.default);
+  }
+
+  getCssShowcase (url, cb, props) {
+    return import('./css-showcase').then(module => module.default);
+  }
+
   render () {
     return (
       <div tabIndex='-1' class={'app ' + this.state.theme + '-theme'}>
@@ -69,8 +75,8 @@ export default class App extends Component {
         <div class='content'>
           <Router>
             <Home path='/' />
-            <AsyncRoute path='/css' component={CssShowcase} />
-            <AsyncRoute path='/fotos' component={Fotos} />
+            <AsyncRoute path='/css' getComponent={this.getCssShowcase} />
+            <AsyncRoute path='/fotos' getComponent={this.getFotos} />
             <NotFound type='404' default />
           </Router>
         </div>
