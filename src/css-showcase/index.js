@@ -8,7 +8,7 @@ import { Modal } from '../modal'
 import { MODAL_TYPES } from '../modal/types'
 import { Component } from 'preact'
 
-export default class CssShowcase extends Component {
+export class CssShowcase extends Component {
   constructor (props) {
     super(props)
     this.state = {

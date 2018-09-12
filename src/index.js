@@ -4,8 +4,9 @@ import { Component } from 'preact'
 import { Footer } from './footer'
 import { Header } from './header'
 import { Home } from './home'
+import { CssShowcase } from './css-showcase'
+import { Fotos } from './fotos'
 import { NotFound } from './not-found'
-import AsyncRoute from 'preact-async-route'
 import Router from 'preact-router'
 
 const features = [
@@ -55,28 +56,6 @@ export default class App extends Component {
     this.updateStateTheme()
   }
 
-  getCssShowcase (url, cb, props) {
-    const componentOrPromise = import('./css-showcase');
-    if (componentOrPromise.then) {
-      // for client
-      return componentOrPromise.then(module => module.default);
-    } else if (componentOrPromise.default) {
-      // for node
-      cb({component: componentOrPromise.default});
-    }
-  }
-
-  getFotos (url, cb, props) {
-    const componentOrPromise = import('./fotos');
-    if (componentOrPromise.then) {
-      // for client
-      return componentOrPromise.then(module => module.default);
-    } else if (componentOrPromise.default) {
-      // for node
-      cb({component: componentOrPromise.default});
-    }
-  }
-
   render () {
     return (
       <div class={'app ' + this.state.theme + '-theme'}>
@@ -89,8 +68,8 @@ export default class App extends Component {
         <div class='content'>
           <Router>
             <Home path='/' />
-            <AsyncRoute path='/css' getComponent={this.getCssShowcase} />
-            <AsyncRoute path='/fotos' getComponent={this.getFotos} />
+            <CssShowcase path='/css' />
+            <Fotos path='/fotos' />
             <NotFound type='404' default />
           </Router>
         </div>
