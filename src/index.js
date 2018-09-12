@@ -8,6 +8,7 @@ import { Header } from './header'
 import { Home } from './home'
 import { NotFound } from './not-found'
 import Router from 'preact-router'
+import AsyncRoute from 'preact-async-route'
 
 const features = [
   {
@@ -67,9 +68,9 @@ export default class App extends Component {
         <Header features={features} changeTheme={this.changeTheme} />
         <div class='content'>
           <Router>
-            <CssShowcase path='/css' />
-            <Fotos path='/fotos' />
             <Home path='/' />
+            <AsyncRoute path='/css' component={CssShowcase} />
+            <AsyncRoute path='/fotos' component={Fotos} />
             <NotFound type='404' default />
           </Router>
         </div>
