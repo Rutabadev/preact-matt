@@ -55,12 +55,26 @@ export default class App extends Component {
     this.updateStateTheme()
   }
 
-  getCssShowcase () {
-    return import('./css-showcase').then(module => module.default)
+  getCssShowcase (url, cb, props) {
+    const componentOrPromise = import('./css-showcase');
+    if (componentOrPromise.then) {
+      // for client
+      return componentOrPromise.then(module => module.default);
+    } else if (componentOrPromise.default) {
+      // for node
+      cb({component: componentOrPromise.default});
+    }
   }
 
-  getFotos () {
-    return import('./fotos').then(module => module.default)
+  getFotos (url, cb, props) {
+    const componentOrPromise = import('./fotos');
+    if (componentOrPromise.then) {
+      // for client
+      return componentOrPromise.then(module => module.default);
+    } else if (componentOrPromise.default) {
+      // for node
+      cb({component: componentOrPromise.default});
+    }
   }
 
   render () {
