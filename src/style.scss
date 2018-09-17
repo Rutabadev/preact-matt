@@ -145,7 +145,7 @@ body {
 }
 
 /* Spinner */
-.loader:before {
+.loader:empty:before {
   content: "";
   box-sizing: border-box;
   position: absolute;
