@@ -6,6 +6,7 @@ import { Header } from './header'
 import { Home } from './home'
 import { CssShowcase } from './css-showcase'
 import { Fotos } from './fotos'
+import { Stats } from './stats'
 import { NotFound } from './not-found'
 import Router from 'preact-router'
 
@@ -22,11 +23,15 @@ const features = [
   {
     name: 'Fotos',
     path: '/fotos'
+  },
+  {
+    name: 'Stats',
+    path: '/stats'
   }
 ]
 
 export default class App extends Component {
-  changeTheme () {
+  changeTheme() {
     if (localStorage.getItem('theme') === 'dark') {
       localStorage.setItem('theme', 'light')
       this.updateStateTheme()
@@ -36,7 +41,7 @@ export default class App extends Component {
     }
   }
 
-  updateStateTheme () {
+  updateStateTheme() {
     if (localStorage.getItem('theme') !== null) {
       this.setState({ theme: localStorage.getItem('theme') })
     } else {
@@ -44,7 +49,7 @@ export default class App extends Component {
     }
   }
 
-  constructor () {
+  constructor() {
     super()
     this.state = {
       theme: ''
@@ -52,11 +57,11 @@ export default class App extends Component {
     this.changeTheme = this.changeTheme.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.updateStateTheme()
   }
 
-  render () {
+  render() {
     return (
       <div class={'app ' + this.state.theme + '-theme'}>
         <Helmet
@@ -70,6 +75,7 @@ export default class App extends Component {
             <Home path='/' />
             <CssShowcase path='/css' />
             <Fotos path='/fotos' />
+            <Stats path='/stats' />
             <NotFound type='404' default />
           </Router>
         </div>
