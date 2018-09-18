@@ -126,6 +126,9 @@ body {
 
     &:disabled {
       filter: var(--disabled);
+      &:hover {
+        box-shadow: var(--elevation-low);
+      }
     }
 
     &.primary {
