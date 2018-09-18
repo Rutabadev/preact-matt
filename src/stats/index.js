@@ -1,8 +1,6 @@
 import './style.scss'
 import { Component } from 'preact'
 
-const SEARCH = 'https://api.fortnitetracker.com/v1/profile/pc/puex.'
-
 export class Stats extends Component {
     constructor(props) {
         super(props);
@@ -12,12 +10,12 @@ export class Stats extends Component {
     }
 
     componentDidMount() {
-        fetch(`${SEARCH}`, { headers: { "TRN-Api-Key": "e95f658d-ddf6-44b4-a36b-23dbb0e5bbc8" }, mode: "no-cors" })
+        fetch("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=<<KEY>>&steamid=<<PROFILEID>>")
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
-                this.setState({ results: json && json.items || [] })
+                console.log(json)
             });
     }
 
