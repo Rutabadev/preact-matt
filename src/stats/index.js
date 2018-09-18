@@ -4,14 +4,24 @@ import { Component } from 'preact'
 const SEARCH = '//api.github.com/search/repositories'
 
 export class Stats extends Component {
-    componentDidMount() {
-        let res = fetch(`${SEARCH}?q=matthieu`),
-            json = res.json(),
-            results = json && json.items || []
-        this.setState({ results });
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: []
+        }
     }
 
-    render({ }, { results = [] }) {
+    componentDidMount() {
+        fetch(`${SEARCH}?q=preact`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((json) => {
+                this.setState({ results: json && json.items || []})
+            });
+    }
+
+    render({ }, { results }) {
         return (
             <div class="stats">
                 <h1>The statistics for this great g@mer</h1>
