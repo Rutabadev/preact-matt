@@ -1,7 +1,7 @@
 import './style.scss'
 import { Component } from 'preact'
 
-const SEARCH = '//api.github.com/search/repositories'
+const SEARCH = 'https://api.fortnitetracker.com/v1/profile/pc/puex.'
 
 export class Stats extends Component {
     constructor(props) {
@@ -12,12 +12,12 @@ export class Stats extends Component {
     }
 
     componentDidMount() {
-        fetch(`${SEARCH}?q=preact`)
+        fetch(`${SEARCH}`, { headers: { "TRN-Api-Key": "e95f658d-ddf6-44b4-a36b-23dbb0e5bbc8" }, mode: "no-cors" })
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
-                this.setState({ results: json && json.items || []})
+                this.setState({ results: json && json.items || [] })
             });
     }
 
@@ -25,29 +25,29 @@ export class Stats extends Component {
         return (
             <div class="stats">
                 <h1>The statistics for this great g@mer</h1>
-                <div class="list">
+                {/* <div class="list">
                     {results.map(result => (
                         <Result result={result} />
                     ))}
-                </div>
+                </div> */}
             </div>
         )
     }
 }
 
-const Result = ({ result }) => (
-    <div style={{
-        padding: 10,
-        margin: 10,
-        background: 'white',
-        boxShadow: '0 1px 5px rgba(0,0,0,0.5)'
-    }}>
-        <div>
-            <a href={result.html_url} target="_blank">
-                {result.full_name}
-            </a>
-            🌟<strong>{result.stargazers_count}</strong>
-        </div>
-        <p>{result.description}</p>
-    </div>
-);
+// const Result = ({ result }) => (
+//     <div style={{
+//         padding: 10,
+//         margin: 10,
+//         background: 'white',
+//         boxShadow: '0 1px 5px rgba(0,0,0,0.5)'
+//     }}>
+//         <div>
+//             <a href={result.html_url} target="_blank">
+//                 {result.full_name}
+//             </a>
+//             🌟<strong>{result.stargazers_count}</strong>
+//         </div>
+//         <p>{result.description}</p>
+//     </div>
+// );
