@@ -5,47 +5,37 @@ export class Stats extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            results: []
+            dog: ""
         }
+        this.refreshDoggo = this.refreshDoggo.bind(this);
     }
 
-    componentDidMount() {
-        fetch("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=<<KEY>>&steamid=<<PROFILEID>>")
+    refreshDoggo() {
+        fetch("https://dog.ceo/api/breeds/image/random")
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
-                console.log(json)
+                this.setState({ dog: json.message })
             });
+    }
+
+    componentDidMount() {
+        this.refreshDoggo();
     }
 
     render({ }, { results }) {
         return (
             <div class="stats">
                 <h1>The statistics for this great g@mer</h1>
-                {/* <div class="list">
-                    {results.map(result => (
-                        <Result result={result} />
-                    ))}
-                </div> */}
+                <Dog dog={this.state.dog} refresh={this.refreshDoggo} />
             </div>
         )
     }
 }
 
-// const Result = ({ result }) => (
-//     <div style={{
-//         padding: 10,
-//         margin: 10,
-//         background: 'white',
-//         boxShadow: '0 1px 5px rgba(0,0,0,0.5)'
-//     }}>
-//         <div>
-//             <a href={result.html_url} target="_blank">
-//                 {result.full_name}
-//             </a>
-//             🌟<strong>{result.stargazers_count}</strong>
-//         </div>
-//         <p>{result.description}</p>
-//     </div>
-// );
+const Dog = ({ dog, refresh }) => (
+    <div class="dog">
+        <img src={dog} onClick={refresh}></img>
+    </div>
+);
