@@ -6,7 +6,7 @@ import { Header } from './header'
 import { Home } from './home'
 import { CssShowcase } from './css-showcase'
 import { Fotos } from './fotos'
-import { Stats } from './stats'
+import { Animals } from './animals'
 import { NotFound } from './not-found'
 import Router from 'preact-router'
 
@@ -25,8 +25,8 @@ const features = [
     path: '/fotos'
   },
   {
-    name: 'Stats',
-    path: '/stats'
+    name: 'Animals',
+    path: '/animals'
   }
 ]
 
@@ -75,7 +75,7 @@ export default class App extends Component {
             <Home path='/' />
             <CssShowcase path='/css' />
             <Fotos path='/fotos' />
-            <Stats path='/stats' />
+            <Animals path='/animals' />
             <NotFound type='404' default />
           </Router>
         </div>
