@@ -5,12 +5,13 @@ export class Stats extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dog: ""
+            dog: null
         }
         this.refreshDoggo = this.refreshDoggo.bind(this);
     }
 
     refreshDoggo() {
+        this.setState({ dog: null })
         fetch("https://dog.ceo/api/breeds/image/random")
             .then((response) => {
                 return response.json();
@@ -28,7 +29,7 @@ export class Stats extends Component {
         return (
             <div class="stats">
                 <h1>The statistics for this great g@mer</h1>
-                <Dog dog={this.state.dog} refresh={this.refreshDoggo} />
+                {this.state.dog ? <Dog dog={this.state.dog} refresh={this.refreshDoggo} /> : <div class="spinner"></div>}
             </div>
         )
     }
