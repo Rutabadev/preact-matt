@@ -1,5 +1,9 @@
-.stats {
+.animals {
     text-align: center;
+
+    select {
+        margin: 32px;
+    }
 
     .animal > img {
         max-width: 100%;

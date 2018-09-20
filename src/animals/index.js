@@ -50,8 +50,7 @@ export class Animals extends Component {
 
     render({ }, { results }) {
         return (
-            <div class="stats">
-                <h1>The statistics for this great g@mer</h1>
+            <div class="animals">
                 <select onChange={this.handleChange} name="Animal">
                     <option value="dog">doggo</option>
                     <option value="cat">kitty</option>
