@@ -51,10 +51,7 @@ export class Animals extends Component {
     render({ }, { results }) {
         return (
             <div class="animals">
-                <select onChange={this.handleChange} name="Animal">
-                    <option value="dog">doggo</option>
-                    <option value="cat">kitty</option>
-                </select>
+                <Select handleChange={this.handleChange}></Select>
                 {this.state.result ? <Animal animal={this.state.result} refresh={this.refresh} /> : <div class="spinner"></div>}
             </div>
         )
@@ -64,5 +61,14 @@ export class Animals extends Component {
 const Animal = ({ animal, refresh }) => (
     <div class="animal">
         <img src={animal} onClick={refresh}></img>
+    </div>
+);
+
+const Select = ({ handleChange }) => (
+    <div class="select">
+        <select onChange={handleChange} name="Animal">
+            <option value="dog">doggo</option>
+            <option value="cat">kitty</option>
+        </select>
     </div>
 );
