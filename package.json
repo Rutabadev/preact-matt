@@ -8,6 +8,7 @@
     "firebase": "5.3.0",
     "focus-trap-react": "^4.0.0",
     "preact": "8.2.5",
+    "preact-cli": "^1.4.1",
     "preact-compat": "3.17.0",
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-icons": "^2.2.5",
@@ -23,7 +24,6 @@
     "if-env": "^1.0.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "preact-cli": "^1.4.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   },
