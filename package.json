@@ -13,10 +13,10 @@
     "preact-icons": "^2.2.5",
     "preact-router": "2.6.1",
     "react-images": "^0.5.19",
-    "react-photo-gallery": "^6.2.0"
+    "react-photo-gallery": "^6.2.0",
+    "copy-webpack-plugin": "^4.5.2"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.5.2",
     "eslint": "^5.6.0",
     "if-env": "^1.0.0",
     "less": "^2.7.2",
