@@ -3,11 +3,8 @@
 
     table {
         border-spacing: 100px;
-        td:nth-child(odd){
-            text-align: right;        
-        }
-        td:nth-child(even){
-            text-align: left;        
+        td {
+            text-align: center;
         }
         span {
             font-size: 3em;
