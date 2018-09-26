@@ -1,19 +1,22 @@
 import './style.scss'
 import { Component } from 'preact'
+import { Animal } from './animal';
 
 export class Animals extends Component {
     constructor(props) {
         super(props);
         this.state = {
             animal: "dog",
-            result: null
+            result: null,
+            imageLoading: false
         }
         this.refresh = this.refresh.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleLoad = this.handleLoad.bind(this);
     }
 
     refresh() {
-        this.setState({ result: null })
+        this.setState({ result: null, imageLoading: true })
         switch (this.state.animal) {
             case 'dog':
                 this.setState({ animal: 'dog' });
@@ -22,7 +25,6 @@ export class Animals extends Component {
                         return response.json();
                     })
                     .then((json) => {
-                        console.log(json)
                         this.setState({ result: json.message })
                     });
                 break;
@@ -48,21 +50,20 @@ export class Animals extends Component {
         this.refresh();
     }
 
+    handleLoad() {
+        this.setState({ imageLoading: false });
+    }
+
     render({ }, { results }) {
         return (
             <div class="animals">
                 <Select handleChange={this.handleChange}></Select>
-                {this.state.result ? <Animal animal={this.state.result} refresh={this.refresh} /> : <div class="spinner"></div>}
+                {this.state.result && <Animal animal={this.state.result} refresh={this.refresh} handleLoad={this.handleLoad} />}
+                {this.state.imageLoading && <div class="spinner"></div>}
             </div>
         )
     }
 }
-
-const Animal = ({ animal, refresh }) => (
-    <div class="animal">
-        <img src={animal} onClick={refresh}></img>
-    </div>
-);
 
 const Select = ({ handleChange }) => (
     <div class="select">
