@@ -6,6 +6,9 @@
         td:nth-child(odd){
             text-align: right;        
         }
+        td:nth-child(even){
+            text-align: left;        
+        }
         span {
             font-size: 3em;
             &.nazi {
