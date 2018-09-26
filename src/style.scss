@@ -95,6 +95,12 @@ body {
     }
   }
 
+  &.mobile {
+    .home .main-title {
+      animation: none;
+    }
+  }
+
   .content {
     background-color: var(--bg);
     flex-grow: 1;

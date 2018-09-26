@@ -4,6 +4,7 @@ import Helmet from 'preact-helmet';
 import { Header, Footer } from './_core';
 import { Home, CssShowcase, Fotos, Animals, DesTrucs, NotFound } from './features';
 import Router from 'preact-router';
+import { isMobile } from 'react-device-detect';
 
 const features = [
   {
@@ -62,7 +63,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div class={'app ' + this.state.theme + '-theme'}>
+      <div class={'app ' + this.state.theme + '-theme' + (isMobile ? ' mobile' : '')}>
         <Helmet
           meta={[
             { name: 'description', content: 'The Matthieu Montaillé showcase website' }
@@ -80,7 +81,7 @@ export default class App extends Component {
           </Router>
         </div>
         <Footer />
-      </div>
+      </div >
     )
   }
 }
