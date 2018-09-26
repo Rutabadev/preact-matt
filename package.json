@@ -15,6 +15,7 @@
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-icons": "^2.2.5",
     "preact-router": "2.6.1",
+    "react-device-detect": "^1.6.1",
     "react-images": "^0.5.19",
     "react-photo-gallery": "^6.2.0",
     "sass-loader": "^6.0.6"

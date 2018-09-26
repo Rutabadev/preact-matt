@@ -1,11 +1,11 @@
 language: node_js
 node_js:  
   8
+install:
+  - npm install --production
 cache:
   directories:
     - node_modules
-install:
-  - npm install --production
 script:
   npm run build
 after_success:
