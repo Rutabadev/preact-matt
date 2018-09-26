@@ -1,9 +1,9 @@
 import { Component } from 'preact'
 import './style.scss'
-import firebase from '../../firebase'
+import firebase from '../../../firebase'
 
 export class Login extends Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -14,7 +14,7 @@ export class Login extends Component {
     this.logout = this.logout.bind(this)
   }
 
-  login () {
+  login() {
     firebase
       .auth()
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -26,7 +26,7 @@ export class Login extends Component {
       })
   }
 
-  logout () {
+  logout() {
     firebase
       .auth()
       .signOut()
@@ -37,7 +37,7 @@ export class Login extends Component {
       })
   }
 
-  user () {
+  user() {
     if (this.state.user) {
       return (
         <button class='image-button' onClick={this.logout}>
@@ -48,7 +48,7 @@ export class Login extends Component {
     return <button onClick={this.login}>Login</button>
   }
 
-  render () {
+  render() {
     return <div class='login'>{this.user()}</div>
   }
 }

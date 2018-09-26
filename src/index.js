@@ -1,14 +1,9 @@
-import './style.scss'
-import Helmet from 'preact-helmet'
-import { Component } from 'preact'
-import { Footer } from './footer'
-import { Header } from './header'
-import { Home } from './home'
-import { CssShowcase } from './css-showcase'
-import { Fotos } from './fotos'
-import { Animals } from './animals'
-import { NotFound } from './not-found'
-import Router from 'preact-router'
+import './style.scss';
+import { Component } from 'preact';
+import Helmet from 'preact-helmet';
+import { Header, Footer } from './_core';
+import { Home, CssShowcase, Fotos, Animals, NotFound } from './features';
+import Router from 'preact-router';
 
 const features = [
   {

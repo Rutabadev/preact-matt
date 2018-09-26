@@ -54,7 +54,7 @@ export class Animals extends Component {
         this.setState({ imageLoading: false });
     }
 
-    render({ }, { results }) {
+    render() {
         return (
             <div class="animals">
                 <Select handleChange={this.handleChange}></Select>

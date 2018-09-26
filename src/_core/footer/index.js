@@ -5,14 +5,14 @@ import { Modal } from '../modal'
 import { MODAL_TYPES } from '../modal/types'
 
 export class Footer extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       modalOpen: false
     }
   }
 
-  render () {
+  render() {
     return (
       <div class='footer'>
         <div class='links'>
