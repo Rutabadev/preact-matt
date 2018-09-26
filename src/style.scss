@@ -78,6 +78,9 @@ body {
     --elevation-high: var(--elevation-high-values) grey;
     --elevation-mid: var(--elevation-mid-values) grey;
     --elevation-low: var(--elevation-low-values) grey;
+    .spinner:before {
+      border-top: 2px solid var(--secondary);
+    }
   }
 
   &.dark-theme {
@@ -87,6 +90,9 @@ body {
     --elevation-high: var(--elevation-high-values) black;
     --elevation-mid: var(--elevation-mid-values) black;
     --elevation-low: var(--elevation-low-values) black;
+    .spinner:before {
+      border-top: 2px solid var(--primary);
+    }
   }
 
   .content {
@@ -149,8 +155,7 @@ body {
 
   .spinner:before {
     content: "";
-    border-radius: 50%;
-    border-top: 2px solid var(--secondary);
+    border-radius: 50%;    
     border-right: 2px solid transparent;
     position: absolute;
     top: 50%;
