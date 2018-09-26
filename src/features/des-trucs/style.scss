@@ -1,0 +1,10 @@
+.trucs {
+    text-align: center;
+    span {
+        font-size: 3em;
+        &.nazi {
+            display: inline-block;
+            animation: spinin 4s linear infinite;
+        }
+    }
+}

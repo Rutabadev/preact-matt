@@ -2,7 +2,7 @@ import './style.scss';
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { Header, Footer } from './_core';
-import { Home, CssShowcase, Fotos, Animals, NotFound } from './features';
+import { Home, CssShowcase, Fotos, Animals, DesTrucs, NotFound } from './features';
 import Router from 'preact-router';
 
 const features = [
@@ -22,6 +22,10 @@ const features = [
   {
     name: 'Animals',
     path: '/animals'
+  },
+  {
+    name: 'Des trucs',
+    path: '/trucs'
   }
 ]
 
@@ -71,6 +75,7 @@ export default class App extends Component {
             <CssShowcase path='/css' />
             <Fotos path='/fotos' />
             <Animals path='/animals' />
+            <DesTrucs path='/trucs' />
             <NotFound type='404' default />
           </Router>
         </div>
