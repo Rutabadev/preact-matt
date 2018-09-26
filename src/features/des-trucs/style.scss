@@ -1,20 +1,47 @@
+@import "../../variables";
 
 .trucs {
     text-align: center;
 
-    table {   
-        td:nth-child(odd) {
-            text-align: left;
+    .flex-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 33%;
+
+        @media (max-width: $breakpoint-mobile) {
+            margin: 0 10%;
         }
-        td:nth-child(even) {
-            text-align: right;
-        }
-        span {
-            font-size: 3em;
-            &.nazi {
-                display: inline-block;
-                animation: spinin 4s linear infinite;
+
+        .row {
+            p {
+                float: left;
+            }
+
+            span {
+                float: right;
+                font-size: 3em;
+
+                &.nazi {
+                    display: inline-block;
+                    animation: spinin 4s linear infinite;
+                }
             }
         }
     }
+
+    // table {   
+    //     td:nth-child(odd) {
+    //         text-align: left;
+    //     }
+    //     td:nth-child(even) {
+    //         text-align: right;
+    //     }
+    //     span {
+    //         font-size: 3em;
+    //         &.nazi {
+    //             display: inline-block;
+    //             animation: spinin 4s linear infinite;
+    //         }
+    //     }
+    // }
 }
