@@ -1,8 +1,14 @@
+
 .trucs {
     text-align: center;
 
-    table {
-        border-spacing: 100px;
+    table {   
+        td:nth-child(odd) {
+            text-align: left;
+        }
+        td:nth-child(even) {
+            text-align: right;
+        }
         span {
             font-size: 3em;
             &.nazi {
