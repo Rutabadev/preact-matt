@@ -31,7 +31,8 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build --production --template template.html",
     "serve": "preact build --template && preact serve",
-    "dev": "preact watch"
+    "dev": "preact watch",
+    "deploy": "firebase use --token $FIREBASE_TOKEN matthieu-f1348 && firebase deploy --non-interactive --token $FIREBASE_TOKEN"
   },
   "standard": {
     "globals": [

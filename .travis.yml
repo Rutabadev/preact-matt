@@ -10,5 +10,4 @@ install:
 script:
   npm run build
 after_success:
-  - firebase use --token $FIREBASE_TOKEN matthieu-f1348
-  - firebase deploy --non-interactive --token $FIREBASE_TOKEN
+  - npm run deploy
