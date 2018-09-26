@@ -1,10 +1,17 @@
 .trucs {
     text-align: center;
-    span {
-        font-size: 3em;
-        &.nazi {
-            display: inline-block;
-            animation: spinin 4s linear infinite;
+
+    table {
+        border-spacing: 100px;
+        td:nth-child(odd){
+            text-align: right;        
+        }
+        span {
+            font-size: 3em;
+            &.nazi {
+                display: inline-block;
+                animation: spinin 4s linear infinite;
+            }
         }
     }
 }
