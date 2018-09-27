@@ -3,10 +3,13 @@ import { Component } from 'preact'
 import { Link } from 'preact-router/match'
 import CloseIcon from 'preact-icons/md/close'
 import ColorIcon from 'preact-icons/go/color-mode'
+import MobileIcon from 'preact-icons/md/phone-android'
+import LaptopIcon from 'preact-icons/md/laptop-mac'
 import OutsideAlerter from './outside-alerter'
+import { isMobile } from 'react-device-detect'
 
 export class SideNav extends Component {
-  render () {
+  render() {
     const links = []
     this.props.features.forEach(feature => {
       links.push(
@@ -21,6 +24,22 @@ export class SideNav extends Component {
       )
     })
 
+    let deviceButton = {}
+
+    if (isMobile) {
+      deviceButton = (
+        <button onClick={() => console.log('remove mobile class')} aria-label='remove mobile restrictions'>
+          <MobileIcon />
+        </button>
+      )
+    } else {
+      deviceButton = (
+        <button onClick={() => console.log('add mobile class')} aria-label='add mobile restrictions'>
+          <LaptopIcon />
+        </button>
+      )
+    }
+
     return (
       <OutsideAlerter sideNavDisplay={this.props.sideNavDisplay} closeHandler={this.props.closeHandler}>
         <div class={'sidenav ' + this.props.sideNavDisplay}>
@@ -32,9 +51,12 @@ export class SideNav extends Component {
             </div>
           </div>
           {links}
-          <button class='sidenav-theme-switch' onClick={this.props.changeTheme} aria-label='theme switch'>
-            <ColorIcon />
-          </button>
+          <div class="bottom-buttons">
+            {deviceButton}
+            <button onClick={this.props.changeTheme} aria-label='theme switch'>
+              <ColorIcon />
+            </button>
+          </div>
         </div>
       </OutsideAlerter>
     )

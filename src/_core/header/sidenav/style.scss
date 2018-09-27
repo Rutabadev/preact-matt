@@ -3,7 +3,6 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 45%;
   width: 200px;
   background-color: var(--bg);
   display: flex;
@@ -12,6 +11,7 @@
   transition: transform 300ms ease;
   will-change: transform;
   box-shadow: var(--elevation-high);
+  // padding: 0 2%;
 
   button {
     background-color: transparent;
@@ -29,9 +29,12 @@
     padding: 0 20px;
   }
 
-  a button {
-    width: 100%;
-    margin: .2em 0;
+  a {
+    margin: .2em auto;
+    width: 96%;
+    button {
+      width: 100%;
+    }
   }
 
   &.open {
@@ -44,8 +47,14 @@
     transform: translateX(-110%);
   }
 
-  .sidenav-theme-switch {
+  .bottom-buttons {
     margin-top: auto;
     margin-bottom: .2em;
+
+    button {
+      display: block;
+      width: 96%;
+      margin: 0 auto;
+    }
   }
 }
