@@ -26,6 +26,8 @@
         img.waka {
             display: block;
             margin: 0 auto;
+            // reduce size if screen size too small
+            max-width: 100%;
         }
     }
 
