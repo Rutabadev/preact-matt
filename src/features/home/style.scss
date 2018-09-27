@@ -19,9 +19,14 @@
 
     .main {
         margin: 0 10%;
+        p {
+            text-align: justify;
+        }
+
+        img.waka {
+            display: block;
+            margin: 0 auto;
+        }
     }
 
-    p {
-        text-align: justify;
-    }
 }
