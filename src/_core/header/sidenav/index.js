@@ -10,13 +10,6 @@ import { isMobile } from 'react-device-detect'
 
 export class SideNav extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      mobile: isMobile
-    }
-  }
-
   render() {
     const links = []
     this.props.features.forEach(feature => {
@@ -33,7 +26,7 @@ export class SideNav extends Component {
     })
 
     let deviceButton = {}
-    if (this.props.isMobile) {
+    if (this.props.device === 'mobile') {
       deviceButton = (
         <button onClick={this.props.changeDevice} aria-label='remove mobile restrictions'>
           <MobileIcon />

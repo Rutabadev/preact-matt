@@ -48,7 +48,7 @@ export class Header extends Component {
             sideNavDisplay={this.state.sideNavDisplay}
             closeHandler={this.closeSideNav}
             changeTheme={props.changeTheme}
-            isMobile={props.isMobile}
+            device={props.device}
             changeDevice={props.changeDevice}
           />
           <div className={'behind-sidenav ' + this.state.sideNavDisplay} />

@@ -49,14 +49,31 @@ export default class App extends Component {
   }
 
   changeDevice() {
-    this.setState({ isMobile: !this.state.isMobile })
+    if (localStorage.getItem('device') === 'mobile') {
+      localStorage.setItem('device', 'desktop')
+    } else {
+      localStorage.setItem('device', 'mobile')
+    }
+    this.updateStateDevice();
+  }
+
+  updateStateDevice() {
+    if (localStorage.getItem('device') !== null) {
+      this.setState({ device: localStorage.getItem('device') })
+    } else {
+      if (isMobile) {
+        this.setState({ device: 'mobile' })
+      } else {
+        this.setState({ device: 'desktop' })
+      }
+    }
   }
 
   constructor() {
     super()
     this.state = {
       theme: '',
-      isMobile: isMobile
+      device: ''
     }
     this.changeTheme = this.changeTheme.bind(this)
     this.changeDevice = this.changeDevice.bind(this)
@@ -64,17 +81,18 @@ export default class App extends Component {
 
   componentDidMount() {
     this.updateStateTheme()
+    this.updateStateDevice()
   }
 
   render() {
     return (
-      <div class={'app ' + this.state.theme + '-theme' + (this.state.isMobile ? ' mobile' : '')}>
+      <div class={`app ${this.state.theme}-theme ${this.state.device}`}>
         <Helmet
           meta={[
             { name: 'description', content: 'The Matthieu Montaillé showcase website' }
           ]}
         />
-        <Header features={features} changeTheme={this.changeTheme} isMobile={this.state.isMobile} changeDevice={this.changeDevice} />
+        <Header features={features} changeTheme={this.changeTheme} device={this.state.device} changeDevice={this.changeDevice} />
         <div class='content'>
           <Router>
             <Home path='/' />

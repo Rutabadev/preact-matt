@@ -93,3 +93,10 @@
     }
   }
 }
+
+.mobile {
+  .behind-sidenav.open {
+    display: none !important;
+    z-index: 0 !important;
+  }
+}

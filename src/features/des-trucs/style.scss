@@ -28,20 +28,10 @@
             }
         }
     }
+}
 
-    // table {   
-    //     td:nth-child(odd) {
-    //         text-align: left;
-    //     }
-    //     td:nth-child(even) {
-    //         text-align: right;
-    //     }
-    //     span {
-    //         font-size: 3em;
-    //         &.nazi {
-    //             display: inline-block;
-    //             animation: spinin 4s linear infinite;
-    //         }
-    //     }
-    // }
+.mobile {
+    .nazi {
+        animation: none !important;
+    }
 }
