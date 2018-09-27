@@ -9,6 +9,14 @@ import OutsideAlerter from './outside-alerter'
 import { isMobile } from 'react-device-detect'
 
 export class SideNav extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      mobile: isMobile
+    }
+  }
+
   render() {
     const links = []
     this.props.features.forEach(feature => {
@@ -25,23 +33,22 @@ export class SideNav extends Component {
     })
 
     let deviceButton = {}
-
-    if (isMobile) {
+    if (this.props.isMobile) {
       deviceButton = (
-        <button onClick={() => console.log('remove mobile class')} aria-label='remove mobile restrictions'>
+        <button onClick={this.props.changeDevice} aria-label='remove mobile restrictions'>
           <MobileIcon />
         </button>
       )
     } else {
       deviceButton = (
-        <button onClick={() => console.log('add mobile class')} aria-label='add mobile restrictions'>
+        <button onClick={this.props.changeDevice} aria-label='add mobile restrictions' >
           <LaptopIcon />
-        </button>
+        </button >
       )
     }
 
     return (
-      <OutsideAlerter sideNavDisplay={this.props.sideNavDisplay} closeHandler={this.props.closeHandler}>
+      <OutsideAlerter sideNavDisplay={this.props.sideNavDisplay} closeHandler={this.props.closeHandler} >
         <div class={'sidenav ' + this.props.sideNavDisplay}>
           <div class='table-wrapper'>
             <div class='close-button-wrapper'>

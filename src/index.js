@@ -34,11 +34,10 @@ export default class App extends Component {
   changeTheme() {
     if (localStorage.getItem('theme') === 'dark') {
       localStorage.setItem('theme', 'light')
-      this.updateStateTheme()
     } else {
       localStorage.setItem('theme', 'dark')
-      this.updateStateTheme()
     }
+    this.updateStateTheme()
   }
 
   updateStateTheme() {
@@ -49,12 +48,18 @@ export default class App extends Component {
     }
   }
 
+  changeDevice() {
+    this.setState({ isMobile: !this.state.isMobile })
+  }
+
   constructor() {
     super()
     this.state = {
-      theme: ''
+      theme: '',
+      isMobile: isMobile
     }
     this.changeTheme = this.changeTheme.bind(this)
+    this.changeDevice = this.changeDevice.bind(this)
   }
 
   componentDidMount() {
@@ -63,13 +68,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div class={'app ' + this.state.theme + '-theme' + (isMobile ? ' mobile' : '')}>
+      <div class={'app ' + this.state.theme + '-theme' + (this.state.isMobile ? ' mobile' : '')}>
         <Helmet
           meta={[
             { name: 'description', content: 'The Matthieu Montaillé showcase website' }
           ]}
         />
-        <Header features={features} changeTheme={this.changeTheme} />
+        <Header features={features} changeTheme={this.changeTheme} isMobile={this.state.isMobile} changeDevice={this.changeDevice} />
         <div class='content'>
           <Router>
             <Home path='/' />

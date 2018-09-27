@@ -7,17 +7,17 @@ import MenuIcon from 'preact-icons/md/menu'
 import ColorIcon from 'preact-icons/go/color-mode'
 
 export class Header extends Component {
-  openSideNav () {
+  openSideNav() {
     this.setState({ sideNavDisplay: 'open' })
     document.body.classList.add('scroll-lock')
   }
 
-  closeSideNav () {
+  closeSideNav() {
     this.setState({ sideNavDisplay: 'closed' })
     document.body.classList.remove('scroll-lock')
   }
 
-  constructor () {
+  constructor() {
     super()
     this.state = {
       sideNavDisplay: 'closed'
@@ -26,7 +26,7 @@ export class Header extends Component {
     this.closeSideNav = this.closeSideNav.bind(this)
   }
 
-  render (props, state) {
+  render(props, state) {
     const features = props.features
     const links = []
     features.forEach(feature => {
@@ -48,6 +48,8 @@ export class Header extends Component {
             sideNavDisplay={this.state.sideNavDisplay}
             closeHandler={this.closeSideNav}
             changeTheme={props.changeTheme}
+            isMobile={props.isMobile}
+            changeDevice={props.changeDevice}
           />
           <div className={'behind-sidenav ' + this.state.sideNavDisplay} />
         </div>
