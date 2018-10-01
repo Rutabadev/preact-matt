@@ -23,5 +23,6 @@
             "html"
         ]
         // ^^ providing just an array sets the VS Code file type
-    }
+    },
+    "files.insertFinalNewline": true
 }
