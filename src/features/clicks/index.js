@@ -15,7 +15,9 @@ export class Clicks extends Component {
     showClick(event) {
         console.log(event.clientX);
         let click = (
-            <div class="click" style={{ left: event.clientX, top: event.clientY }}>this is clicked</div>
+            <div class="click" style={{ left: event.clientX, top: event.clientY }}>
+                <div class="arrow_box">You clicked here</div>
+            </div>
         )
         this.setState({
             lastClick: click
