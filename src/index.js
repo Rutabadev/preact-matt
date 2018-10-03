@@ -2,7 +2,7 @@ import './style.scss';
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { Header, Footer } from './_core';
-import { Home, CssShowcase, Fotos, Animals, DesTrucs, NotFound } from './features';
+import { Home, CssShowcase, Fotos, Animals, DesTrucs, Clicks, NotFound } from './features';
 import Router from 'preact-router';
 import { isMobile } from 'react-device-detect';
 
@@ -27,6 +27,10 @@ const features = [
   {
     name: 'Des trucs',
     path: '/trucs'
+  },
+  {
+    name: 'Clicks',
+    path: '/clicks'
   }
 ]
 
@@ -100,6 +104,7 @@ export default class App extends Component {
             <Fotos path='/fotos' />
             <Animals path='/animals' />
             <DesTrucs path='/trucs' />
+            <Clicks path='/clicks' />
             <NotFound type='404' default />
           </Router>
         </div>

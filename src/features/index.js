@@ -4,6 +4,7 @@ import { Fotos } from './fotos';
 import { Home } from './home';
 import { NotFound } from './not-found';
 import { DesTrucs } from './des-trucs';
+import { Clicks } from './clicks';
 
 export {
     Animals,
@@ -11,5 +12,6 @@ export {
     Fotos,
     Home,
     NotFound,
-    DesTrucs
+    DesTrucs,
+    Clicks
 }

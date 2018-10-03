@@ -41,6 +41,9 @@
   }
 
   .menu-links {
+    // makes sure the buttons does not wrap to 2 lines when to small
+    flex-shrink: 0;
+
     button {
       margin: 0 .2em;
     }

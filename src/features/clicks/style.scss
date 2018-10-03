@@ -1,0 +1,9 @@
+.clicks {
+    // make the div fill the flex parent remaining space
+    flex: 1 1 auto;
+
+    .click {
+        position: absolute;
+        background-color: red;
+    }
+}
