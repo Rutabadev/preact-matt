@@ -104,7 +104,7 @@ export default class App extends Component {
             <Fotos path='/fotos' />
             <Animals path='/animals' />
             <DesTrucs path='/trucs' />
-            <Clicks path='/clicks' />
+            <Clicks path='/clicks' device={this.state.device} />
             <NotFound type='404' default />
           </Router>
         </div>

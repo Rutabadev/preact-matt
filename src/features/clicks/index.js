@@ -7,7 +7,7 @@ export class Clicks extends Component {
         super()
         this.state = {
             lastClick: null,
-            lastPosition: null
+            lastPosition: null,
         }
 
         this.showClick = this.showClick.bind(this);
@@ -26,8 +26,7 @@ export class Clicks extends Component {
     }
 
     showPosition(event) {
-        console.log(`1 = x: ${event.pageX}, y: ${event.pageY}`)
-        console.log(`2 = x: ${event.nativeEvent.clientX}, y: ${event.nativeEvent.clientY}`)
+        if (this.props.device !== 'desktop') return
         let position = (
             <div class="click position" style={{ left: event.pageX, top: event.nativeEvent.pageY }}>
                 <div class="arrow_box">You are here</div>
@@ -38,11 +37,11 @@ export class Clicks extends Component {
         })
     }
 
-    render() {
+    render({ device }) {
         return (
             <div class="clicks" onClick={(e) => this.showClick(e)} onMouseMove={(e) => this.showPosition(e)}>
                 {this.state.lastClick}
-                {this.state.lastPosition}
+                {(device === 'desktop') ? this.state.lastPosition : null}
             </div>
         )
     }
