@@ -39,9 +39,7 @@ export class Modal extends Component {
         >
           <div class='modal'>
             <h3 class='modal-title'>
-              {(type === MODAL_TYPES.WARNING || !type) && (
-                <Warning color='orange' />
-              )}
+              {(type === MODAL_TYPES.WARNING || !type) && <Warning color='orange' />}
               {type === MODAL_TYPES.ERROR && <Error color='red' />}
               {type === MODAL_TYPES.SUCCESS && <Success color='green' />}
               {title}

@@ -1,8 +1,7 @@
 import './style.scss'
 import { Roller } from './roller'
 import { Component } from 'preact'
-import { Modal } from '../modal'
-import { MODAL_TYPES } from '../modal/types'
+import { Modal, MODAL_TYPES } from '../modal'
 
 export class Footer extends Component {
   constructor(props) {

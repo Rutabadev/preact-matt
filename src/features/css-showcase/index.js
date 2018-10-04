@@ -4,8 +4,7 @@ import DeliciousIcon from 'preact-icons/fa/delicious'
 import LinkIcon from 'preact-icons/ti/link'
 import MortarBoardIcon from 'preact-icons/go/mortar-board'
 import RestaurantIcon from 'preact-icons/io/android-restaurant'
-import { Modal } from '../../_core/modal'
-import { MODAL_TYPES } from '../../_core/modal/types'
+import { Modal, MODAL_TYPES } from '../../_core/modal'
 import { Component } from 'preact'
 
 export class CssShowcase extends Component {

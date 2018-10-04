@@ -68,10 +68,8 @@ export class SideNav extends Component {
           </div>
         </div>
 
-        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.WARNING} modalOpen={this.state.modalOpen}>
-          <div class="modal-content">
-            <h1>NON</h1>
-          </div>
+        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen}>
+          <h1>NON</h1>
         </Modal>
       </OutsideAlerter>
     )
