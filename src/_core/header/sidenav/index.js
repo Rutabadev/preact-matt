@@ -6,9 +6,15 @@ import ColorIcon from 'preact-icons/go/color-mode'
 import MobileIcon from 'preact-icons/md/phone-android'
 import LaptopIcon from 'preact-icons/md/laptop-mac'
 import OutsideAlerter from './outside-alerter'
-import { isMobile } from 'react-device-detect'
-
+import { Modal, MODAL_TYPES } from '../../modal'
 export class SideNav extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false
+    }
+  }
 
   render() {
     const links = []
@@ -52,12 +58,21 @@ export class SideNav extends Component {
           </div>
           {links}
           <div class="bottom-buttons">
+            <button class="tujou" onClick={() => this.setState({ modalOpen: true })}>
+              Tu joues ce soir ?
+            </button>
             {deviceButton}
             <button onClick={this.props.changeTheme} aria-label='theme switch'>
               <ColorIcon />
             </button>
           </div>
         </div>
+
+        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.WARNING} modalOpen={this.state.modalOpen}>
+          <div class="modal-content">
+            <h1>NON</h1>
+          </div>
+        </Modal>
       </OutsideAlerter>
     )
   }

@@ -6,15 +6,17 @@ import Error from 'preact-icons/md/error'
 import Success from 'preact-icons/md/check'
 import FocusTrap from 'focus-trap-react'
 
+export { MODAL_TYPES }
+
 export class Modal extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       hidden: !props.modalOpen
     }
   }
 
-  componentWillUpdate ({ modalOpen }) {
+  componentWillUpdate({ modalOpen }) {
     if (modalOpen !== this.props.modalOpen) {
       if (!modalOpen && this.props.modalOpen) {
         this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
@@ -25,7 +27,7 @@ export class Modal extends Component {
     }
   }
 
-  render ({ title, children, onSuccess, onCancel, type, modalOpen, imbriquedModal }) {
+  render({ title, children, onSuccess, onCancel, type, modalOpen, imbriquedModal }) {
     return (
       <FocusTrap active={modalOpen} paused={imbriquedModal}>
         <div
@@ -49,11 +51,11 @@ export class Modal extends Component {
             <div class='modal-buttons'>
               {onCancel && (
                 <button class='secondary' onClick={onCancel}>
-                    Cancel
+                  Cancel
                 </button>
               )}
               <button class='secondary' ref={(button) => { this.button = button }} onClick={onSuccess}>
-                    OK
+                OK
               </button>
             </div>
           </div>
