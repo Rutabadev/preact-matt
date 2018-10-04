@@ -12,6 +12,7 @@
 
     .click.position {
         position: fixed;
+        z-index: 0;
         transform: translate(-50%, 10px);
 
         .arrow_box {
@@ -30,7 +31,7 @@
         color: var(--bg);
         padding: .2em .7em;
         white-space: nowrap;
-        box-shadow: var(--elevation-low);
+        box-shadow: var(--elevation-mid);
     }
 
     .arrow_box:after {

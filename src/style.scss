@@ -75,9 +75,9 @@ body {
     --text-color: var(--black);
     --bg: var(--white);
     --behind-sidenav-color: var(--whiteRGB);
-    --elevation-high: var(--elevation-high-values) grey;
-    --elevation-mid: var(--elevation-mid-values) grey;
-    --elevation-low: var(--elevation-low-values) grey;
+    --elevation-high: var(--elevation-high-values) rgba(39, 39, 39, 0.794);
+    --elevation-mid: var(--elevation-mid-values) rgba(39, 39, 39, 0.794);
+    --elevation-low: var(--elevation-low-values) rgba(39, 39, 39, 0.794);
 
     .spinner:before {
       border-top: 2px solid var(--secondary);

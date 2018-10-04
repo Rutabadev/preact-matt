@@ -1,17 +1,23 @@
 @import '../../variables';
+
 .footer {
+    z-index: 1;
+
     .links {
         min-height: 40px;
         background-color: var(--secondary);
         display: flex;
         align-items: center;
         justify-content: space-around;
+
         .roller {
             position: relative;
             margin: 0 10px;
         }
+
         @media (max-width: $breakpoint-mobile) {
             flex-direction: column;
+
             .roller {
                 margin: 10px 0;
             }
