@@ -8,6 +8,7 @@ export class Clicks extends Component {
         this.state = {
             lastClick: null,
             lastPosition: null,
+            allowPosition: null
         }
 
         this.showClick = this.showClick.bind(this);
@@ -39,9 +40,9 @@ export class Clicks extends Component {
 
     render({ device }) {
         return (
-            <div class="clicks" onClick={(e) => this.showClick(e)} onMouseMove={(e) => this.showPosition(e)}>
+            <div class="clicks" onClick={(e) => this.showClick(e)} onMouseEnter={() => this.setState({ allowPosition: true })} onMouseLeave={() => this.setState({ allowPosition: false })} onMouseMove={(e) => this.showPosition(e)}>
                 {this.state.lastClick}
-                {(device === 'desktop') ? this.state.lastPosition : null}
+                {(device === 'desktop' && this.state.allowPosition) ? this.state.lastPosition : null}
             </div>
         )
     }
