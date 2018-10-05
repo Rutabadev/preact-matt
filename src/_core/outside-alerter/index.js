@@ -8,35 +8,35 @@ export default class OutsideAlerter extends Component {
   /**
    * Set the wrapper ref
    */
-  setWrapperRef (node) {
+  setWrapperRef(node) {
     this.wrapperRef = node
   }
 
   /**
    * Alert if clicked on outside of element
    */
-  handleClickOutside (event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.props.sideNavDisplay !== 'closed') {
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.props.thingDisplayed !== 'closed') {
       this.props.closeHandler()
     }
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.setWrapperRef = this.setWrapperRef.bind(this)
     this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside)
   }
 
-  render () {
+  render() {
     return <div ref={this.setWrapperRef}>{this.props.children}</div>
   }
 }

@@ -18,6 +18,12 @@ export class CssShowcase extends Component {
       modalOpen2: false,
       dropdown: false
     }
+
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  handleClose() {
+    this.setState({ dropdown: false })
   }
 
   render() {
@@ -39,9 +45,9 @@ export class CssShowcase extends Component {
         <div class='elements-box'>
           <button class='tertiary'>tertiary</button>
           <button class='warning'>warning</button>
-          <button class='primary' onClick={() => this.setState({ dropdown: !this.state.dropdown })}>
+          <button class='primary' onClick={() => this.setState({ dropdown: true })}>
             dropdown
-            <Dropdown show={this.state.dropdown} Xcorrect="8%" Ycorrect="16px">
+            <Dropdown show={this.state.dropdown} Xcorrect="8%" Ycorrect="16px" closeHandler={this.handleClose}>
               <BeerIcon style={{ "font-size": "3em" }}></BeerIcon>
             </Dropdown>
           </button>
