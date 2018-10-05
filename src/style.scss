@@ -153,6 +153,16 @@ body {
       background-color: var(--secondary);
       color: var(--white);
     }
+
+    &.tertiary {
+      background-color: var(--tertiary);
+      color: var(--black);
+    }
+
+    &.warning {
+      background-color: var(--warning);
+      color: var(--white);
+    }
   }
 
   a {

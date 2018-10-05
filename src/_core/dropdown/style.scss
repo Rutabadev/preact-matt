@@ -1,28 +1,12 @@
-.clicks {
-    // make the div fill the flex parent remaining space
-    flex: 1 1 auto;
-    overflow: hidden;
-    position: relative;
+.dropdown {
+    position: absolute;
 
-    .click {
-        position: absolute;
-        display: inline-flex;
-        transform: translate(-50%, -200%);
+    &.open {
+        display: inherit
     }
 
-    .click.position {
-        position: fixed;
-        z-index: 0;
-        transform: translate(-50%, 10px);
-
-        .arrow_box {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .arrow_box:after {
-            border-bottom-color: var(--secondary);
-        }
+    &.close {
+        display: none;
     }
 
     .arrow_box {
@@ -48,6 +32,6 @@
         border-bottom-color: var(--text-color);
         border-width: 10px;
         margin-left: -10px;
-        margin-bottom: -1px;
+        margin-bottom: -2px;
     }
 }
