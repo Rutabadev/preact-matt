@@ -13,7 +13,8 @@ export class SideNav extends Component {
     super(props);
     this.state = {
       modalOpen: false,
-      playin: null
+      playin: null,
+      modalType: null
     }
 
     this.handleTujou = this.handleTujou.bind(this)
@@ -21,11 +22,12 @@ export class SideNav extends Component {
 
   handleTujou() {
     let res = Math.random()
-    console.log(res)
     if (res < 0.9) {
       this.setState({ playin: 'NON' })
+      this.setState({ modalType: MODAL_TYPES.ERROR })
     } else {
       this.setState({ playin: 'OUI' })
+      this.setState({ modalType: MODAL_TYPES.SUCCESS })
     }
     this.setState({ modalOpen: true })
   }
@@ -82,7 +84,7 @@ export class SideNav extends Component {
           </div>
         </div>
 
-        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen}>
+        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={this.state.modalType} modalOpen={this.state.modalOpen}>
           <h1>{this.state.playin}</h1>
         </Modal>
       </OutsideAlerter>
