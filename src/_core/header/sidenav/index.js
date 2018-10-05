@@ -12,8 +12,22 @@ export class SideNav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      playin: null
     }
+
+    this.handleTujou = this.handleTujou.bind(this)
+  }
+
+  handleTujou() {
+    let res = Math.random()
+    console.log(res)
+    if (res < 0.9) {
+      this.setState({ playin: 'NON' })
+    } else {
+      this.setState({ playin: 'OUI' })
+    }
+    this.setState({ modalOpen: true })
   }
 
   render() {
@@ -58,7 +72,7 @@ export class SideNav extends Component {
           </div>
           {links}
           <div class="bottom-buttons">
-            <button class="tujou" onClick={() => this.setState({ modalOpen: true })}>
+            <button class="tujou" onClick={this.handleTujou}>
               Tu joues ce soir ?
             </button>
             {deviceButton}
@@ -69,7 +83,7 @@ export class SideNav extends Component {
         </div>
 
         <Modal onSuccess={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen}>
-          <h1>NON</h1>
+          <h1>{this.state.playin}</h1>
         </Modal>
       </OutsideAlerter>
     )
