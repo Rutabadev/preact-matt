@@ -70,27 +70,27 @@
     }
   }
 
+  .behind-sidenav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(var(--behind-sidenav-color), .4);
+
+    &.open {
+      display: inherit;
+      z-index: 1;
+    }
+  }
+
 
   @media (max-width: $breakpoint-mobile) {
 
     .menu-links,
     .theme-switch {
       display: none;
-    }
-
-    .behind-sidenav {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      background-color: rgba(var(--behind-sidenav-color), .4);
-
-      &.open {
-        display: inherit;
-        z-index: 1;
-      }
     }
   }
 }
