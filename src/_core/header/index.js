@@ -39,21 +39,23 @@ export class Header extends Component {
 
     return (
       <div class='header'>
-        <div class='sidenav-switcher'>
-          <button class='sidenav-button' onClick={() => this.openSideNav()} aria-label='sidenav switcher'>
-            <MenuIcon />
-          </button>
-          <SideNav
-            features={features}
-            sideNavDisplay={this.state.sideNavDisplay}
-            closeHandler={this.closeSideNav}
-            changeTheme={props.changeTheme}
-            device={props.device}
-            changeDevice={props.changeDevice}
-          />
-          <div className={'behind-sidenav ' + this.state.sideNavDisplay} />
+        <div class="start-bar">
+          <div class='sidenav-switcher'>
+            <button class='sidenav-button' onClick={() => this.openSideNav()} aria-label='sidenav switcher'>
+              <MenuIcon />
+            </button>
+            <SideNav
+              features={features}
+              sideNavDisplay={this.state.sideNavDisplay}
+              closeHandler={this.closeSideNav}
+              changeTheme={props.changeTheme}
+              device={props.device}
+              changeDevice={props.changeDevice}
+            />
+            <div className={'behind-sidenav ' + this.state.sideNavDisplay} />
+          </div>
+          <nav class='menu-links'>{links}</nav>
         </div>
-        <nav class='menu-links'>{links}</nav>
         <div class='end-bar'>
           <button class='theme-switch' onClick={this.props.changeTheme} aria-label='theme-switch'>
             <ColorIcon />
