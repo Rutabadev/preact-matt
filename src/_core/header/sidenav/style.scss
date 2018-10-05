@@ -58,7 +58,12 @@
 
       &.tujou {
         font-size: .9em;
+
+        &:focus {
+          box-shadow: var(--elevation-low);
+        }
       }
+
     }
   }
 }

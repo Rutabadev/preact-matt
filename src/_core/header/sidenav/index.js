@@ -18,6 +18,7 @@ export class SideNav extends Component {
     }
 
     this.handleTujou = this.handleTujou.bind(this)
+    this.handleSuccess = this.handleSuccess.bind(this)
   }
 
   handleTujou() {
@@ -30,6 +31,11 @@ export class SideNav extends Component {
       this.setState({ modalType: MODAL_TYPES.SUCCESS })
     }
     this.setState({ modalOpen: true })
+  }
+
+  handleSuccess() {
+    this.setState({ modalOpen: false })
+    setTimeout(() => this.tujou.focus(), 200)
   }
 
   render() {
@@ -74,7 +80,7 @@ export class SideNav extends Component {
           </div>
           {links}
           <div class="bottom-buttons">
-            <button class="tujou" onClick={this.handleTujou}>
+            <button ref={tujou => this.tujou = tujou} class="tujou" onClick={this.handleTujou}>
               Tu joues ce soir ?
             </button>
             {deviceButton}
@@ -84,7 +90,7 @@ export class SideNav extends Component {
           </div>
         </div>
 
-        <Modal onSuccess={() => this.setState({ modalOpen: false })} type={this.state.modalType} modalOpen={this.state.modalOpen}>
+        <Modal onSuccess={this.handleSuccess} type={this.state.modalType} modalOpen={this.state.modalOpen}>
           <h1>{this.state.playin}</h1>
         </Modal>
       </OutsideAlerter>
