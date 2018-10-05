@@ -2,6 +2,7 @@
     padding-top: 2em;
 
     .main-title {
+        margin: 0 5%;
         text-align: center;
         animation: gradienting 8s ease infinite;
         background: linear-gradient(270deg, var(--primary), var(--secondary));
@@ -10,15 +11,24 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    
-    @keyframes gradienting { 
-        0%   {background-position:0% 50%;}
-        50%  {background-position:90% 50%;}
-        100% {background-position:0% 50%;}
+
+    @keyframes gradienting {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 90% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     .main {
         margin: 0 10%;
+
         p {
             text-align: justify;
         }
