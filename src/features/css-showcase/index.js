@@ -47,8 +47,8 @@ export class CssShowcase extends Component {
           <button class='warning'>warning</button>
           <button class='primary' onClick={() => this.setState({ dropdown: true })}>
             dropdown
-            <Dropdown show={this.state.dropdown} Xcorrect="8%" Ycorrect="16px" closeHandler={this.handleClose}>
-              <BeerIcon style={{ "font-size": "3em" }}></BeerIcon>
+            <Dropdown show={this.state.dropdown} Xcorrect="22%" Ycorrect="16px" closeHandler={this.handleClose}>
+              <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(2px)" }}></BeerIcon>
             </Dropdown>
           </button>
         </div>

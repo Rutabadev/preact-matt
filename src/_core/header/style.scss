@@ -47,6 +47,10 @@
     color: var(--white);
   }
 
+  .sidenav-switcher {
+    display: none;
+  }
+
   .menu-links,
   .sidenav-switcher,
   .end-bar {
@@ -67,6 +71,35 @@
 
     & * {
       margin: 0 1px;
+    }
+
+    .options {
+      padding: .5em;
+      
+      .icon {
+        transform: translateX(1px);
+      }
+
+      .dropdown-content {
+        padding: .1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+          font-size: .3em;
+          background-color: var(--text-color);
+          color: var(--bg);
+
+          &.tujou {
+            font-size: .25em;
+          }
+        }
+
+        button:hover {
+          z-index: 1;
+        }
+      }      
     }
   }
 
@@ -89,8 +122,12 @@
   @media (max-width: $breakpoint-mobile) {
 
     .menu-links,
-    .theme-switch {
+    .options {
       display: none;
+    }
+
+    .sidenav-switcher {
+      display: inherit;
     }
   }
 }
