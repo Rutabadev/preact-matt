@@ -45,12 +45,14 @@ export class CssShowcase extends Component {
         <div class='elements-box'>
           <button class='tertiary'>tertiary</button>
           <button class='warning'>warning</button>
-          <button class='primary' onClick={() => this.setState({ dropdown: true })}>
-            dropdown
+          <div class="dropdown-wrapper">
+            <button class='primary' onClick={() => this.setState({ dropdown: true })}>
+              dropdown
+            </button>
             <Dropdown show={this.state.dropdown} Xcorrect="22%" Ycorrect="16px" closeHandler={this.handleClose}>
               <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(2px)" }}></BeerIcon>
             </Dropdown>
-          </button>
+          </div>
         </div>
         <Modal title='Custom modal' imbriquedModal={this.state.pause} onSuccess={() => this.setState({ modalOpen: false })} onCancel={() => this.setState({ modalOpen: false })} type={MODAL_TYPES.SUCCESS} modalOpen={this.state.modalOpen}>
           <h1>Coucou</h1>

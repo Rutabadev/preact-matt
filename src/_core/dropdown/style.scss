@@ -1,5 +1,15 @@
+
+.dropdown-wrapper {
+    position: relative;
+}
+
 .dropdown {
     position: absolute;
+    margin: 0;
+    left: 50%;
+    top: calc(100% + 10px);
+    transform: translateX(-50%);
+    z-index: 1;
 
     &.open {
         display: inherit

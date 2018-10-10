@@ -105,20 +105,22 @@ export class Header extends Component {
             <nav class='menu-links'>{links}</nav>
           </div>
           <div class='end-bar'>
+          <div class="dropdown-wrapper">          
             <button class='options' onClick={() => this.setState({showDrop: true})} aria-label='options'>
               <OptionsIcon class='icon' />
-              <Dropdown show={this.state.showDrop} closeHandler={this.closeDrop} Xcorrect="-45%" Ycorrect="20px">
-                <div class="dropdown-content">
-                  <button onClick={this.props.changeTheme} aria-label='theme switch'>
-                    <ColorIcon />
-                  </button>
-                  {deviceButton}
-                  <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
-                    Tu joues ce soir ?
-                  </button>
-                </div>
-              </Dropdown>        
             </button>
+            <Dropdown show={this.state.showDrop} closeHandler={this.closeDrop}>
+              <div class="dropdown-content">
+                <button onClick={this.props.changeTheme} aria-label='theme switch'>
+                  <ColorIcon />
+                </button>
+                {deviceButton}
+                <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
+                  Tu joues ce soir ?
+                </button>
+              </div>
+            </Dropdown>
+          </div>
             <Login />
           </div>
         </div>
