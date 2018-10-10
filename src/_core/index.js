@@ -1,11 +1,4 @@
-import { Header } from './header';
-import { Footer } from './footer';
-import { Modal } from './modal';
-import { Dropdown } from './dropdown';
-
-export {
-    Header,
-    Footer,
-    Modal,
-    Dropdown
-}
+export * from "./header"
+export * from "./footer"
+export * from "./modal"
+export * from "./dropdown"

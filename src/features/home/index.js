@@ -1,8 +1,12 @@
 import './style.scss'
+import { Link } from 'preact-router/match'
 
 export const Home = () => (
   <div class='home'>
     <h1 class='main-title'>Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé 🐼</h1>
+    <Link href="/parallax" class="parallax-button">
+      <button class="secondary">Splendide présentation</button>
+    </Link>
     <div class='main'>
       <br />
       <h2>Biographie</h2>

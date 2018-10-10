@@ -1,5 +1,7 @@
 .home {
     padding-top: 2em;
+    display: flex;
+    flex-direction: column;
 
     .main-title {
         margin: 0 5%;
@@ -24,6 +26,11 @@
         100% {
             background-position: 0% 50%;
         }
+    }
+
+    .parallax-button {
+        align-self: center;
+        margin-top: 30px; 
     }
 
     .main {

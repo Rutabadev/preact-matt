@@ -2,7 +2,7 @@ import './style.scss';
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { Header, Footer } from './_core';
-import { Home, CssShowcase, Fotos, Animals, DesTrucs, Clicks, NotFound } from './features';
+import { Home, CssShowcase, Fotos, Animals, DesTrucs, Clicks, NotFound, Parallax } from './features';
 import Router from 'preact-router';
 import { isMobile } from 'react-device-detect';
 
@@ -100,6 +100,7 @@ export default class App extends Component {
         <div class='content'>
           <Router>
             <Home path='/' />
+            <Parallax path='/parallax' />
             <CssShowcase path='/css' />
             <Fotos path='/fotos' />
             <Animals path='/animals' />
