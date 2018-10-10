@@ -67,10 +67,12 @@ export class Animals extends Component {
 
 const Select = ({ handleChange }) => (
     <div class="select">
-        <label style="margin-right:20px;" htmlFor="Animal">Animal</label>
-        <select onChange={handleChange} name="Animal">
-            <option value="dog">doggo</option>
-            <option value="cat">kitty</option>
-        </select>
+        <label>
+            Animal:
+            <select onChange={handleChange} name="Animal">
+                <option value="dog">doggo</option>
+                <option value="cat">kitty</option>
+            </select>
+        </label>
     </div>
 );
