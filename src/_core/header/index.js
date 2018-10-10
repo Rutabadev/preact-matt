@@ -85,7 +85,7 @@ export class Header extends Component {
     }
 
     return (
-      <div style="z-index: 0;">
+      <div style="z-index: 1">
         <div class="header">
           <div class="start-bar">
             <div class='sidenav-switcher'>
