@@ -5,10 +5,11 @@
   --primary: #ffdc06;
   --secondary: #A61257;
   --tertiary: #1ff3ff;
-  --warning: #eb1212;
+  --warning: #BF0D0D;
   --black: #333;
   --blackRGB: 58, 58, 58;
   --white: #eee;
+  --max-white: #fff;
   --whiteRGB: 238, 238, 238;
   --elevation-high-values: 0 0 24px;
   --elevation-mid-values: 0 1px 7px;
@@ -161,7 +162,7 @@ body {
 
     &.warning {
       background-color: var(--warning);
-      color: var(--white);
+      color: var(--max-white);
     }
   }
 
