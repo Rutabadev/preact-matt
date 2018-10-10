@@ -18,7 +18,7 @@ export class Animal extends Component {
     render({ animal, refresh }) {
         return (
             <div class="animal">
-                <img src={animal} style={this.state.imageLoading && "display: none"} onLoad={this.imageLoaded} onClick={refresh}></img>
+                <img src={animal} alt="animal selected in a situation" style={this.state.imageLoading && "display: none"} onLoad={this.imageLoaded} onClick={refresh}></img>
             </div>
         )
     }
