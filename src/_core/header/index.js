@@ -67,6 +67,7 @@ export class Header extends Component {
     this.handleTujou = this.handleTujou.bind(this)
     this.handleSuccess = this.handleSuccess.bind(this)
     this.handleInstallPWA = this.handleInstallPWA.bind(this)
+    this.handleInstallPrompt = this.handleInstallPrompt.bind(this)
   }
 
   componentDidMount() {
@@ -75,7 +76,6 @@ export class Header extends Component {
   }
 
   handleInstallPrompt(e) {
-    console.log("is ok pour l'event PWA")
     this.setState({prompEvent: e, installAsPWA: true})
   }
 
