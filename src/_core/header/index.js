@@ -10,6 +10,8 @@ import { Dropdown } from '../dropdown'
 import { Modal, MODAL_TYPES } from '../modal'
 import MobileIcon from 'preact-icons/md/phone-android'
 import LaptopIcon from 'preact-icons/md/laptop-mac'
+import InstallIcon from 'preact-icons/md/file-download';
+
 
 export class Header extends Component {
   openSideNav() {
@@ -49,13 +51,19 @@ export class Header extends Component {
       sideNavDisplay: 'closed',
       showDrop: false,
       modalOpen: false,
-      modalType: null
+      modalType: null,
+      installAsPWA: false
     }
 
     this.closeSideNav = this.closeSideNav.bind(this)
     this.closeDrop = this.closeDrop.bind(this)
     this.handleTujou = this.handleTujou.bind(this)
     this.handleSuccess = this.handleSuccess.bind(this)
+  }
+
+  componentDidMount() {
+    // this.setState({installAsPWA: true})
+    addEventListener('beforeinstallprompt', console.log('is ok'));
   }
 
   render(props, state) {
@@ -117,6 +125,9 @@ export class Header extends Component {
                 {deviceButton}
                 <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
                   Tu joues ce soir ?
+                </button>
+                <button>
+                  <InstallIcon /> Install that shit
                 </button>
               </div>
             </Dropdown>
