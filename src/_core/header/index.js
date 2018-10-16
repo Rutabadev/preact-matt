@@ -45,6 +45,10 @@ export class Header extends Component {
     setTimeout(() => this.tujouHeader.focus(), 200)
   }
 
+  handleInstallPWA() {
+    this.setState({installAsPWA: false});
+  }
+
   constructor() {
     super()
     this.state = {
@@ -52,7 +56,8 @@ export class Header extends Component {
       showDrop: false,
       modalOpen: false,
       modalType: null,
-      installAsPWA: false
+      installAsPWA: false,
+      prompEvent: null
     }
 
     this.closeSideNav = this.closeSideNav.bind(this)
@@ -63,7 +68,12 @@ export class Header extends Component {
 
   componentDidMount() {
     // this.setState({installAsPWA: true})
-    addEventListener('beforeinstallprompt', console.log('is ok'));
+    addEventListener('beforeinstallprompt', this.handleInstallPrompt);    
+  }
+
+  handleInstallPrompt(e) {
+    console.log("is ok pour l'event PWA")
+    this.setState({prompEvent: e, installAsPWA: true})
   }
 
   render(props, state) {
@@ -126,7 +136,7 @@ export class Header extends Component {
                 <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
                   Tu joues ce soir ?
                 </button>
-                <button>
+                <button onClick={this.handleInstallPWA}>
                   <InstallIcon /> Install that shit
                 </button>
               </div>
