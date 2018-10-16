@@ -47,6 +47,8 @@ export class Header extends Component {
 
   handleInstallPWA() {
     this.setState({installAsPWA: false});
+    this.state.prompEvent.prompt();
+    // this.state.prompEvent.userChoice.then(handleA2HSResponse);
   }
 
   constructor() {
@@ -64,6 +66,7 @@ export class Header extends Component {
     this.closeDrop = this.closeDrop.bind(this)
     this.handleTujou = this.handleTujou.bind(this)
     this.handleSuccess = this.handleSuccess.bind(this)
+    this.handleInstallPWA = this.handleInstallPWA.bind(this)
   }
 
   componentDidMount() {
@@ -136,9 +139,9 @@ export class Header extends Component {
                 <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
                   Tu joues ce soir ?
                 </button>
-                <button onClick={this.handleInstallPWA}>
+                {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
                   <InstallIcon /> Install that shit
-                </button>
+                </button>}
               </div>
             </Dropdown>
           </div>
