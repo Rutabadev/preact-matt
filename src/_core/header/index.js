@@ -71,7 +71,6 @@ export class Header extends Component {
   }
 
   componentDidMount() {
-    // this.setState({installAsPWA: true})
     addEventListener('beforeinstallprompt', this.handleInstallPrompt);    
   }
 

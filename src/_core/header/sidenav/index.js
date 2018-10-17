@@ -14,11 +14,23 @@ export class SideNav extends Component {
     this.state = {
       modalOpen: false,
       playin: null,
-      modalType: null
+      modalType: null,
+      installAsPWA: false,
+      prompEvent: null
     }
 
     this.handleTujou = this.handleTujou.bind(this)
     this.handleSuccess = this.handleSuccess.bind(this)
+    this.handleInstallPWA = this.handleInstallPWA.bind(this)
+    this.handleInstallPrompt = this.handleInstallPrompt.bind(this)
+  }
+
+  componentDidMount() {
+    addEventListener('beforeinstallprompt', this.handleInstallPrompt);    
+  }
+
+  handleInstallPrompt(e) {
+    this.setState({prompEvent: e, installAsPWA: true})
   }
 
   handleTujou() {
@@ -87,6 +99,9 @@ export class SideNav extends Component {
             <button onClick={this.props.changeTheme} aria-label='theme switch'>
               <ColorIcon />
             </button>
+            {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
+              <InstallIcon /> Install that shit
+            </button>}
           </div>
         </div>
 
