@@ -138,7 +138,7 @@ export class Header extends Component {
                   Tu joues ce soir ?
                 </button>
                 {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
-                  <InstallIcon /> Install that shit
+                  <InstallIcon /> Install
                 </button>}
               </div>
             </Dropdown>

@@ -106,7 +106,7 @@ export class SideNav extends Component {
               <ColorIcon />
             </button>
             {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
-              <InstallIcon /> Install that shit
+              <InstallIcon /> Install
             </button>}
           </div>
         </div>
