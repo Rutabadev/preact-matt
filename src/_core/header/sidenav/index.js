@@ -51,6 +51,11 @@ export class SideNav extends Component {
     setTimeout(() => this.tujou.focus(), 200)
   }
 
+  handleInstallPWA() {
+    this.setState({installAsPWA: false});
+    this.state.prompEvent.prompt();
+  }
+
   render() {
     const links = []
     this.props.features.forEach(feature => {

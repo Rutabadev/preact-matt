@@ -48,7 +48,6 @@ export class Header extends Component {
   handleInstallPWA() {
     this.setState({installAsPWA: false});
     this.state.prompEvent.prompt();
-    // this.state.prompEvent.userChoice.then(handleA2HSResponse);
   }
 
   constructor() {
