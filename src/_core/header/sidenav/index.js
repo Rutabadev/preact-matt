@@ -5,6 +5,7 @@ import CloseIcon from 'preact-icons/md/close'
 import ColorIcon from 'preact-icons/go/color-mode'
 import MobileIcon from 'preact-icons/md/phone-android'
 import LaptopIcon from 'preact-icons/md/laptop-mac'
+import InstallIcon from 'preact-icons/md/file-download';
 import OutsideAlerter from '../../outside-alerter'
 import { Modal, MODAL_TYPES } from '../../modal'
 export class SideNav extends Component {
