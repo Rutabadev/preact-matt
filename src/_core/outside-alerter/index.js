@@ -17,7 +17,7 @@ export default class OutsideAlerter extends Component {
    */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.props.thingDisplayed !== 'closed') {
-      this.props.closeHandler()
+      setTimeout(() => this.props.closeHandler(), 214);
     }
   }
 

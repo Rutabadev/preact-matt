@@ -3,6 +3,7 @@ import { Component } from "preact";
 import OutsideAlerter from "../outside-alerter";
 
 export class Dropdown extends Component {
+
   render({ show, children, closeHandler }) {
     const display = show ? "open" : "closed";
 
