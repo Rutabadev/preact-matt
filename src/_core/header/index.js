@@ -25,7 +25,7 @@ export class Header extends Component {
   }
 
   closeDrop() {
-    this.setState({showDrop: false});
+    this.setState({ showDrop: false });
   }
 
   handleTujou() {
@@ -46,7 +46,7 @@ export class Header extends Component {
   }
 
   handleInstallPWA() {
-    this.setState({installAsPWA: false});
+    this.setState({ installAsPWA: false, showDrop: false });
     this.state.prompEvent.prompt();
   }
 
@@ -70,11 +70,11 @@ export class Header extends Component {
   }
 
   componentDidMount() {
-    addEventListener('beforeinstallprompt', this.handleInstallPrompt);    
+    addEventListener('beforeinstallprompt', this.handleInstallPrompt);
   }
 
   handleInstallPrompt(e) {
-    this.setState({prompEvent: e, installAsPWA: true})
+    this.setState({ prompEvent: e, installAsPWA: true })
   }
 
   render(props, state) {
@@ -124,25 +124,25 @@ export class Header extends Component {
             <nav class='menu-links'>{links}</nav>
           </div>
           <div class='end-bar'>
-          <div class="dropdown-wrapper">          
-            <button class='options' onClick={() => this.setState({showDrop: true})} aria-label='options'>
-              <OptionsIcon class='icon' />
-            </button>
-            <Dropdown show={this.state.showDrop} closeHandler={this.closeDrop}>
-              <div class="dropdown-content">
-                <button onClick={this.props.changeTheme} aria-label='theme switch'>
-                  <ColorIcon />
+            <div class="dropdown-wrapper">
+              <button class='options' onClick={() => this.setState({ showDrop: true })} aria-label='options'>
+                <OptionsIcon class='icon' />
+              </button>
+              <Dropdown show={this.state.showDrop} closeHandler={this.closeDrop}>
+                <div class="dropdown-content">
+                  <button onClick={this.props.changeTheme} aria-label='theme switch'>
+                    <ColorIcon />
+                  </button>
+                  {deviceButton}
+                  <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
+                    Tu joues ce soir ?
                 </button>
-                {deviceButton}
-                <button ref={tujouHeader => this.tujouHeader = tujouHeader} class="tujou" onClick={this.handleTujou}>
-                  Tu joues ce soir ?
-                </button>
-                {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
-                  <InstallIcon /> Install
+                  {this.state.installAsPWA && <button onClick={this.handleInstallPWA}>
+                    <InstallIcon /> Install
                 </button>}
-              </div>
-            </Dropdown>
-          </div>
+                </div>
+              </Dropdown>
+            </div>
             <Login />
           </div>
         </div>
