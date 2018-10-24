@@ -17,6 +17,7 @@
     "preact-router": "2.6.1",
     "react-device-detect": "^1.6.1",
     "react-images": "^0.5.19",
+    "react-parallax": "^2.0.1",
     "react-photo-gallery": "^6.2.0",
     "sass-loader": "^6.0.6"
   },
@@ -35,11 +36,5 @@
     "serve": "preact build --template && preact serve",
     "dev": "preact watch",
     "deploy": "firebase use --token $FIREBASE_TOKEN matthieu-f1348 && firebase deploy --non-interactive --token $FIREBASE_TOKEN"
-  },
-  "standard": {
-    "globals": [
-      "alert",
-      "localStorage"
-    ]
   }
 }
