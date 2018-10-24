@@ -10,23 +10,22 @@ const insideStyles = {
     transform: "translate(-50%,-50%)"
 };
 
-
-export const ParallaxMatt = () => (
+export const ParallaxMatt = ({ device }) => (
     <div class="parallax">
-        <Parallax bgImage={'https://source.unsplash.com/1600x900/?nature,water'} strength={500}>
-            <div style={{ height: 500 }}>
+        <Parallax bgImage={'https://source.unsplash.com/1600x900/?nature,water'} strength={500} disabled={device === 'mobile'}>
+            <div style={{ height: '100vh' }}>
                 <div class="inside">Matthieu est beau</div>
             </div>
         </Parallax>
         <h1>| | |</h1>
-        <Parallax bgImage={'https://source.unsplash.com/1600x900/?animal'} blur={{ min: -1, max: 3 }}>
-            <div style={{ height: 500 }}>
+        <Parallax bgImage={'https://source.unsplash.com/1600x900/?animal'} blur={{ min: -1, max: 3 }} disabled={device === 'mobile'}>
+            <div style={{ height: '100vh' }}>
                 <div class="inside">Matthieu est frais</div>
             </div>
         </Parallax>
         <h1>| | |</h1>
-        <Parallax bgImage={'https://source.unsplash.com/1600x900/?mountain'} strength={-100}>
-            <div style={{ height: 500 }}>
+        <Parallax bgImage={'https://source.unsplash.com/1600x900/?mountain'} strength={-500} disabled={device === 'mobile'}>
+            <div style={{ height: '100vh' }}>
                 <div class="inside">Mais surtout</div>
             </div>
         </Parallax>
@@ -34,12 +33,13 @@ export const ParallaxMatt = () => (
         <Parallax
             bgImage={'https://source.unsplash.com/1600x900/?dog'}
             strength={200}
+            disabled={device === 'mobile'}
             renderLayer={percentage => (
                 <div>
                     <div
                         style={{
                             position: "absolute",
-                            background: `rgba(255, 220, 6, ${percentage * 1})`,
+                            background: `rgba(255, 220, 6, ${percentage})`,
                             left: "50%",
                             top: "50%",
                             borderRadius: "50%",
@@ -51,7 +51,7 @@ export const ParallaxMatt = () => (
                 </div>
             )}
         >
-            <div style={{ height: 500 }}>
+            <div style={{ height: '100vh' }}>
                 <div class="inside">Matthieu est bridé</div>
             </div>
         </Parallax>

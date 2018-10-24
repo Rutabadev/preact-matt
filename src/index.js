@@ -100,7 +100,7 @@ export default class App extends Component {
         <div class='content'>
           <Router>
             <Home path='/' />
-            <ParallaxMatt path='/parallax' />
+            <ParallaxMatt path='/parallax' device={this.state.device} />
             <CssShowcase path='/css' />
             <Fotos path='/fotos' />
             <Animals path='/animals' />
