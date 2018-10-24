@@ -52,7 +52,7 @@ export const ParallaxMatt = () => (
             )}
         >
             <div style={{ height: 500 }}>
-                <div style={insideStyles}>Matthieu est bridé \u2728</div>
+                <div style={insideStyles}>Matthieu est bridé</div>
             </div>
         </Parallax>
         <div style={{ height: 370 }} />
