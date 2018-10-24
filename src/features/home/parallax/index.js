@@ -15,19 +15,19 @@ export const ParallaxMatt = () => (
     <div class="parallax">
         <Parallax bgImage={'https://source.unsplash.com/1600x900/?nature,water'} strength={500}>
             <div style={{ height: 500 }}>
-                <div style={insideStyles}>Matthieu est beau</div>
+                <div class="inside">Matthieu est beau</div>
             </div>
         </Parallax>
         <h1>| | |</h1>
         <Parallax bgImage={'https://source.unsplash.com/1600x900/?animal'} blur={{ min: -1, max: 3 }}>
             <div style={{ height: 500 }}>
-                <div style={insideStyles}>Matthieu est frais</div>
+                <div class="inside">Matthieu est frais</div>
             </div>
         </Parallax>
         <h1>| | |</h1>
         <Parallax bgImage={'https://source.unsplash.com/1600x900/?mountain'} strength={-100}>
             <div style={{ height: 500 }}>
-                <div style={insideStyles}>Mais surtout</div>
+                <div class="inside">Mais surtout</div>
             </div>
         </Parallax>
         <h1>| | |</h1>
@@ -52,7 +52,7 @@ export const ParallaxMatt = () => (
             )}
         >
             <div style={{ height: 500 }}>
-                <div style={insideStyles}>Matthieu est bridé</div>
+                <div class="inside">Matthieu est bridé</div>
             </div>
         </Parallax>
         <div style={{ height: 370 }} />
