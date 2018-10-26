@@ -18,7 +18,7 @@ export const ParallaxMatt = ({ device }) => (
             </div>
         </Parallax>
         <h1>| | |</h1>
-        <Parallax bgImage={'https://source.unsplash.com/1600x900/?animal'} blur={{ min: -1, max: 3 }} disabled={device === 'mobile'}>
+        <Parallax bgImage={'https://source.unsplash.com/1600x900/?animal'} strength={500} disabled={device === 'mobile'}>
             <div style={{ height: '100vh' }}>
                 <div class="inside">Matthieu est frais</div>
             </div>
@@ -32,7 +32,7 @@ export const ParallaxMatt = ({ device }) => (
         <h1>| | |</h1>
         <Parallax
             bgImage={'https://source.unsplash.com/1600x900/?dog'}
-            strength={200}
+            strength={500}
             disabled={device === 'mobile'}
             renderLayer={percentage => (
                 <div>
