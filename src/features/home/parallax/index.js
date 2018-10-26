@@ -1,5 +1,5 @@
 import './style.scss'
-import { Parallax, Background } from 'react-parallax'
+import { Parallax } from 'react-parallax'
 
 export const ParallaxMatt = ({ device }) => (
     <div class="parallax">
@@ -36,12 +36,13 @@ export const ParallaxMatt = ({ device }) => (
                             borderRadius: "50%",
                             transform: "translate(-50%,-50%)",
                             width: percentage * 500,
-                            height: percentage * 500
+                            height: percentage * 500,
+                            display: (device === 'mobile') ? 'none' : 'block'
                         }}
                     />
                     <div
                         style={{
-                            transform: `translate(-50%,-50%) rotate(${178 + (percentage * 360)}deg)`,
+                            transform: `translate(-50%,-50%) rotate(${(device === 'mobile') ? 0 : (178 + (percentage * 360))}deg)`,
                             position: "absolute",
                             left: "50%",
                             top: "50%",
