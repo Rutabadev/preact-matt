@@ -24,7 +24,7 @@ export const ParallaxMatt = ({ device }) => (
             </div>
         </Parallax>
         <h1>| | |</h1>
-        <Parallax bgImage={'https://source.unsplash.com/1600x900/?mountain'} strength={-500} disabled={device === 'mobile'}>
+        <Parallax bgImage={'https://source.unsplash.com/1600x900/?mountain'} strength={500} disabled={device === 'mobile'}>
             <div style={{ height: '100vh' }}>
                 <div class="inside">Mais surtout</div>
             </div>
