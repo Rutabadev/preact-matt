@@ -99,6 +99,7 @@ body {
   }
 
   .content {
+    margin-top: var(--navbar-height);
     display: flex;
     flex-flow: column;
     background-color: var(--bg);

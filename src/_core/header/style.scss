@@ -8,6 +8,8 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  position: fixed;
+  width: 100%;
 
   .start-bar {
     display: flex;
@@ -75,10 +77,10 @@
 
     .options {
       padding: .5em;
-      
+
       .icon {
         transform: translateX(1px);
-      }          
+      }
     }
 
 
@@ -96,7 +98,7 @@
       button:hover {
         z-index: 1;
       }
-    }  
+    }
   }
 
   .behind-sidenav {
