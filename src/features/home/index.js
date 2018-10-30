@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match'
 
 export const Home = () => (
   <div class='home'>
-    <h1 class='main-title'>Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé 🐼</h1>
+    <h1 class='main-title'>Bienvenue sur le site de Matthieu <i>"Puex"</i> Montaillé <a href="../../assets/panda.webm">🐼</a></h1>
     <Link href="/parallax" class="parallax-button">
       <button class="secondary">Splendide présentation</button>
     </Link>
