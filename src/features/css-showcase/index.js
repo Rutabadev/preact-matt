@@ -16,14 +16,19 @@ export class CssShowcase extends Component {
       modalOpen: false,
       pause: false,
       modalOpen2: false,
-      dropdown: false
+      dropdown: {
+        open: false,
+        lastchanged: null
+      }
     }
 
-    this.handleClose = this.handleClose.bind(this);
+    this.switchDrop = this.switchDrop.bind(this);
   }
 
-  handleClose() {
-    this.setState({ dropdown: false })
+  switchDrop() {
+    if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
+      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
+    }
   }
 
   render() {
@@ -46,10 +51,10 @@ export class CssShowcase extends Component {
           <button class='tertiary'>tertiary</button>
           <button class='warning'>warning</button>
           <div class="dropdown-wrapper">
-            <button class='primary' onClick={() => this.setState({ dropdown: !this.state.dropdown })}>
+            <button class='primary' onClick={() => this.switchDrop()}>
               dropdown
             </button>
-            <Dropdown show={this.state.dropdown} closeHandler={this.handleClose}>
+            <Dropdown show={this.state.dropdown.open} closeHandler={this.switchDrop}>
               <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(2px)" }}></BeerIcon>
             </Dropdown>
           </div>

@@ -24,8 +24,10 @@ export class Header extends Component {
     document.body.classList.remove('scroll-lock')
   }
 
-  closeDrop() {
-    this.setState({ showDrop: false });
+  switchDrop() {
+    if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
+      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
+    }
   }
 
   handleTujou() {
@@ -54,7 +56,10 @@ export class Header extends Component {
     super()
     this.state = {
       sideNavDisplay: 'closed',
-      showDrop: false,
+      dropdown: {
+        open: false,
+        lastchanged: null
+      },
       modalOpen: false,
       modalType: null,
       installAsPWA: false,
@@ -62,7 +67,7 @@ export class Header extends Component {
     }
 
     this.closeSideNav = this.closeSideNav.bind(this)
-    this.closeDrop = this.closeDrop.bind(this)
+    this.switchDrop = this.switchDrop.bind(this)
     this.handleTujou = this.handleTujou.bind(this)
     this.handleSuccess = this.handleSuccess.bind(this)
     this.handleInstallPWA = this.handleInstallPWA.bind(this)
@@ -125,10 +130,10 @@ export class Header extends Component {
           </div>
           <div class='end-bar'>
             <div class="dropdown-wrapper">
-              <button class='options' onClick={() => this.setState({ showDrop: true })} aria-label='options'>
+              <button class='options' onClick={() => this.switchDrop()} aria-label='options'>
                 <OptionsIcon class='icon' />
               </button>
-              <Dropdown show={this.state.showDrop} closeHandler={this.closeDrop}>
+              <Dropdown show={this.state.dropdown.open} closeHandler={this.switchDrop}>
                 <div class="dropdown-content">
                   <button onClick={this.props.changeTheme} aria-label='theme switch'>
                     <ColorIcon />
