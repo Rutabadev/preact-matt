@@ -46,8 +46,9 @@ export const ParallaxMatt = ({ device }) => (
                             position: "absolute",
                             left: "50%",
                             top: "50%",
+                            borderRadius: "100px",
                             background: "var(--bg)",
-                            padding: "20px"
+                            padding: "15px"
                         }}>
                         Matthieu est bridé
                     </div>
