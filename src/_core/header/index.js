@@ -32,11 +32,15 @@ export class Header extends Component {
 
   handleTujou() {
     let res = Math.random()
+    console.log(this.state.nbFails)
     if (res < 0.9) {
-      this.setState({ playin: 'NON' })
+      this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
+      if (this.state.nbFails > 5) {
+        this.setState({ playin: "C'est mort" })
+      }
       this.setState({ modalType: MODAL_TYPES.ERROR })
     } else {
-      this.setState({ playin: 'OUI' })
+      this.setState({ playin: 'OUI', nbFails: 0 })
       this.setState({ modalType: MODAL_TYPES.SUCCESS })
     }
     this.setState({ modalOpen: true })
@@ -63,7 +67,8 @@ export class Header extends Component {
       modalOpen: false,
       modalType: null,
       installAsPWA: false,
-      prompEvent: null
+      prompEvent: null,
+      nbFails: 0
     }
 
     this.closeSideNav = this.closeSideNav.bind(this)
@@ -153,6 +158,12 @@ export class Header extends Component {
         </div>
         <Modal onSuccess={this.handleSuccess} type={this.state.modalType} modalOpen={this.state.modalOpen}>
           <h1>{this.state.playin}</h1>
+          {this.state.nbFails > 5 &&
+            <div>
+              <p>({this.state.nbFails} échecs)</p>
+              <div id="progress" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
+            </div>
+          }
         </Modal>
       </div>
     )
