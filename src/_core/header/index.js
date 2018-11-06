@@ -161,7 +161,7 @@ export class Header extends Component {
           {this.state.nbFails > 5 &&
             <div>
               <p>({this.state.nbFails} échecs)</p>
-              <div id="progress" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
+              <div id="progress-bar" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
             </div>
           }
         </Modal>
