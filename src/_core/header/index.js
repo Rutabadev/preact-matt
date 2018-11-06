@@ -56,7 +56,6 @@ export class Header extends Component {
 
   handleTujou() {
     let res = Math.random()
-    console.log(this.state.nbFails)
     if (res < 0.9) {
       this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
       if (this.state.nbFails > 4) {

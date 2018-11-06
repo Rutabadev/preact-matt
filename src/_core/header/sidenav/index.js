@@ -17,7 +17,8 @@ export class SideNav extends Component {
       playin: null,
       modalType: null,
       installAsPWA: false,
-      prompEvent: null
+      prompEvent: null,
+      nbFails: 0
     }
 
     this.handleTujou = this.handleTujou.bind(this)
@@ -27,20 +28,23 @@ export class SideNav extends Component {
   }
 
   componentDidMount() {
-    addEventListener('beforeinstallprompt', this.handleInstallPrompt);    
+    addEventListener('beforeinstallprompt', this.handleInstallPrompt);
   }
 
   handleInstallPrompt(e) {
-    this.setState({prompEvent: e, installAsPWA: true})
+    this.setState({ prompEvent: e, installAsPWA: true })
   }
 
   handleTujou() {
     let res = Math.random()
     if (res < 0.9) {
-      this.setState({ playin: 'NON' })
+      this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
+      if (this.state.nbFails > 4) {
+        this.setState({ playin: "C'est mort" })
+      }
       this.setState({ modalType: MODAL_TYPES.ERROR })
     } else {
-      this.setState({ playin: 'OUI' })
+      this.setState({ playin: 'OUI', nbFails: 0 })
       this.setState({ modalType: MODAL_TYPES.SUCCESS })
     }
     this.setState({ modalOpen: true })
@@ -52,7 +56,7 @@ export class SideNav extends Component {
   }
 
   handleInstallPWA() {
-    this.setState({installAsPWA: false});
+    this.setState({ installAsPWA: false });
     this.state.prompEvent.prompt();
   }
 
@@ -113,6 +117,12 @@ export class SideNav extends Component {
 
         <Modal onSuccess={this.handleSuccess} type={this.state.modalType} modalOpen={this.state.modalOpen}>
           <h1>{this.state.playin}</h1>
+          {this.state.nbFails > 4 &&
+            <div>
+              <p>({this.state.nbFails} échecs)</p>
+              <div id="progress-bar" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
+            </div>
+          }
         </Modal>
       </OutsideAlerter>
     )
