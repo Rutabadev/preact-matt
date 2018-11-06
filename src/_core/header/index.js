@@ -14,47 +14,6 @@ import InstallIcon from 'preact-icons/md/file-download';
 
 
 export class Header extends Component {
-  openSideNav() {
-    this.setState({ sideNavDisplay: 'open' })
-    document.body.classList.add('scroll-lock')
-  }
-
-  closeSideNav() {
-    this.setState({ sideNavDisplay: 'closed' })
-    document.body.classList.remove('scroll-lock')
-  }
-
-  switchDrop() {
-    if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
-      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
-    }
-  }
-
-  handleTujou() {
-    let res = Math.random()
-    console.log(this.state.nbFails)
-    if (res < 0.9) {
-      this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
-      if (this.state.nbFails > 5) {
-        this.setState({ playin: "C'est mort" })
-      }
-      this.setState({ modalType: MODAL_TYPES.ERROR })
-    } else {
-      this.setState({ playin: 'OUI', nbFails: 0 })
-      this.setState({ modalType: MODAL_TYPES.SUCCESS })
-    }
-    this.setState({ modalOpen: true })
-  }
-
-  handleSuccess() {
-    this.setState({ modalOpen: false })
-    setTimeout(() => this.tujouHeader.focus(), 200)
-  }
-
-  handleInstallPWA() {
-    this.setState({ installAsPWA: false, showDrop: false });
-    this.state.prompEvent.prompt();
-  }
 
   constructor() {
     super()
@@ -77,6 +36,48 @@ export class Header extends Component {
     this.handleSuccess = this.handleSuccess.bind(this)
     this.handleInstallPWA = this.handleInstallPWA.bind(this)
     this.handleInstallPrompt = this.handleInstallPrompt.bind(this)
+  }
+
+  openSideNav() {
+    this.setState({ sideNavDisplay: 'open' })
+    document.body.classList.add('scroll-lock')
+  }
+
+  closeSideNav() {
+    this.setState({ sideNavDisplay: 'closed' })
+    document.body.classList.remove('scroll-lock')
+  }
+
+  switchDrop() {
+    if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
+      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
+    }
+  }
+
+  handleTujou() {
+    let res = Math.random()
+    console.log(this.state.nbFails)
+    if (res < 0.9) {
+      this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
+      if (this.state.nbFails > 4) {
+        this.setState({ playin: "C'est mort" })
+      }
+      this.setState({ modalType: MODAL_TYPES.ERROR })
+    } else {
+      this.setState({ playin: 'OUI', nbFails: 0 })
+      this.setState({ modalType: MODAL_TYPES.SUCCESS })
+    }
+    this.setState({ modalOpen: true })
+  }
+
+  handleSuccess() {
+    this.setState({ modalOpen: false })
+    setTimeout(() => this.tujouHeader.focus(), 200)
+  }
+
+  handleInstallPWA() {
+    this.setState({ installAsPWA: false, showDrop: false });
+    this.state.prompEvent.prompt();
   }
 
   componentDidMount() {
@@ -158,7 +159,7 @@ export class Header extends Component {
         </div>
         <Modal onSuccess={this.handleSuccess} type={this.state.modalType} modalOpen={this.state.modalOpen}>
           <h1>{this.state.playin}</h1>
-          {this.state.nbFails > 5 &&
+          {this.state.nbFails > 4 &&
             <div>
               <p>({this.state.nbFails} échecs)</p>
               <div id="progress-bar" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
