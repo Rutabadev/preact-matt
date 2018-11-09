@@ -19,7 +19,7 @@ export const Home = () => (
       <p>C'est sur les coups de l'année 1789 que Matthieu fit une découverte sans prédédent : il n'était pas encore né. Ça fait un choc sur le moment mais c'est pas déconnant quand on y réfléchit bien.</p>
       <br />
       <h2>Œuvre</h2>
-      <p>On ne va pas se mentir, il a pas fait grand chose. On retiendra principalement ses classements au badmington. Une fois il a fait 16ème je crois, c'est pas dégueu.</p>
+      <p>On ne va pas se mentir, il n'a pas fait grand chose. On retiendra principalement ses classements au badmington. Une fois il a fait 16ème je crois, c'est pas dégueu.</p>
       <br />
       <img class="waka" alt="pac-man hr" src="../../assets/wakahr.png"></img>
       <h2>Conclusion</h2>
