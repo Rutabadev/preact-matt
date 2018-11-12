@@ -7,7 +7,7 @@ export class Login extends Component {
   componentDidMount(){
     firebase.auth().onAuthStateChanged(function(user) {
       this.setState({ user: user });
-    }).bind(this);
+    }.bind(this));
   }
 
   login = () => {
