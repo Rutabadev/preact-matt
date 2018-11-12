@@ -69,7 +69,9 @@ export class Header extends Component {
          firebase.database().ref('Scores/' + this.state.user.uid).once('value')
           .then((snapshot) => {
             lastMax = snapshot.val()
-            this.setState({maxFails: lastMax.max})
+            if (lastMax) {
+              this.setState({maxFails: lastMax.max})
+            }
             if (!lastMax || lastMax.max < this.state.nbFails) {
               let displayName = this.state.user.displayName
               let max = this.state.nbFails
