@@ -10,7 +10,8 @@ import { Dropdown } from '../dropdown'
 import { Modal, MODAL_TYPES } from '../modal'
 import MobileIcon from 'preact-icons/md/phone-android'
 import LaptopIcon from 'preact-icons/md/laptop-mac'
-import InstallIcon from 'preact-icons/md/file-download';
+import InstallIcon from 'preact-icons/md/file-download'
+import firebase from '../../firebase'
 
 
 export class Header extends Component {
@@ -55,6 +56,20 @@ export class Header extends Component {
   }
 
   handleTujou() {
+    let email = 'le mail'
+    let fname = 'le prénom'
+    let lname = 'le nom'
+    firebase.database().ref('Users/').set({
+      email,
+      lname,
+      fname
+  }).then((data)=>{
+      //success callback
+      console.log('data ' , data)
+  }).catch((error)=>{
+      //error callback
+      console.log('error ' , error)
+  })
     let res = Math.random()
     if (res < 0.9) {
       this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
