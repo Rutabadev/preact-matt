@@ -7,6 +7,7 @@ export class Login extends Component {
   componentDidMount(){
     firebase.auth().onAuthStateChanged(function(user) {
       this.setState({ user: user });
+      this.props.setUser(this.state.user)
     }.bind(this));
   }
 
@@ -15,7 +16,7 @@ export class Login extends Component {
       .auth()
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(result => {
-        const user = result.user
+        const user = result.user        
         this.setState({
           user
         })

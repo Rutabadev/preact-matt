@@ -37,6 +37,11 @@ export class Header extends Component {
     this.handleSuccess = this.handleSuccess.bind(this)
     this.handleInstallPWA = this.handleInstallPWA.bind(this)
     this.handleInstallPrompt = this.handleInstallPrompt.bind(this)
+    this.setUser = this.setUser.bind(this)
+  }
+
+  setUser(userParam) {
+    this.setState({user : userParam})
   }
 
   openSideNav() {
@@ -55,24 +60,29 @@ export class Header extends Component {
     }
   }
 
-  handleTujou() {
-    let email = 'le mail'
-    let fname = 'le prénom'
-    let lname = 'le nom'
-    firebase.database().ref('Users/').set({
-      email,
-      lname,
-      fname
-  }).then((data)=>{
-      //success callback
-      console.log('data ' , data)
-  }).catch((error)=>{
-      //error callback
-      console.log('error ' , error)
-  })
+  handleTujou() {    
     let res = Math.random()
     if (res < 0.9) {
       this.setState({ playin: 'NON', nbFails: this.state.nbFails + 1 })
+      if (this.state.user) {
+        let lastMax
+         firebase.database().ref('Scores/' + this.state.user.uid).once('value')
+          .then((snapshot) => {
+            lastMax = snapshot.val()
+            if (!lastMax || lastMax.max < this.state.nbFails) {
+              let displayName = this.state.user.displayName
+              let max = this.state.nbFails
+              firebase.database().ref('Scores/' + this.state.user.uid).set({
+                displayName,
+                max
+              }).catch((error)=>{
+                console.log('error ' , error)
+              })
+            }
+          }
+        )
+        
+      }
       if (this.state.nbFails > 4) {
         this.setState({ playin: "C'est mort" })
       }
@@ -168,7 +178,7 @@ export class Header extends Component {
                 </div>
               </Dropdown>
             </div>
-            <Login />
+            <Login setUser={this.setUser} />
           </div>
         </div>
         <Modal onSuccess={this.handleSuccess} type={this.state.modalType} modalOpen={this.state.modalOpen}>
