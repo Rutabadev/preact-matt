@@ -1,19 +1,18 @@
 import { Component } from 'preact'
 import './style.scss'
-import { auth } from '../../../firebase'
+import firebase from '../../../firebase'
 
 export class Login extends Component {
 
-  constructor(props){
-    super(props);
-    auth
-      .onAuthStateChanged(function(user) {
-        this.setState({ user: user });
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      this.setState({ user: user });
     });
   }
 
   login = () => {
-    auth
+    firebase
+      .auth()
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(result => {
         const user = result.user
@@ -24,7 +23,8 @@ export class Login extends Component {
   }
 
   logout = () => {
-    auth
+    firebase
+      .auth()
       .signOut()
       .then(() => {
         this.setState({
