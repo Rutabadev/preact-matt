@@ -69,6 +69,7 @@ export class Header extends Component {
          firebase.database().ref('Scores/' + this.state.user.uid).once('value')
           .then((snapshot) => {
             lastMax = snapshot.val()
+            this.setState({maxFails: lastMax.max})
             if (!lastMax || lastMax.max < this.state.nbFails) {
               let displayName = this.state.user.displayName
               let max = this.state.nbFails
@@ -185,7 +186,7 @@ export class Header extends Component {
           <h1>{this.state.playin}</h1>
           {this.state.nbFails > 4 &&
             <div>
-              <p>({this.state.nbFails} échecs)</p>
+              <p>({this.state.nbFails} échecs, max {this.state.maxFails})</p>
               <div id="progress-bar" style={{ height: "10px", backgroundImage: "linear-gradient(to right, green, yellow, orange, red)", marginBottom: "10px", clipPath: `inset(0px ${100 - ((this.state.nbFails / 20) * 100)}% 0px 0px)` }}></div>
               {this.state.nbFails >= 20 && <img src="../../assets/neko.jpg" style={{ align: 'center', height: '300px', margin: '0 auto', display: 'block' }}></img>}
             </div>
