@@ -3,18 +3,15 @@ import './style.scss'
 import firebase from '../../../firebase'
 
 export class Login extends Component {
-  constructor() {
-    super()
 
-    this.state = {
-      user: null
-    }
-
-    this.login = this.login.bind(this)
-    this.logout = this.logout.bind(this)
+  constructor(props){
+    super(props);
+    firebase.auth().onAuthStateChanged(function(user) {
+      this.setState({ user: user });
+    });
   }
 
-  login() {
+  login = () => {
     firebase
       .auth()
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -26,7 +23,7 @@ export class Login extends Component {
       })
   }
 
-  logout() {
+  logout = () => {
     firebase
       .auth()
       .signOut()
