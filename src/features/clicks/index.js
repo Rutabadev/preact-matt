@@ -8,7 +8,11 @@ export class Clicks extends Component {
       lastClick: null,
       lastPosition: null,
       allowPosition: null,
-      score: 0
+      game: false,
+      score: 0,
+      btnX: "calc(50% - 30px)",
+      btnY: "0",
+      lastScore: null
     };
 
     this.showClick = this.showClick.bind(this);
@@ -19,15 +23,6 @@ export class Clicks extends Component {
     const clicksDiv = document.getElementById("clicks");
     this.setState({ clicksDivHeight: clicksDiv.clientHeight });
     this.setState({ clicksDivWidth: clicksDiv.clientWidth });
-    this.interval = setInterval(
-      () =>
-        this.setState({
-          btnX: Math.random() * (this.state.clicksDivWidth - 30),
-          btnY: Math.random() * (this.state.clicksDivHeight - 30),
-          buttonClickable: true
-        }),
-      1000
-    );
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -59,6 +54,29 @@ export class Clicks extends Component {
     });
   }
 
+  startGame() {
+    this.setState({ game: true });
+    let timesRun = 0;
+    this.interval = setInterval(() => {
+      this.setState({
+        btnX: `${Math.random() * (this.state.clicksDivWidth - 30)}px`,
+        btnY: `${Math.random() * (this.state.clicksDivHeight - 30)}px`,
+        buttonClickable: true
+      });
+      timesRun++;
+      if (timesRun === 10) {
+        clearInterval(this.interval);
+        this.setState({
+          game: false,
+          btnX: "calc(50% - 30px)",
+          btnY: "0",
+          lastScore: this.state.score,
+          score: 0
+        });
+      }
+    }, 1000);
+  }
+
   handleAim() {
     if (this.state.buttonClickable) {
       this.setState({ score: this.state.score + 1 });
@@ -77,24 +95,29 @@ export class Clicks extends Component {
         onMouseMove={e => this.showPosition(e)}
       >
         <p>Score : {this.state.score}</p>
+        {this.state.lastScore !== null && (
+          <p>Last score : {this.state.lastScore}</p>
+        )}
         {this.state.lastClick}
         {device === "desktop" && this.state.allowPosition
           ? this.state.lastPosition
           : null}
         <button
-          onClick={() => this.handleAim()}
+          onClick={
+            this.state.game ? () => this.handleAim() : () => this.startGame()
+          }
           class="secondary"
           style={{
-            width: "30px",
-            height: "30px",
-            padding: "0",
-            left: `${this.state.btnX}px`,
-            top: `${this.state.btnY}px`,
-            transition: `${
-              device === "desktop" ? "left .2s ease, top .2s ease" : "none"
-            }`
+            width: this.state.game ? "30px" : "inherit",
+            height: this.state.game ? "30px" : "inherit",
+            padding: this.state.game ? "0" : ".4em .5em",
+            left: `${this.state.btnX}`,
+            top: `${this.state.btnY}`,
+            transition: device === "desktop" ? "all .2s ease" : "none"
           }}
-        />
+        >
+          {!this.state.game && "Start"}
+        </button>
       </div>
     );
   }
