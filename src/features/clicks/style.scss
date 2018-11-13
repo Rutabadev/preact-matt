@@ -3,28 +3,23 @@
     flex: 1 1 auto;
     overflow: hidden;
     position: relative;
-
     .click {
         position: absolute;
         display: inline-flex;
         transform: translate(-50%, -200%);
     }
-
     .click.position {
         position: fixed;
         z-index: 0;
         transform: translate(-50%, 10px);
-
         .arrow_box {
             background: var(--secondary);
             color: var(--white);
         }
-
         .arrow_box:after {
             border-bottom-color: var(--secondary);
         }
     }
-
     .arrow_box {
         background: var(--text-color);
         border-radius: var(--rounded);
@@ -33,21 +28,20 @@
         white-space: nowrap;
         box-shadow: var(--elevation-mid);
     }
-
     .arrow_box:after {
         // needed otherwise the arrow doesn't display
-        content: "";
-
-        // place it on top of the div
+        content: ""; // place it on top of the div
         position: absolute;
         bottom: 100%;
         left: 50%;
-
         border: solid transparent;
         pointer-events: none;
         border-bottom-color: var(--text-color);
         border-width: 10px;
         margin-left: -10px;
         margin-bottom: -1px;
+    }
+    .aim {
+        transition: left .2s ease, top .2s ease;
     }
 }
