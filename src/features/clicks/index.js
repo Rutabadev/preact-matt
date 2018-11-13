@@ -1,5 +1,6 @@
 import "./style.scss";
 import { Component } from "preact";
+import firebase from "../../firebase";
 
 export class Clicks extends Component {
   constructor() {
@@ -73,6 +74,31 @@ export class Clicks extends Component {
           lastScore: this.state.score,
           score: 0
         });
+        if (this.props.user) {
+          firebase
+            .database()
+            .ref("Clicks/" + this.props.user.uid)
+            .once("value")
+            .then(snapshot => {
+              if (
+                !snapshot.val() ||
+                snapshot.val().score < this.state.lastScore
+              ) {
+                let displayName = this.props.user.displayName;
+                let score = this.state.lastScore;
+                firebase
+                  .database()
+                  .ref("Clicks/" + this.props.user.uid)
+                  .set({
+                    displayName,
+                    score
+                  })
+                  .catch(error => {
+                    console.log("error ", error);
+                  });
+              }
+            });
+        }
       }
     }, 1000);
   }

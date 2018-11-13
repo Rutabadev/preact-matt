@@ -40,6 +40,7 @@ export class Header extends Component {
 
   setUser(userParam) {
     this.setState({ user: userParam });
+    this.props.setUser(userParam);
   }
 
   openSideNav() {

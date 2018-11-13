@@ -87,15 +87,21 @@ export default class App extends Component {
     super();
     this.state = {
       theme: "",
-      device: ""
+      device: "",
+      user: null
     };
     this.changeTheme = this.changeTheme.bind(this);
     this.changeDevice = this.changeDevice.bind(this);
+    this.setUser = this.setUser.bind(this);
   }
 
   componentDidMount() {
     this.updateStateTheme();
     this.updateStateDevice();
+  }
+
+  setUser(user) {
+    this.setState({ user: user });
   }
 
   render() {
@@ -114,6 +120,7 @@ export default class App extends Component {
           changeTheme={this.changeTheme}
           device={this.state.device}
           changeDevice={this.changeDevice}
+          setUser={this.setUser}
         />
         <div class="content">
           <Router>
@@ -123,7 +130,11 @@ export default class App extends Component {
             <Fotos path="/fotos" />
             <Animals path="/animals" />
             <DesTrucs path="/trucs" />
-            <Clicks path="/clicks" device={this.state.device} />
+            <Clicks
+              path="/clicks"
+              device={this.state.device}
+              user={this.state.user}
+            />
             <Highscores path="/highscores" />
             <NotFound type="404" default />
           </Router>
