@@ -9,13 +9,16 @@ export class Highscores extends Component {
   }
 
   componentDidMount() {
-    let scoresRef = firebase.database().ref("Scores");
+    let scoresRef = firebase
+      .database()
+      .ref("Scores")
+      .orderByChild("max");
     scoresRef.on("value", snapshot => {
       snapshot.forEach(data => {
-        console.log(data.val());
         let score = data.val();
-        this.setState({ scores: [...this.state.scores, score] });
+        this.setState({ scores: [score, ...this.state.scores] });
       });
+      scoresRef.off();
     });
   }
 

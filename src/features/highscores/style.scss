@@ -1,22 +1,17 @@
 @import "../../variables";
-
 .highscores {
     // make the div fill the flex parent remaining space
     flex: 1 1 auto;
     display: grid;
     justify-items: center;
     align-content: space-evenly;
-
     table {
         width: 40%;
-
         th {
             text-align: left;
-
             border-bottom: 2px solid;
         }
     }
-
     @media(max-width: $breakpoint-mobile) {
         table {
             width: 90%;
