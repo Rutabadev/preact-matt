@@ -7,6 +7,16 @@
     align-content: space-evenly;
     table {
         width: 40%;
+        tbody {
+            tr:first-child {
+                animation: gradienting 8s ease infinite;
+                background: linear-gradient(270deg, var(--primary), var(--secondary));
+                background-size: 200% 200%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
     }
     @media (max-width: $breakpoint-mobile) {
         table {
