@@ -26,7 +26,7 @@ export class Clicks extends Component {
           btnY: Math.random() * (this.state.clicksDivHeight - 30),
           buttonClickable: true
         }),
-      1800
+      1000
     );
   }
   componentWillUnmount() {
@@ -83,13 +83,16 @@ export class Clicks extends Component {
           : null}
         <button
           onClick={() => this.handleAim()}
-          class="secondary aim"
+          class="secondary"
           style={{
             width: "30px",
             height: "30px",
             padding: "0",
             left: `${this.state.btnX}px`,
-            top: `${this.state.btnY}px`
+            top: `${this.state.btnY}px`,
+            transition: `${
+              device === "desktop" ? "left .2s ease, top .2s ease" : "none"
+            }`
           }}
         />
       </div>
