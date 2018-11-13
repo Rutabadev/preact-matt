@@ -56,17 +56,22 @@ export class Clicks extends Component {
   }
 
   startGame() {
-    this.setState({ game: true });
-    let timesRun = 0;
-    this.interval = setInterval(() => {
+    this.setState({ game: true, startTime: Date.now() });
+    this.refreshTimer();
+  }
+
+  refreshTimer() {
+    this.setState({
+      btnX: `${Math.random() * (this.state.clicksDivWidth - 30)}px`,
+      btnY: `${Math.random() * (this.state.clicksDivHeight - 100)}px`
+    });
+    let intervalId = setInterval(() => {
       this.setState({
         btnX: `${Math.random() * (this.state.clicksDivWidth - 30)}px`,
-        btnY: `${Math.random() * (this.state.clicksDivHeight - 30)}px`,
-        buttonClickable: true
+        btnY: `${Math.random() * (this.state.clicksDivHeight - 100)}px`
       });
-      timesRun++;
-      if (timesRun === 10) {
-        clearInterval(this.interval);
+      if (Date.now() - this.state.startTime > 10000) {
+        clearInterval(this.state.intervalId);
         this.setState({
           game: false,
           btnX: "calc(50% - 30px)",
@@ -101,13 +106,13 @@ export class Clicks extends Component {
         }
       }
     }, 1000);
+    this.setState({ intervalId: intervalId });
   }
 
   handleAim() {
-    if (this.state.buttonClickable) {
-      this.setState({ score: this.state.score + 1 });
-      this.setState({ buttonClickable: false });
-    }
+    this.setState({ score: this.state.score + 1 });
+    clearInterval(this.state.intervalId);
+    this.refreshTimer();
   }
 
   render({ device }) {
