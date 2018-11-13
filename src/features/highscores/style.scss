@@ -10,9 +10,15 @@
         th {
             text-align: left;
             border-bottom: 2px solid;
+            background-color: #ccc;
+        }
+        tbody {
+            tr:nth-child(even) {
+                background-color: #ccc;
+            }
         }
     }
-    @media(max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-mobile) {
         table {
             width: 90%;
         }
