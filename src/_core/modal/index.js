@@ -16,13 +16,16 @@ export class Modal extends Component {
     }
   }
 
-  componentWillUpdate({ modalOpen }) {
+  componentWillUpdate({ modalOpen, focusOk }) {
     if (modalOpen !== this.props.modalOpen) {
       if (!modalOpen && this.props.modalOpen) {
         this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
       } else {
         this.setState({ hidden: false })
         clearTimeout(this.timeout)
+        if (focusOk) {
+          this.button.focus()
+        }
       }
     }
   }

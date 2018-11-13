@@ -2,7 +2,7 @@ import './style.scss';
 import { Component } from 'preact';
 import Helmet from 'preact-helmet';
 import { Header, Footer } from './_core';
-import { Home, CssShowcase, Fotos, Animals, DesTrucs, Clicks, NotFound, ParallaxMatt } from './features';
+import { Home, CssShowcase, Fotos, Animals, DesTrucs, Clicks, NotFound, ParallaxMatt, Highscores } from './features';
 import Router from 'preact-router';
 import { isMobile } from 'react-device-detect';
 
@@ -106,6 +106,7 @@ export default class App extends Component {
             <Animals path='/animals' />
             <DesTrucs path='/trucs' />
             <Clicks path='/clicks' device={this.state.device} />
+            <Highscores path='/highscores'/>
             <NotFound type='404' default />
           </Router>
         </div>

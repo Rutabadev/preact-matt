@@ -6,3 +6,5 @@ export * from "./home/parallax"
 export * from "./not-found"
 export * from "./des-trucs"
 export * from "./clicks"
+export * from "./highscores"
+
