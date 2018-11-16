@@ -9,8 +9,8 @@
     "firebase-tools": "^4.2.1",
     "focus-trap-react": "^4.0.0",
     "node-sass": "^4.5.3",
-    "preact": "8.3.1",
-    "preact-cli": "^2.2.1",
+    "preact": "8.2.5",
+    "preact-cli": "^1.4.1",
     "preact-compat": "3.17.0",
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-icons": "^2.2.5",
@@ -19,7 +19,6 @@
     "react-images": "^0.5.19",
     "react-parallax": "^2.0.1",
     "react-photo-gallery": "^6.2.0",
-    "preact-cli-plugin-async": "^2.0.0",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {

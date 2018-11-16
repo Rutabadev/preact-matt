@@ -1,5 +1,4 @@
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import asyncPlugin from "preact-cli-plugin-async";
 
 export default config => {
   config.plugins.push(
@@ -7,5 +6,4 @@ export default config => {
       { context: `${__dirname}/src/build-root`, from: `*.*` }
     ])
   );
-  asyncPlugin(config);
 };
