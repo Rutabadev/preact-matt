@@ -66,6 +66,7 @@ export class Header extends Component {
 
   handleTujou() {
     let res = Math.random();
+
     if (res < 0.9) {
       this.setState({ playin: "NON", nbFails: this.state.nbFails + 1 });
       if (this.state.user) {
