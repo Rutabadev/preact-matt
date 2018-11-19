@@ -2,15 +2,5 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "beautify.language": {
-    "js": {
-      "type": ["javascript", "json"],
-      "filename": [".jshintrc", ".jsbeautifyrc"]
-      // ^^ to set extensions to be beautified using the javascript beautifier
-    },
-    "css": ["css", "scss"],
-    "html": ["htm", "html"]
-    // ^^ providing just an array sets the VS Code file type
-  },
   "files.insertFinalNewline": true
 }
