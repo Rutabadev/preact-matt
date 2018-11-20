@@ -35,6 +35,6 @@
     "build": "preact build --production --template template.html",
     "serve": "preact build --template && preact serve",
     "dev": "preact watch",
-    "deploy": "firebase use --token $FIREBASE_TOKEN matthieu-f1348 && firebase deploy --non-interactive --token $FIREBASE_TOKEN"
+    "deploy": "firebase use --token $FIREBASE_TOKEN matthieu-f1348 && firebase deploy --only hosting --non-interactive --token $FIREBASE_TOKEN"
   }
 }
