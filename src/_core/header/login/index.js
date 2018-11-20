@@ -2,27 +2,18 @@ import { Component } from 'preact'
 import './style.scss'
 import firebase from '../../../firebase'
 
-export class Login extends Component {
+export class Login extends Component {  
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged(function (user) {
+      localStorage.removeItem('userLoading')
       this.setState({ user: user });
       this.props.setUser(this.state.user)
     }.bind(this));
-    firebase
-      .auth()
-      .getRedirectResult()
-      .then(result => {
-        if (result.user) {
-          const user = result.user
-          this.setState({
-            user
-          })
-        }
-      })
   }
 
   login = () => {
+    localStorage.setItem('userLoading', 1)
     firebase
       .auth()
       .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
@@ -40,6 +31,13 @@ export class Login extends Component {
   }
 
   user() {
+    if (localStorage.getItem('userLoading')) {
+      return (
+        <button class='image-button' onClick={this.logout}>
+          <div class="spinner"></div>
+        </button>
+      )
+    }
     if (this.state.user) {
       return (
         <button class='image-button' onClick={this.logout}>
