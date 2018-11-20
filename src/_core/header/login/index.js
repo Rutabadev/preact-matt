@@ -5,9 +5,15 @@ import firebase from '../../../firebase'
 export class Login extends Component {  
 
   componentDidMount() {
+    if (localStorage.getItem('userLoading')) {
+      this.setState ({ loading: true })
+    }
     firebase.auth().onAuthStateChanged(function (user) {
       localStorage.removeItem('userLoading')
-      this.setState({ user: user });
+      this.setState({ 
+        loading : false,
+        user: user 
+      });
       this.props.setUser(this.state.user)
     }.bind(this));
   }
@@ -31,7 +37,7 @@ export class Login extends Component {
   }
 
   user() {
-    if (localStorage.getItem('userLoading')) {
+    if (this.state.loading) {
       return (
         <button class='image-button' onClick={this.logout}>
           <div class="spinner"></div>
