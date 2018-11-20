@@ -4,23 +4,28 @@ import firebase from '../../../firebase'
 
 export class Login extends Component {
 
-  componentDidMount(){
-    firebase.auth().onAuthStateChanged(function(user) {
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(function (user) {
       this.setState({ user: user });
       this.props.setUser(this.state.user)
     }.bind(this));
+    firebase
+      .auth()
+      .getRedirectResult()
+      .then(result => {
+        if (result.user) {
+          const user = result.user
+          this.setState({
+            user
+          })
+        }
+      })
   }
 
   login = () => {
     firebase
       .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then(result => {
-        const user = result.user        
-        this.setState({
-          user
-        })
-      })
+      .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
   }
 
   logout = () => {
