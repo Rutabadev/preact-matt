@@ -10,8 +10,11 @@ const cors = require("cors")({
 //  response.send("Hello from Firebase!");
 // });
 
-exports.randomize = functions.https.onRequest((request, response) => {
-  return cors(req, res, () => {
-    response.json({ data: Math.random() });
+exports.randomize = functions
+  .region('europe-west1')
+  .https
+  .onRequest((request, response) => {
+    return cors(req, res, () => {
+      response.json({ data: Math.random() });
+    });
   });
-});
