@@ -178,7 +178,7 @@ export class SideNav extends Component {
                 <Link
                   style={{ color: "grey" }}
                   href="/highscores"
-                  onClick={() => this.setState({ modalOpen: false })}
+                  onClick={() => { this.setState({ modalOpen: false }); this.props.closeHandler() }}
                 >
                   {" "}
                   highscores
