@@ -175,7 +175,8 @@ export class SideNav extends Component {
               <p>
                 ({this.state.nbFails} échecs
                 {this.props.user ? `, max ${this.state.maxFails}` : ""}){" "}
-                <Link style={{ color: "grey" }} href="/highscores">
+                <Link style={{ color: "grey" }} href="/highscores" onClick={() => this.setState({ modalOpen: false })}
+                >
                   {" "}
                   highscores
                 </Link>
