@@ -24,3 +24,15 @@
         }
     }
 }
+
+.mobile {
+    .highscores {
+        table {
+            tbody {
+                tr:first-child {
+                    animation: none !important;
+                }
+            }
+        }
+    }
+}
