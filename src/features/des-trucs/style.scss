@@ -1,27 +1,21 @@
 @import "../../variables";
-
 .trucs {
     text-align: center;
-
     .flex-wrapper {
         display: flex;
         flex-direction: column;
         margin: 0 33%;
-
         @media (max-width: $breakpoint-mobile) {
             margin: 0 10%;
         }
-
         .row {
             p {
                 float: left;
             }
-
             span {
                 float: right;
                 font-size: 3em;
-
-                &.nazi {
+                &.yinyang {
                     display: inline-block;
                     animation: spinin 4s linear infinite;
                 }
@@ -31,7 +25,7 @@
 }
 
 .mobile {
-    .nazi {
+    .yinyang {
         animation: none !important;
     }
 }
