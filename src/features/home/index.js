@@ -10,7 +10,7 @@ export const Home = () => (
     <div class='main'>
       <br />
       <h2>Biographie</h2>
-      <p>De son vrai prénom Kim Jun Ho, Matthieu Montaillé est un jeune coréen natif, devenu catalan de force par une adoption dont les détails resteront secrets tellements ils vous regardent pas alors calmez vous bien.</p>
+      <p>De son vrai prénom Kim Jun Ho, Matthieu Montaillé est un jeune coréen natif, devenu catalan de force par une adoption dont les détails resteront secrets, notamment parceque je ne les ais pas.</p>
       <br />
       <p>Après une enfance difficile mais somme toute aisée, il devient adulte.</p>
       <br />
