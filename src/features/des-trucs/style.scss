@@ -18,7 +18,12 @@
                 &.yinyang {
                     display: inline-block;
                     animation: spinin 4s linear infinite;
-                }
+                    height: 70px;
+                    &:hover {
+                        animation: spinin .9s linear infinite;
+                        cursor: wait;
+                    }
+                }                
             }
         }
     }
