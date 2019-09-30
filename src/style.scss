@@ -114,6 +114,27 @@ body {
             }
         }
     }
+
+    &.neon-theme {
+        --text-color: var(--white);
+        --bg: var(--black);
+        --behind-sidenav-color: var(--blackRGB);
+        --elevation-high: var(--elevation-high-values) aquamarine;
+        --elevation-mid: var(--elevation-mid-values) aquamarine;
+        --elevation-low: var(--elevation-low-values) black;
+        .spinner:before {
+            border-top: 2px solid aquamarine;
+        }
+        th {
+            background-color: var(--less-black);
+        }
+        tbody {
+            tr:nth-child(even) {
+                background-color: var(--less-black);
+            }
+        }
+    }
+
     .content {
         margin-top: var(--navbar-height);
         display: flex;
