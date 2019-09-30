@@ -11,6 +11,10 @@ const fotos = [
   { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', alt: "branches de pin", width: 3, height: 4 },
   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', alt: "gland macro", width: 4, height: 3 },
   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', alt: "arbres orangés sur bords de nationnale", width: 4, height: 3 },
+  { src: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80', alt: "regard en haut vers les arbres", width: 3, height: 4 },
+  { src: 'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', alt: "lumière forêt dense", width: 4, height: 3 },
+  { src: 'https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', alt: "mi forêt mi ciel blanc", width: 1, height: 1 },  
+  { src: 'https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1311&q=80', alt: "petit ilot forestier sur lac brumeux", width: 4, height: 3 },  
 ]
 
 export class Fotos extends Component {
