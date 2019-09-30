@@ -133,6 +133,23 @@ body {
                 background-color: var(--less-black);
             }
         }
+        .header {
+            box-shadow: var(--elevation-high-values) rgb(255, 132, 249)
+        }
+        button:hover {
+            animation: neoning 1.5s linear infinite;
+        }
+        @keyframes neoning {
+            0% {
+                box-shadow: 0 1px 7px aquamarine; 
+            }
+            50% {
+                box-shadow: 0 1px 17px rgb(255, 132, 249); 
+            }
+            100% {
+                box-shadow: 0 1px 7px aquamarine; 
+            }
+        }
     }
 
     .content {
