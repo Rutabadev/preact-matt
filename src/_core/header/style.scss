@@ -84,6 +84,10 @@
       }
     }
 
+    .ontop {
+      z-index: 2;
+    }
+
 
     .dropdown-content {
       padding: .1em;

@@ -45,25 +45,23 @@ const features = [
 ];
 
 export default class App extends Component {
-  changeTheme() {
-
-    var theme = localStorage.getItem("theme");
+  changeTheme(theme) {
 
     switch (theme) {
       case "light":
-        localStorage.setItem("theme", "dark");
-        break;
-
-      case "dark":
-        localStorage.setItem("theme", "neon");
-        break;
-
-      case "neon":
         localStorage.setItem("theme", "light");
         break;
 
-      default:
+      case "dark":
         localStorage.setItem("theme", "dark");
+        break;
+
+      case "neon":
+        localStorage.setItem("theme", "neon");
+        break;
+
+      default:
+        localStorage.setItem("theme", "light");
         break;
     }
 

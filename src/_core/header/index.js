@@ -5,7 +5,6 @@ import { Login } from "./login";
 import { SideNav } from "./sidenav";
 import MenuIcon from "preact-icons/md/menu";
 import OptionsIcon from "preact-icons/io/android-options";
-import ColorIcon from "preact-icons/go/color-mode";
 import { Dropdown } from "../dropdown";
 import { Modal, MODAL_TYPES } from "../modal";
 import MobileIcon from "preact-icons/md/phone-android";
@@ -19,6 +18,10 @@ export class Header extends Component {
     this.state = {
       sideNavDisplay: "closed",
       dropdown: {
+        open: false,
+        lastchanged: null
+      },
+      dropdown2: {
         open: false,
         lastchanged: null
       },
@@ -60,6 +63,17 @@ export class Header extends Component {
     ) {
       this.setState({
         dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() }
+      });
+    }
+  }
+
+  switchDrop2() {
+    if (
+      Date.now() - this.state.dropdown2.lastchanged > 100 ||
+      this.state.dropdown2.lastchanged === null
+    ) {
+      this.setState({
+        dropdown2: { open: !this.state.dropdown2.open, lastchanged: Date.now() }
       });
     }
   }
@@ -197,12 +211,16 @@ export class Header extends Component {
                 closeHandler={this.switchDrop}
               >
                 <div class="dropdown-content">
-                  <button
-                    onClick={this.props.changeTheme}
-                    aria-label="theme switch"
-                  >
-                    <ColorIcon />
-                  </button>
+                  <div class="dropdown-wrapper ontop">
+                    <button class='primary' onClick={() => this.switchDrop2()}>
+                      theme
+                    </button>
+                    <Dropdown show={this.state.dropdown2.open} closeHandler={this.switchDrop2}>
+                      <button aria-label="light theme switch" onClick={() => this.props.changeTheme("light")}>light</button>
+                      <button aria-label="dark theme switch" onClick={() => this.props.changeTheme("dark")}>dark</button>
+                      <button aria-label="neon theme switch" onClick={() => this.props.changeTheme("neon")}>neon</button>
+                    </Dropdown>
+                  </div>
                   {deviceButton}
                   <button
                     ref={tujouHeader => (this.tujouHeader = tujouHeader)}
