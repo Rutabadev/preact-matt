@@ -55,7 +55,7 @@ export class CssShowcase extends Component {
               dropdown
             </button>
             <Dropdown show={this.state.dropdown.open} closeHandler={this.switchDrop}>
-              <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(2px)" }}></BeerIcon>
+              <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(4px)" }}></BeerIcon>
             </Dropdown>
           </div>
         </div>

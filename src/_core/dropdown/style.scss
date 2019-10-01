@@ -5,18 +5,24 @@
 
 .dropdown {
     position: absolute;
+    display: inherit;
     margin: 0;
     left: 50%;
     top: calc(100% + 10px);
     transform: translateX(-50%);
     z-index: 1;
+    transition: visibility .2s, opacity .2s linear, transform .2s ease;
 
     &.open {
-        display: inherit
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%);
     }
 
     &.close {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) rotateX(45deg);
     }
 
     .arrow_box {
