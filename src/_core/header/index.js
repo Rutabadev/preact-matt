@@ -34,6 +34,7 @@ export class Header extends Component {
 
     this.closeSideNav = this.closeSideNav.bind(this);
     this.switchDrop = this.switchDrop.bind(this);
+    this.switchDrop2 = this.switchDrop2.bind(this);
     this.handleTujou = this.handleTujou.bind(this);
     this.handleSuccess = this.handleSuccess.bind(this);
     this.handleInstallPWA = this.handleInstallPWA.bind(this);
