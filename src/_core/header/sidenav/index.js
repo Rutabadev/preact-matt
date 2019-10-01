@@ -152,7 +152,7 @@ export class SideNav extends Component {
               Tu joues ce soir ?
             </button>
             {deviceButton}
-            <button onClick={this.props.changeTheme} aria-label="theme switch">
+            <button onClick={this.props.switchTheme} aria-label="theme switch">
               <ColorIcon />
             </button>
             {this.state.installAsPWA && (

@@ -50,7 +50,7 @@ export default class App extends Component {
     this.updateStateTheme();
   }
 
-  changeTheme() {
+  switchTheme() {
 
     let theme = localStorage.getItem("theme");
     switch (theme) {
@@ -67,7 +67,7 @@ export default class App extends Component {
         break;
 
       default:
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("theme", "dark");
         break;
     }
 
@@ -111,6 +111,7 @@ export default class App extends Component {
       user: null
     };
     this.changeTheme = this.changeTheme.bind(this);
+    this.switchTheme = this.switchTheme.bind(this);
     this.changeDevice = this.changeDevice.bind(this);
     this.setUser = this.setUser.bind(this);
   }
@@ -138,6 +139,7 @@ export default class App extends Component {
         <Header
           features={features}
           changeTheme={this.changeTheme}
+          switchTheme={this.switchTheme}
           device={this.state.device}
           changeDevice={this.changeDevice}
           setUser={this.setUser}

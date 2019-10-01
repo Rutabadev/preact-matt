@@ -189,7 +189,7 @@ export class Header extends Component {
                 features={features}
                 sideNavDisplay={this.state.sideNavDisplay}
                 closeHandler={this.closeSideNav}
-                changeTheme={props.changeTheme}
+                switchTheme={props.switchTheme}
                 device={props.device}
                 changeDevice={props.changeDevice}
                 user={this.state.user}
