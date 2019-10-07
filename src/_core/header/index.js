@@ -216,10 +216,12 @@ export class Header extends Component {
                     <button class='primary' onClick={() => this.switchDrop2()}>
                       theme
                     </button>
-                    <Dropdown show={this.state.dropdown2.open} closeHandler={this.switchDrop2}>
-                      <button aria-label="light theme switch" onClick={() => this.props.changeTheme("light")}>light</button>
-                      <button aria-label="dark theme switch" onClick={() => this.props.changeTheme("dark")}>dark</button>
-                      <button aria-label="neon theme switch" onClick={() => this.props.changeTheme("neon")}>neon</button>
+                    <Dropdown show={this.state.dropdown2.open} closeHandler={this.switchDrop2} direction={"left"}>
+                      <div class="themes-wrap">
+                        <button aria-label="light theme switch" onClick={() => this.props.changeTheme("light")}>light</button>
+                        <button aria-label="dark theme switch" onClick={() => this.props.changeTheme("dark")}>dark</button>
+                        <button aria-label="neon theme switch" onClick={() => this.props.changeTheme("neon")}>neon</button>
+                      </div>
                     </Dropdown>
                   </div>
                   {deviceButton}
