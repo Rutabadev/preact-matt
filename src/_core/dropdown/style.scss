@@ -58,7 +58,7 @@
             left: 50%;
 
             // point the arrow up
-            border-bottom-color: var(--text-color);
+            border-color: transparent transparent var(--text-color) transparent;
         }        
     }
 
@@ -80,7 +80,7 @@
             left: 50%;
 
             // point the arrow down
-            border-top-color: var(--text-color);
+            border-color: var(--text-color) transparent transparent transparent;
         }        
     }
 
@@ -102,7 +102,7 @@
             right: calc(-50% + 10px);
 
             // point the arrow right
-            border-left-color: var(--text-color);
+            border-color: transparent transparent transparent var(--text-color); 
         }        
     }
 
@@ -124,7 +124,7 @@
             left: -9px;
 
             // point the arrow left
-            border-right-color: var(--text-color);
+            border-color: transparent var(--text-color) transparent transparent;
         }        
     }
 }
