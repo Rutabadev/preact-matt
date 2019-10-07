@@ -7,22 +7,17 @@
     position: absolute;
     display: inherit;
     margin: 0;
-    left: 50%;
-    top: calc(100% + 10px);
-    transform: translateX(-50%);
     z-index: 1;
     transition: visibility .2s, opacity .2s linear, transform .2s ease;
 
     &.open {
         visibility: visible;
         opacity: 1;
-        transform: translateX(-50%);
     }
 
     &.close {
         visibility: hidden;
         opacity: 0;
-        transform: translateX(-50%) translateY(-50%) rotateX(45deg);
     }
 
     .arrow_box {
@@ -36,18 +31,101 @@
     .arrow_box:after {
         // needed otherwise the arrow doesn't display
         content: "";
-
-        // place it on top of the div
         position: absolute;
-        bottom: 100%;
-        left: 50%;
 
         border: solid transparent;
         pointer-events: none;
-        border-bottom-color: var(--text-color);
         border-width: 10px;
         margin-left: -10px;
         margin-bottom: -2px;
+    }
+
+    &.down {
+        left: 50%;
+        top: calc(100% + 10px);
+        
+        &.open {
+            transform: translateX(-50%);
+        }
+    
+        &.close {
+            transform: translateX(-50%) translateY(-50%) rotateX(45deg);
+        }
+
+        .arrow_box:after {
+            // place it on top of the div
+            bottom: 100%;
+            left: 50%;
+
+            // point the arrow up
+            border-bottom-color: var(--text-color);
+        }        
+    }
+
+    &.up {
+        left: 50%;
+        bottom: calc(100% + 10px);
+        
+        &.open {
+            transform: translateX(-50%);
+        }
+    
+        &.close {
+            transform: translateX(-50%) translateY(50%) rotateX(45deg);
+        }
+          
+        .arrow_box:after {
+            // place it under the div
+            top: 98%;
+            left: 50%;
+
+            // point the arrow down
+            border-top-color: var(--text-color);
+        }        
+    }
+
+    &.left {
+        left: -50%;
+        bottom: -50%;
+        
+        &.open {
+            transform: translateX(-50%);
+        }
+    
+        &.close {
+            transform: translateX(0%) rotateY(45deg);
+        }
+          
+        .arrow_box:after {
+            // place it on the right of the div
+            top: calc(50% - 10px);
+            right: calc(-50% + 10px);
+
+            // point the arrow right
+            border-left-color: var(--text-color);
+        }        
+    }
+
+    &.right {
+        right: calc(-50% + 8px);
+        bottom: -50%;
+        
+        &.open {
+            transform: translateX(50%);
+        }
+    
+        &.close {
+            transform: translateX(0%) rotateY(45deg);
+        }
+          
+        .arrow_box:after {
+            // place it on the left of the div
+            top: calc(50% - 10px);
+            left: -9px;
+
+            // point the arrow left
+            border-right-color: var(--text-color);
+        }        
     }
 }
 

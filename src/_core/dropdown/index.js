@@ -4,11 +4,11 @@ import OutsideAlerter from "../outside-alerter";
 
 export class Dropdown extends Component {
 
-  render({ show, children, closeHandler }) {
+  render({ show, children, closeHandler, direction }) {
     const display = show ? "open" : "closed";
 
     return (
-      <div class={"dropdown" + (show ? " open" : " close")}>
+      <div class={"dropdown " + (direction ? direction : "down") + (show ? " open" : " close")}>
         <OutsideAlerter thingDisplayed={display} closeHandler={closeHandler}>
           <div class="arrow_box">{children}</div>
         </OutsideAlerter>

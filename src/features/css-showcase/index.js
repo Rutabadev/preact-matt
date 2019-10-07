@@ -19,7 +19,8 @@ export class CssShowcase extends Component {
       dropdown: {
         open: false,
         lastchanged: null
-      }
+      },
+      direction: "left"
     }
 
     this.switchDrop = this.switchDrop.bind(this);
@@ -28,6 +29,28 @@ export class CssShowcase extends Component {
   switchDrop() {
     if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
       this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
+      if (!this.state.dropdown.open) {
+        setTimeout(() => {
+          switch (this.state.direction) {
+            case "left":
+              this.setState({ direction: "up" })
+              break;
+            case "up":
+              this.setState({ direction: "right" })
+              break;
+            case "right":
+              this.setState({ direction: "down" })
+              break;
+            case "down":
+              this.setState({ direction: "left" })
+              break;
+
+            default:
+              break;
+          }
+        }, 200)
+      }
+
     }
   }
 
@@ -54,7 +77,7 @@ export class CssShowcase extends Component {
             <button class='primary' onClick={() => this.switchDrop()}>
               dropdown
             </button>
-            <Dropdown show={this.state.dropdown.open} closeHandler={this.switchDrop}>
+            <Dropdown show={this.state.dropdown.open} closeHandler={this.switchDrop} direction={this.state.direction}>
               <BeerIcon style={{ "font-size": "3em", "padding": ".1em", "transform": "translateX(4px)" }}></BeerIcon>
             </Dropdown>
           </div>
