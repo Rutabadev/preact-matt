@@ -85,15 +85,15 @@
     }
 
     &.left {
-        left: -50%;
+        right: calc(100% + 10px);
         bottom: -50%;
         
         &.open {
-            transform: translateX(-37%);
+            transform: translateX(0%);
         }
     
         &.close {
-            transform: translateX(0%) rotateY(45deg);
+            transform: translateX(50%) rotateY(45deg);
         }
           
         .arrow_box:after {
