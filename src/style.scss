@@ -80,9 +80,10 @@ body {
         --text-color: var(--black);
         --bg: var(--white);
         --behind-sidenav-color: var(--whiteRGB);
-        --elevation-high: var(--elevation-high-values) rgba(39, 39, 39, 0.794);
-        --elevation-mid: var(--elevation-mid-values) rgba(39, 39, 39, 0.794);
-        --elevation-low: var(--elevation-low-values) rgba(39, 39, 39, 0.794);
+        --shadow-color: rgba(39, 39, 39, 0.794);
+        --elevation-high: var(--elevation-high-values) var(--shadow-color);
+        --elevation-mid: var(--elevation-mid-values) var(--shadow-color);
+        --elevation-low: var(--elevation-low-values) var(--shadow-color);
         .spinner:before {
             border-top: 2px solid var(--secondary);
         }
@@ -99,9 +100,10 @@ body {
         --text-color: var(--white);
         --bg: var(--black);
         --behind-sidenav-color: var(--blackRGB);
-        --elevation-high: var(--elevation-high-values) black;
-        --elevation-mid: var(--elevation-mid-values) black;
-        --elevation-low: var(--elevation-low-values) black;
+        --shadow-color: black;
+        --elevation-high: var(--elevation-high-values) var(--shadow-color);
+        --elevation-mid: var(--elevation-mid-values) var(--shadow-color);
+        --elevation-low: var(--elevation-low-values) var(--shadow-color);
         .spinner:before {
             border-top: 2px solid var(--primary);
         }
@@ -119,9 +121,10 @@ body {
         --text-color: var(--white);
         --bg: var(--black);
         --behind-sidenav-color: var(--blackRGB);
-        --elevation-high: var(--elevation-high-values) aquamarine;
-        --elevation-mid: var(--elevation-mid-values) aquamarine;
-        --elevation-low: var(--elevation-low-values) black;
+        --shadow-color: aquamarine;
+        --elevation-high: var(--elevation-high-values) var(----shadow-color);
+        --elevation-mid: var(--elevation-mid-values) var(--shadow-color);
+        --elevation-low: var(--elevation-low-values) var(--shadow-color);
         .spinner:before {
             border-top: 2px solid aquamarine;
         }

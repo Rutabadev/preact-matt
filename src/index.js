@@ -11,7 +11,9 @@ import {
   Clicks,
   NotFound,
   ParallaxMatt,
-  Highscores
+  Highscores,
+  DropFun,
+  Shadow
 } from "./features";
 import Router from "preact-router";
 import { isMobile } from "react-device-detect";
@@ -41,6 +43,14 @@ const features = [
   {
     name: "Clicks",
     path: "/clicks"
+  },
+  {
+    name: "DropFun",
+    path: "/dropfun"
+  },
+  {
+    name: "Shadow",
+    path: "/shadow"
   }
 ];
 
@@ -158,6 +168,8 @@ export default class App extends Component {
               user={this.state.user}
             />
             <Highscores path="/highscores" />
+            <DropFun path="/dropfun" />
+            <Shadow path="/shadow" />
             <NotFound type="404" default />
           </Router>
         </div>

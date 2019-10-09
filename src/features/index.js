@@ -7,4 +7,6 @@ export * from "./not-found"
 export * from "./des-trucs"
 export * from "./clicks"
 export * from "./highscores"
+export * from "./dropfun"
+export * from "./shadow"
 
