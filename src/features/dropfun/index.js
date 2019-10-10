@@ -27,7 +27,7 @@ export class DropFun extends Component {
 
     onMoreDrop() {
         let newDrop = this.state.drops;
-        this.setState({ ["dropdown" + newDrop]: { open: true }, drops: this.state.drops++ });
+        this.setState({ ["dropdown" + newDrop]: { open: true }, drops: this.state.drops+1 });
         console.log(this.state);
     }
 
