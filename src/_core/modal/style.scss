@@ -85,7 +85,7 @@
         button:focus {
             background: linear-gradient(270deg, var(--primary), var(--secondary));
             background-size: 150% 150%;
-            animation: gradienting 2s ease infinite, elevating 2s ease infinite, neoning 2s linear infinite;
+            animation: gradienting 2s ease infinite, elevating 2s ease infinite;
             filter: none;
         }
     }
