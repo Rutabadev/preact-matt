@@ -122,7 +122,7 @@ body {
         --bg: var(--black);
         --behind-sidenav-color: var(--blackRGB);
         --shadow-color: aquamarine;
-        --elevation-high: var(--elevation-high-values) var(----shadow-color);
+        --elevation-high: var(--elevation-high-values) var(--shadow-color);
         --elevation-mid: var(--elevation-mid-values) var(--shadow-color);
         --elevation-low: var(--elevation-low-values) var(--shadow-color);
         .spinner:before {
