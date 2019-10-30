@@ -61,12 +61,25 @@
         }
     }
 
+    &.ouf {
+        .modal {
+            transform: translateY(0) scale(.1) rotateZ(-900deg);
+            transition: transform 2s ease;
+        }
+    }
+
     &.open {
         background: rgba(var(--behind-sidenav-color), .7);
 
         .modal {
             opacity: 1;
             transform: translateY(-70px);
+        }
+    }
+
+    &.ouf.open {
+        .modal {
+            transform: translateY(-70px) scale(1) rotateZ(0);
         }
     }
 

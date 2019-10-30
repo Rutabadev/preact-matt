@@ -30,12 +30,13 @@ export class Modal extends Component {
     }
   }
 
-  render({ title, children, onSuccess, onCancel, type, modalOpen, imbriquedModal }) {
+  render({ title, children, onSuccess, onCancel, type, modalOpen, imbriquedModal, ouf }) {
     return (
       <FocusTrap active={modalOpen} paused={imbriquedModal}>
         <div
           class={
             'modal-overlay' +
+            (ouf ? ' ouf' : '') +
             (modalOpen ? ' open' : ' close') +
             (this.state.hidden ? ' hidden' : '')
           }

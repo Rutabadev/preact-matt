@@ -89,7 +89,7 @@ export class CssShowcase extends Component {
           <br />
           <br />
         </Modal>
-        <Modal title='Custom modal imbriquée' onSuccess={() => this.setState({ modalOpen2: false, pause: false })} onCancel={() => this.setState({ modalOpen2: false, pause: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen2}>
+        <Modal title='Custom modal imbriquée' onSuccess={() => this.setState({ modalOpen2: false, pause: false })} onCancel={() => this.setState({ modalOpen2: false, pause: false })} type={MODAL_TYPES.ERROR} modalOpen={this.state.modalOpen2} ouf={true}>
           <p>Paf la modale imbriquée</p>
         </Modal>
       </div >
