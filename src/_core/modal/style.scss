@@ -61,10 +61,10 @@
         }
     }
 
-    &.ouf {
+    &.ouf.close {
         .modal {
             transform: translateY(0) scale(.1) rotateZ(-900deg);
-            transition: transform 2s ease;
+            transition: all 2s ease;
         }
     }
 
@@ -80,6 +80,7 @@
     &.ouf.open {
         .modal {
             transform: translateY(-70px) scale(1) rotateZ(0);
+            transition: all 2s ease;
         }
     }
 
