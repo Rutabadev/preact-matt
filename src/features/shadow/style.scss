@@ -18,7 +18,8 @@
         max-width: 70%;
         max-height: 60%;
         background-color: var(--bg);
-        filter: brightness(.98);
+        filter: brightness(.98);        
+        transition: box-shadow .5s ease;
 
         .row {
             margin: .4em;
