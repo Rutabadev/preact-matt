@@ -10,7 +10,7 @@ export { MODAL_TYPES }
 
 export class Modal extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       hidden: !props.modalOpen
     }
@@ -25,8 +25,8 @@ export class Modal extends Component {
           this.timeout = setTimeout(() => this.setState({ hidden: true }), 200)
         }
       } else {
-        this.setState({ hidden: false })
-        clearTimeout(this.timeout)
+        this.setState({ hidden: false });
+        clearTimeout(this.timeout);
         if (focusOk) {
           this.button.focus()
         }

@@ -6,12 +6,12 @@ export class Animal extends Component {
         super(props);
         this.state = {
             imageLoading: true
-        }
+        };
         this.imageLoaded = this.imageLoaded.bind(this);
     }
 
     imageLoaded() {
-        this.setState({ imageLoading: false })
+        this.setState({ imageLoading: false });
         this.props.handleLoad();
     }
 

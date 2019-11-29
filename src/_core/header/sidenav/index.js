@@ -104,7 +104,7 @@ export class SideNav extends Component {
       );
     });
 
-    let deviceButton = {};
+    let deviceButton;
     if (this.props.device === "mobile") {
       deviceButton = (
         <button
@@ -198,6 +198,7 @@ export class SideNav extends Component {
               {this.state.nbFails >= 20 && (
                 <img
                   src="../../../assets/neko.jpg"
+                  alt="Le petit chat Neko"
                   style={{
                     align: "center",
                     height: "150px",

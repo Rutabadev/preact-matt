@@ -27,6 +27,7 @@
     "if-env": "^1.0.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "prop-types": "^15.7.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   },

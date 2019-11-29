@@ -14,7 +14,7 @@ export class DropFun extends Component {
                 open: false,
                 lastchanged: null
             }
-        }
+        };
 
         this.switchDrop = this.switchDrop.bind(this);
     }

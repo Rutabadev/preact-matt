@@ -9,14 +9,14 @@ export class Animals extends Component {
             animal: "dog",
             result: null,
             imageLoading: false
-        }
+        };
         this.refresh = this.refresh.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleLoad = this.handleLoad.bind(this);
     }
 
     refresh() {
-        this.setState({ result: null, imageLoading: true })
+        this.setState({ result: null, imageLoading: true });
         switch (this.state.animal) {
             case 'dog':
                 this.setState({ animal: 'dog' });

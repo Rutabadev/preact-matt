@@ -9,7 +9,7 @@ export class Login extends Component {
       this.setState ({ loading: true })
     }
     firebase.auth().onAuthStateChanged(function (user) {
-      localStorage.removeItem('userLoading')
+      localStorage.removeItem('userLoading');
       this.setState({ 
         loading : false,
         user: user 
@@ -19,11 +19,11 @@ export class Login extends Component {
   }
 
   login = () => {
-    localStorage.setItem('userLoading', 1)
+    localStorage.setItem('userLoading', 1);
     firebase
       .auth()
       .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
-  }
+  };
 
   logout = () => {
     firebase
@@ -34,7 +34,7 @@ export class Login extends Component {
           user: null
         })
       })
-  }
+  };
 
   user() {
     if (this.state.loading) {

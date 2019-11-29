@@ -15,7 +15,7 @@ const fotos = [
   { src: 'https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', alt: "lumière forêt dense", width: 4, height: 3 },
   { src: 'https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', alt: "mi forêt mi ciel blanc", width: 1, height: 1 },  
   { src: 'https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1311&q=80', alt: "petit ilot forestier sur lac brumeux", width: 4, height: 3 },  
-]
+];
 
 export class Fotos extends Component {
   openLightbox (event, obj) {
@@ -42,11 +42,11 @@ export class Fotos extends Component {
   }
 
   constructor () {
-    super()
-    this.state = { currentImage: 0 }
-    this.closeLightbox = this.closeLightbox.bind(this)
-    this.openLightbox = this.openLightbox.bind(this)
-    this.gotoNext = this.gotoNext.bind(this)
+    super();
+    this.state = { currentImage: 0 };
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this)
   }
 

@@ -33,9 +33,8 @@
         content: "";
         position: absolute;
 
-        border: solid transparent;
         pointer-events: none;
-        border-width: 10px;
+        border: 10px solid transparent;
         margin-left: -10px;
         margin-bottom: -2px;
     }

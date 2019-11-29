@@ -11,7 +11,7 @@ import BeerIcon from 'preact-icons/io/beer'
 
 export class CssShowcase extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       modalOpen: false,
       pause: false,
@@ -21,28 +21,28 @@ export class CssShowcase extends Component {
         lastchanged: null
       },
       direction: "left"
-    }
+    };
 
     this.switchDrop = this.switchDrop.bind(this);
   }
 
   switchDrop() {
     if (Date.now() - this.state.dropdown.lastchanged > 100 || this.state.dropdown.lastchanged === null) {
-      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } })
+      this.setState({ dropdown: { open: !this.state.dropdown.open, lastchanged: Date.now() } });
       if (!this.state.dropdown.open) {
         setTimeout(() => {
           switch (this.state.direction) {
             case "left":
-              this.setState({ direction: "up" })
+              this.setState({ direction: "up" });
               break;
             case "up":
-              this.setState({ direction: "right" })
+              this.setState({ direction: "right" });
               break;
             case "right":
-              this.setState({ direction: "down" })
+              this.setState({ direction: "down" });
               break;
             case "down":
-              this.setState({ direction: "left" })
+              this.setState({ direction: "left" });
               break;
 
             default:

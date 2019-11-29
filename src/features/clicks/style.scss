@@ -34,10 +34,9 @@
         position: absolute;
         bottom: 100%;
         left: 50%;
-        border: solid transparent;
         pointer-events: none;
+        border: 10px solid transparent;
         border-bottom-color: var(--text-color);
-        border-width: 10px;
         margin-left: -10px;
         margin-bottom: -1px;
     }

@@ -3,7 +3,7 @@ import { Component } from "preact";
 
 export class Shadow extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             horizontal: 0,
             vertical: 1,

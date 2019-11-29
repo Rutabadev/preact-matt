@@ -5,7 +5,7 @@ import { Modal, MODAL_TYPES } from '../modal'
 
 export class Footer extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       modalOpen: false
     }
@@ -19,7 +19,7 @@ export class Footer extends Component {
           <Roller content='Youtoube' link='https://www.youtube.com/user/OnchayTM' />
           <Roller content='Touitteur' link='https://twitter.com/MZPuex' />
           <Roller content='Sith' link='/' onClick={(e) => {
-            e.preventDefault()
+            e.preventDefault();
             this.setState({ modalOpen: true })
           }
           } />

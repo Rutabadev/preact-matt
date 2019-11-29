@@ -22,9 +22,9 @@ export default class OutsideAlerter extends Component {
   }
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.setWrapperRef = this.setWrapperRef.bind(this)
+    this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
@@ -43,4 +43,4 @@ export default class OutsideAlerter extends Component {
 
 OutsideAlerter.propTypes = {
   children: PropTypes.element.isRequired
-}
+};
