@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "index.js",
   "dependencies": {
-    "firebase": "5.3.0",
+    "firebase": "10.9.0",
     "firebase-tools": "^4.2.1",
     "focus-trap-react": "^4.0.0",
     "node-sass": "^4.5.3",
